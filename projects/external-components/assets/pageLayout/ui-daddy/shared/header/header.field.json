@@ -1,24 +1,124 @@
 {
-    "header-dashboard": [
+    "menu-header-dashboard": [
         {
-            "value": "UI Daddy",
+            "value": "",
             "baseProperties": {
-                "name": "menu",
-                "type": "staticText"
+                "src": "https://cdn.pixabay.com/photo/2015/10/01/17/17/car-967387__480.png",
+                "name": "logo",
+                "type": "img"
             },
             "layoutProperties":{
                 "css": {
                     "configuration": {
                         "selectorName": ".header__logo",
                         "xs": {
-                            "min-height": "40px",
-                            "font-size": "30px",
-                            "margin-left": "15px",
-                            "parent-justify-content": "flex-start",
-                            "parent-padding": "8px"
+                            "background-image": "url(assets/images/loginPage.jpg)",
+                            "background-size": "cover",
+                            "background-position": "center center"
                         }
                     },
                     "customClassName": "header__logo"
+                }
+            }
+        },{
+            "value": "Home",
+            "baseProperties": {
+                "name": "home",
+                "type": "staticText"
+            },
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__menu",
+                        "xs": {
+                            
+                            "color": "black",
+                            "font-size": "15px",
+                            "font-weight":"bold"                        }
+                    },
+                    "customClassName": "header__menu"
+                }
+            }
+
+        },
+        {
+            "value": "My Tasks",
+            "baseProperties": {
+                "name": "myTasks",
+                "type": "staticText"
+            },
+            "layoutProperties":{
+                "css": {
+                   
+                    "customClassName": "header__menu"
+                }
+            }
+
+        },{
+            "value": "Projects",
+            "baseProperties": {
+                "name": "projects",
+                "type": "staticText"
+            },
+            "layoutProperties":{
+                "css": {
+                    
+                    "customClassName": "header__menu"
+                }
+            }
+
+        },{
+            "value": "Users",
+            "baseProperties": {
+                "name": "users",
+                "type": "staticText"
+            },
+            "layoutProperties":{
+                "css": {
+                    
+                    "customClassName": "header__menu"
+                }
+            }
+
+        },
+        {
+            "value": "Orgs",
+            "baseProperties": {
+                "name": "orgs",
+                "type": "staticText"
+            },
+            "layoutProperties":{
+                "css": {
+                    
+                    "customClassName": "header__menu"
+                }
+            }
+
+        }
+    ],
+    "logout-header-dashboard": [
+        {   "value":"",
+            "baseProperties": {
+                "name": "space",
+                "type": "staticText"
+            }
+        },
+        {   "value":"org: BTS",
+            "baseProperties": {
+                "name": "org",
+                "type": "staticText"
+            },
+            "layoutProperties":{
+                "css": {
+                    "configuration": {
+                        "selectorName": ".header__org",
+                        "xs": {
+                            
+                            "color": "black",
+                            "font-size": "15px",
+                            "font-weight":"bold"                        }
+                    },
+                    "customClassName": "header__org"
                 }
             }
         },
@@ -66,6 +166,8 @@
                     "debounce": 3000
                 }
             ]
-        } 
+        }
+        
+        
     ]
 }

@@ -3,12 +3,12 @@
         "headerSection": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/header",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.section.json"
         },
         "headerField": {
             "fetchFromLocal": true,
             "serverURL": "/api/section/header/field",
-            "localURL": ""
+            "localURL": "./assets/pageLayout/ui-daddy/shared/header/header.field.json"
         },
         "field": {
             "fetchFromLocal": true,
