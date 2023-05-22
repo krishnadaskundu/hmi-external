@@ -1,1 +1,0 @@
-{"dnd-0":[{"baseProperties":{"type":"staticText","id":"dnd-1","label":"welcome"},"layoutProperties":{},"events":[],"expressionProperties":{}},{"baseProperties":{"type":"dropdown","id":"dnd-2"},"layoutProperties":{}},{"baseProperties":{"type":"typeahead","id":"dnd-3"},"layoutProperties":{}}]}
