@@ -86,7 +86,44 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "blur",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "WAIT_IN_MS",
+                            "url": "",
+                            "condition": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": 5000,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": []
+                        },
+                        {
+                            "actionType": "setfield",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "textBox",
+                            "fieldValue": "abcd",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "dnd-0",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": []
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {}
         },
         {
@@ -112,7 +149,23 @@
                 {
                     "event": "blur",
                     "debounce": null,
-                    "actions": []
+                    "actions": [
+                        {
+                            "actionType": "CLEAR_COMPONENT_DATA",
+                            "url": "",
+                            "condition": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "textBox",
+                            "sharedData": [],
+                            "apiConfig": []
+                        }
+                    ]
                 }
             ],
             "expressionProperties": {}
