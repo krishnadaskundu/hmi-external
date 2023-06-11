@@ -1,0 +1,121 @@
+{
+    "dnd-0": [
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "dnd-1",
+                "name": "textBox",
+                "label": "textBox",
+                "formName": "dnd-0"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {},
+            "value": null
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-2",
+                "name": "B1",
+                "label": "B1",
+                "formName": "dnd-0"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "blur",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "navigate",
+                            "url": "123",
+                            "condition": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": []
+                        }
+                    ]
+                }
+            ],
+            "expressionProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-3",
+                "name": "B2",
+                "label": "B2",
+                "formName": "dnd-0"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [],
+            "expressionProperties": {}
+        },
+        {
+            "baseProperties": {
+                "type": "button",
+                "id": "dnd-4",
+                "name": "B3",
+                "label": "B3",
+                "formName": "dnd-0"
+            },
+            "layoutProperties": {
+                "labelPlacement": null,
+                "width": null,
+                "height": null,
+                "css": {
+                    "customClassName": "",
+                    "configuration": [],
+                    "themeClass": ""
+                },
+                "orientation": null
+            },
+            "events": [
+                {
+                    "event": "blur",
+                    "debounce": null,
+                    "actions": []
+                }
+            ],
+            "expressionProperties": {}
+        }
+    ]
+}
