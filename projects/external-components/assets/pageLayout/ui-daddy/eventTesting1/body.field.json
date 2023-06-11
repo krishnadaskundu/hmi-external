@@ -19,7 +19,29 @@
                 },
                 "orientation": null
             },
-            "events": [],
+            "events": [
+                {
+                    "event": "change",
+                    "debounce": null,
+                    "actions": [
+                        {
+                            "actionType": "navigate",
+                            "url": "123",
+                            "condition": "",
+                            "field": "",
+                            "fieldValue": "",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "",
+                            "componentName": "",
+                            "sharedData": [],
+                            "apiConfig": []
+                        }
+                    ]
+                }
+            ],
             "expressionProperties": {},
             "value": null
         },
