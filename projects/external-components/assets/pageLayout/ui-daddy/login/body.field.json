@@ -447,7 +447,7 @@
                             "actionType": "setfield",
                             "url": "",
                             "condition": "1==1",
-                            "field": "dnd-1",
+                            "field": "textBoxName",
                             "fieldValue": "abcd",
                             "messagetype": "",
                             "messageText": "",
