@@ -6,7 +6,7 @@
                 "id": "dnd-1",
                 "name": "textBoxName",
                 "label": "Name",
-                "formName": "form1"
+                "formName": "dnd-0"
             },
             "layoutProperties": {
                 "labelPlacement": null,
