@@ -446,7 +446,7 @@
                         {
                             "actionType": "setfield",
                             "url": "",
-                            "condition": "1=1",
+                            "condition": "1==1",
                             "field": "dnd-1",
                             "fieldValue": "abcd",
                             "messagetype": "",
