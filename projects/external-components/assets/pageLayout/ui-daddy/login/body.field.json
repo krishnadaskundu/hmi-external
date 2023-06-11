@@ -4,7 +4,7 @@
             "baseProperties": {
                 "type": "text",
                 "id": "dnd-1",
-                "name": "name",
+                "name": "textBoxName",
                 "label": "Name",
                 "formName": "form1"
             },
@@ -497,7 +497,7 @@
                             "target": "",
                             "timer": null,
                             "formName": "",
-                            "componentName": "dnd-1",
+                            "componentName": "textBoxName",
                             "sharedData": [
                                 {
                                     "varName": "VarName",
