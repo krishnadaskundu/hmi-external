@@ -453,7 +453,7 @@
                             "messageText": "",
                             "target": "",
                             "timer": null,
-                            "formName": "form1",
+                            "formName": "dnd-0",
                             "componentName": "",
                             "sharedData": [],
                             "apiConfig": []
