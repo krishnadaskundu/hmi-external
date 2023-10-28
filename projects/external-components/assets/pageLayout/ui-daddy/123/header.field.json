@@ -36,9 +36,23 @@
                             "formName": "",
                             "componentName": "",
                             "sharedData": [],
+                            "apiConfig": null
+                        },
+                        {
+                            "actionType": "setfield",
+                            "url": "",
+                            "condition": "1==1",
+                            "field": "12345",
+                            "fieldValue": "test4",
+                            "messagetype": "",
+                            "messageText": "",
+                            "target": "",
+                            "timer": null,
+                            "formName": "test3",
+                            "componentName": "",
+                            "sharedData": [],
                             "apiConfig": null,
-                            "fileName": "test",
-                            "fieldAccessor": "tes3"
+                            "fieldAccessor": "test5"
                         }
                     ]
                 }
