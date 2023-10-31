@@ -59,9 +59,10 @@
                 "beforeSubmit": {
                     "action": []
                 },
-                "downloadFileName": "",
-                "responseType": "",
-                "encodePathAndQueryParams": false
+                "downloadFileName": "test1",
+                "responseType": "test2",
+                "encodePathAndQueryParams": false,
+                "isDownloadAPI": true
             }
         ],
         "layoutProperties": {
