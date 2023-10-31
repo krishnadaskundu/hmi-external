@@ -41,11 +41,30 @@
     },
     "hmiAppConfiguration": {
         "title": "login",
+        "baseUrl": "",
         "metaTags": [],
         "linkTags": [],
         "ifPageNotFound": "",
         "interceptorConfigurations": [],
-        "apiConfigurations": [],
+        "apiConfigurations": [
+            {
+                "name": "API Name",
+                "url": "",
+                "method": "",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "onSuccess": {},
+                "onError": {},
+                "beforeSubmit": {
+                    "action": []
+                },
+                "downloadFileName": "",
+                "responseType": "",
+                "encodePathAndQueryParams": true,
+                "isDownloadAPI": false
+            }
+        ],
         "layoutProperties": {
             "labelPlacement": "top",
             "width": null,
