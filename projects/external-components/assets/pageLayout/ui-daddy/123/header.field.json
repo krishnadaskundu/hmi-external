@@ -27,8 +27,10 @@
                             "actionType": "DOWNLOAD_FILE_FROM_URL",
                             "url": "http://localhost:4200/edit-form/8",
                             "condition": "1==1",
+                            "fileName": "test",
                             "field": "",
                             "fieldValue": "test2",
+                            "fieldAccessor": "tes3",
                             "messagetype": "",
                             "messageText": "",
                             "target": "",
@@ -42,8 +44,10 @@
                             "actionType": "setfield",
                             "url": "",
                             "condition": "1==1",
+                            "fileName": "",
                             "field": "12345",
                             "fieldValue": "test4",
+                            "fieldAccessor": "test5",
                             "messagetype": "",
                             "messageText": "",
                             "target": "",
@@ -51,8 +55,7 @@
                             "formName": "test3",
                             "componentName": "",
                             "sharedData": [],
-                            "apiConfig": null,
-                            "fieldAccessor": "test5"
+                            "apiConfig": null
                         }
                     ]
                 }
