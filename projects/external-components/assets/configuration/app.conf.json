@@ -54,34 +54,15 @@
                 "pathParams": [],
                 "queryParams": [],
                 "payloadParams": [],
-                "fetch": "",
-                "downloadFileName": "",
-                "responseType": "",
+                "onSuccess": {},
+                "onError": {},
                 "beforeSubmit": {
                     "action": []
                 },
-                "onSuccess": {
-                    "pageUrl": "",
-                    "deleteTableRow": false,
-                    "showSuccessMessage": false,
-                    "sharedData": [],
-                    "fieldData": [],
-                    "clearSharedData": [],
-                    "apiDataAccessor": "",
-                    "message": "",
-                    "actions": []
-                },
-                "onError": {
-                    "pageUrl": "",
-                    "sharedData": [],
-                    "fieldData": [],
-                    "clearSharedData": [],
-                    "apiDataAccessor": "",
-                    "message": "",
-                    "showErrorMessage": false,
-                    "actions": []
-                },
-                "encodePathAndQueryParams": true
+                "downloadFileName": "",
+                "responseType": "",
+                "encodePathAndQueryParams": false,
+                "isWithCredentials": true
             }
         ],
         "layoutProperties": {
