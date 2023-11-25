@@ -62,7 +62,7 @@
                 "downloadFileName": "",
                 "responseType": "",
                 "encodePathAndQueryParams": false,
-                "isWithCredentials": true
+                "isWithCredentials": false
             }
         ],
         "layoutProperties": {
