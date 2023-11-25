@@ -80,8 +80,7 @@
                     "message": "",
                     "showErrorMessage": false,
                     "actions": []
-                },
-                "isWithCredentials": true
+                }
             }
         ],
         "layoutProperties": {
