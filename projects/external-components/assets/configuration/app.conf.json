@@ -54,41 +54,6 @@
                 "pathParams": [],
                 "queryParams": [],
                 "payloadParams": [],
-                "fetch": "",
-                "downloadFileName": "",
-                "responseType": "",
-                "beforeSubmit": {
-                    "action": []
-                },
-                "onSuccess": {
-                    "pageUrl": "",
-                    "deleteTableRow": false,
-                    "showSuccessMessage": false,
-                    "sharedData": [],
-                    "fieldData": [],
-                    "clearSharedData": [],
-                    "apiDataAccessor": "",
-                    "message": "",
-                    "actions": []
-                },
-                "onError": {
-                    "pageUrl": "",
-                    "sharedData": [],
-                    "fieldData": [],
-                    "clearSharedData": [],
-                    "apiDataAccessor": "",
-                    "message": "",
-                    "showErrorMessage": false,
-                    "actions": []
-                }
-            },
-            {
-                "name": "API Name",
-                "url": "",
-                "method": "",
-                "pathParams": [],
-                "queryParams": [],
-                "payloadParams": [],
                 "onSuccess": {},
                 "onError": {},
                 "beforeSubmit": {
@@ -96,8 +61,7 @@
                 },
                 "downloadFileName": "",
                 "responseType": "",
-                "encodePathAndQueryParams": true,
-                "isDownloadAPI": false
+                "encodePathAndQueryParams": false
             }
         ],
         "layoutProperties": {
