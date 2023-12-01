@@ -168,6 +168,23 @@
                     "showErrorMessage": false,
                     "actions": []
                 }
+            },
+            {
+                "name": "API Name",
+                "url": "",
+                "method": "",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "onSuccess": {},
+                "onError": {},
+                "beforeSubmit": {
+                    "action": []
+                },
+                "downloadFileName": "",
+                "responseType": "",
+                "encodePathAndQueryParams": false,
+                "isWithCredentials": false
             }
         ],
         "layoutProperties": {
