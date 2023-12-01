@@ -126,7 +126,8 @@
                     "params": {},
                     "onSuccess": {
                         "apiDataAccessor": "payload"
-                    }
+                    },
+                    "isWithCredentials": false
                 },
                 "columnFilter": null,
                 "showExportExcelBtn": null,
