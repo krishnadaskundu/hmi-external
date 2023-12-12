@@ -1,500 +1,5 @@
 {
-    "add-project-modal-content": [
-        {
-            "value": "Add Your Project",
-            "baseProperties": {
-                "name": "staticTitle",
-                "id": "staticTitle",
-                "type": "staticText",
-                "formName": ""
-            },
-            "expressionProperties": {
-                "visible": "",
-                "visibleValue": true
-            },
-            "layoutProperties": {
-                "css": {
-                    "configuration": [
-                        {
-                            "selectorName": ".add-project-modal-title",
-                            "xs": {
-                                "parent-font-size": "30px"
-                            }
-                        },
-                        {
-                            "selectorName": ".add-project-modal-title .dynamic-style-child",
-                            "xs": {
-                                "text-align": "center",
-                                "font-weight": "500"
-                            }
-                        }
-                    ],
-                    "customClassName": "add-project-modal-title"
-                }
-            }
-        },
-        {
-            "baseProperties": {
-                "name": "projectTitle",
-                "id": "projectTitle",
-                "formName": "addProject",
-                "label": "Project Name",
-                "type": "text"
-            },
-            "placeholder": "",
-            "accessor": "",
-            "expressionProperties": {
-                "requiredValue": true,
-                "required": "",
-                "readOnly": "",
-                "readOnlyValue": false,
-                "disabled": "",
-                "disabledValue": false,
-                "visible": "",
-                "visibleValue": true
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "css": {
-                    "customClassName": "add-project__title",
-                    "configuration": {
-                        "selectorName": ".add-project__title",
-                        "xs": {
-                            "padding-top": "15px"
-                        }
-                    }
-                }
-            },
-            "minRequirementPattern": "^.{2,100}$"
-        },
-        {
-            "baseProperties": {
-                "name": "projectDesc",
-                "id": "projectDesc",
-                "formName": "addProject",
-                "label": "Description",
-                "type": "text"
-            },
-            "placeholder": "",
-            "accessor": "",
-            "expressionProperties": {
-                "requiredValue": true,
-                "required": "",
-                "readOnly": "",
-                "readOnlyValue": false,
-                "disabled": "",
-                "disabledValue": false,
-                "visible": "",
-                "visibleValue": true
-            },
-            "layoutProperties": {
-                "labelPlacement": "left"
-            },
-            "minRequirementPattern": "^.{2,100}$"
-        },
-        {
-            "baseProperties": {
-                "name": "gitUrl",
-                "id": "gitUrl",
-                "formName": "addProject",
-                "label": "Github URL",
-                "type": "url",
-                "tooltip": "Please fork from the github repo https://github.com/ui-ankush/hmi-external and add it here.",
-                "tooltipPlacement": "top"
-            },
-            "placeholder": "",
-            "accessor": "",
-            "expressionProperties": {
-                "requiredValue": true,
-                "required": "",
-                "readOnly": "",
-                "readOnlyValue": false,
-                "disabled": "",
-                "disabledValue": false,
-                "visible": "",
-                "visibleValue": true
-            },
-            "layoutProperties": {
-                "labelPlacement": "left"
-            },
-            "minRequirementPattern": "^.{2,100}$"
-        },
-        {
-            "baseProperties": {
-                "name": "branchName",
-                "id": "branchName",
-                "formName": "addProject",
-                "label": "Branch Name",
-                "type": "text",
-                "tooltip": "Please create your branch from develop and add it here.",
-                "tooltipPlacement": "top"
-            },
-            "placeholder": "",
-            "accessor": "",
-            "expressionProperties": {
-                "requiredValue": true,
-                "required": "",
-                "readOnly": "",
-                "readOnlyValue": false,
-                "disabled": "",
-                "disabledValue": false,
-                "visible": "",
-                "visibleValue": true
-            },
-            "layoutProperties": {
-                "labelPlacement": "left"
-            },
-            "minRequirementPattern": "^.{2,100}$"
-        },
-        {
-            "baseProperties": {
-                "id": "saveDetails",
-                "name": "saveDetails",
-                "type": "submit",
-                "formName": "addProject",
-                "label": "Save"
-            },
-            "layoutProperties": {
-                "css": {
-                    "themeClass": "btn-warning",
-                    "customClassName": "add-project__save-details",
-                    "configuration": [
-                        {
-                            "selectorName": ".add-project__save-details",
-                            "xs": {
-                                "padding-top": "30px"
-                            }
-                        },
-                        {
-                            "selectorName": ".add-project__save-details .dynamic-style-child",
-                            "xs": {
-                                "width": "100%"
-                            }
-                        }
-                    ]
-                }
-            },
-            "expressionProperties": {
-                "requiredValue": true,
-                "required": "",
-                "readOnly": "",
-                "readOnlyValue": false,
-                "disabled": "",
-                "disabledValue": false,
-                "visible": "",
-                "visibleValue": true
-            },
-            "events": [
-                {
-                    "event": "click",
-                    "actions": [
-                        {
-                            "actionType": "INVOKE_API",
-                            "showLoading": true,
-                            "apiConfig": {
-                                "name": "addProjectAPI",
-                                "url": "/rest/addProject",
-                                "method": "POST",
-                                "payloadParams": [
-                                    {
-                                        "paramName": "description",
-                                        "mappedField": "projectDesc"
-                                    },
-                                    {
-                                        "paramName": "title",
-                                        "mappedField": "projectTitle"
-                                    },
-                                    {
-                                        "paramName": "branchName",
-                                        "mappedField": "branchName"
-                                    },
-                                    {
-                                        "paramName": "forkUrl",
-                                        "mappedField": "gitUrl"
-                                    }
-                                ],
-                                "onSuccess": {
-                                    "showSuccessMessage": true,
-                                    "actions": [
-                                        {
-                                            "actionType": "RELOAD_COMPONENT_DATA",
-                                            "componentName": "projectList"
-                                        },
-                                        {
-                                            "actionType": "CLOSE_MODAL",
-                                            "showLoading": true,
-                                            "target": "add-project-modal"
-                                        }
-                                    ]
-                                },
-                                "onError": {
-                                    "showErrorMessage": true
-                                }
-                            }
-                        }
-                    ],
-                    "debounce": 3000
-                }
-            ]
-        }
-    ],
-    "edit-project-modal-content": [
-        {
-            "value": "Edit Your Project",
-            "baseProperties": {
-                "name": "editStaticTitle",
-                "id": "editStaticTitle",
-                "type": "staticText",
-                "formName": ""
-            },
-            "expressionProperties": {
-                "visible": "",
-                "visibleValue": true
-            },
-            "layoutProperties": {
-                "css": {
-                    "configuration": [
-                        {
-                            "selectorName": ".edit-project-modal-title",
-                            "xs": {
-                                "font-size": "30px"
-                            }
-                        },
-                        {
-                            "selectorName": ".edit-project-modal-title .dynamic-style-child",
-                            "xs": {
-                                "text-align": "center",
-                                "font-weight": "500"
-                            }
-                        }
-                    ],
-                    "customClassName": "edit-project-modal-title"
-                }
-            }
-        },
-        {
-            "baseProperties": {
-                "name": "editProjectTitle",
-                "id": "editProjectTitle",
-                "formName": "editProject",
-                "label": "Project Name",
-                "type": "text"
-            },
-            "placeholder": "",
-            "accessor": "",
-            "expressionProperties": {
-                "requiredValue": true,
-                "required": "",
-                "readOnly": "",
-                "readOnlyValue": false,
-                "disabled": "",
-                "disabledValue": true,
-                "visible": "",
-                "visibleValue": true
-            },
-            "layoutProperties": {
-                "labelPlacement": "left",
-                "css": {
-                    "customClassName": "add-project__title",
-                    "configuration": {
-                        "selectorName": ".add-project__title",
-                        "xs": {
-                            "padding-top": "15px"
-                        }
-                    }
-                }
-            },
-            "minRequirementPattern": "^.{2,100}$"
-        },
-        {
-            "baseProperties": {
-                "name": "editProjectDesc",
-                "id": "editProjectDesc",
-                "formName": "editProject",
-                "label": "Description",
-                "type": "text"
-            },
-            "placeholder": "",
-            "accessor": "",
-            "expressionProperties": {
-                "requiredValue": true,
-                "required": "",
-                "readOnly": "",
-                "readOnlyValue": false,
-                "disabled": "",
-                "disabledValue": false,
-                "visible": "",
-                "visibleValue": true
-            },
-            "layoutProperties": {
-                "labelPlacement": "left"
-            },
-            "minRequirementPattern": "^.{2,100}$"
-        },
-        {
-            "baseProperties": {
-                "name": "projectId",
-                "id": "projectId",
-                "formName": "editProject",
-                "label": "Id",
-                "type": "hidden"
-            },
-            "placeholder": "",
-            "accessor": "",
-            "expressionProperties": {
-                "requiredValue": true,
-                "required": "",
-                "readOnly": "",
-                "readOnlyValue": false,
-                "disabled": "",
-                "disabledValue": true,
-                "visible": "",
-                "visibleValue": false
-            },
-            "layoutProperties": {
-                "labelPlacement": "left"
-            }
-        },
-        {
-            "baseProperties": {
-                "name": "editGitUrl",
-                "id": "editGitUrl",
-                "formName": "editProject",
-                "label": "Github URL",
-                "type": "url"
-            },
-            "placeholder": "",
-            "accessor": "",
-            "expressionProperties": {
-                "requiredValue": true,
-                "required": "",
-                "readOnly": "",
-                "readOnlyValue": false,
-                "disabled": "",
-                "disabledValue": true,
-                "visible": "",
-                "visibleValue": true
-            },
-            "layoutProperties": {
-                "labelPlacement": "left"
-            },
-            "minRequirementPattern": "^.{2,100}$"
-        },
-        {
-            "baseProperties": {
-                "name": "editBranchName",
-                "id": "editBranchName",
-                "formName": "editProject",
-                "label": "Branch Name",
-                "type": "text"
-            },
-            "placeholder": "",
-            "accessor": "",
-            "expressionProperties": {
-                "requiredValue": true,
-                "required": "",
-                "readOnly": "",
-                "readOnlyValue": false,
-                "disabled": "",
-                "disabledValue": false,
-                "visible": "",
-                "visibleValue": true
-            },
-            "layoutProperties": {
-                "labelPlacement": "left"
-            },
-            "minRequirementPattern": "^.{2,100}$"
-        },
-        {
-            "baseProperties": {
-                "id": "editDetails",
-                "name": "editDetails",
-                "type": "submit",
-                "formName": "editProject",
-                "label": "Update"
-            },
-            "layoutProperties": {
-                "css": {
-                    "themeClass": "btn-warning",
-                    "customClassName": "add-project__save-details",
-                    "configuration": [
-                        {
-                            "selectorName": ".add-project__save-details",
-                            "xs": {
-                                "padding-top": "30px"
-                            }
-                        },
-                        {
-                            "selectorName": ".add-project__save-details .dynamic-style-child",
-                            "xs": {
-                                "width": "100%"
-                            }
-                        }
-                    ]
-                }
-            },
-            "expressionProperties": {
-                "requiredValue": true,
-                "required": "",
-                "readOnly": "",
-                "readOnlyValue": false,
-                "disabled": "",
-                "disabledValue": false,
-                "visible": "",
-                "visibleValue": true
-            },
-            "events": [
-                {
-                    "event": "click",
-                    "actions": [
-                        {
-                            "actionType": "INVOKE_API",
-                            "showLoading": true,
-                            "apiConfig": {
-                                "name": "editProjectAPI",
-                                "url": "/rest/project/:projectId",
-                                "method": "POST",
-                                "pathParams": [
-                                    {
-                                        "paramName": "projectId",
-                                        "mappedField": "projectId"
-                                    }
-                                ],
-                                "payloadParams": [
-                                    {
-                                        "paramName": "description",
-                                        "mappedField": "editProjectDesc"
-                                    },
-                                    {
-                                        "paramName": "branchName",
-                                        "mappedField": "editBranchName"
-                                    }
-                                ],
-                                "onSuccess": {
-                                    "showSuccessMessage": true,
-                                    "actions": [
-                                        {
-                                            "actionType": "RELOAD_COMPONENT_DATA",
-                                            "componentName": "projectList"
-                                        },
-                                        {
-                                            "actionType": "CLOSE_MODAL",
-                                            "showLoading": true,
-                                            "target": "edit-project-modal"
-                                        }
-                                    ]
-                                },
-                                "onError": {
-                                    "showErrorMessage": true
-                                }
-                            }
-                        }
-                    ],
-                    "debounce": 3000
-                }
-            ]
-        }
-    ],
+    "add-project-section": [],
     "project-list": [
         {
             "baseProperties": {
@@ -868,6 +373,511 @@
                 "orientation": null
             },
             "events": []
+        },
+        {
+            "baseProperties": {
+                "type": "text",
+                "id": "db-1"
+            },
+            "layoutProperties": {}
+        }
+    ],
+    "add-project-modal": [],
+    "add-project-modal-content": [
+        {
+            "value": "Add Your Project",
+            "baseProperties": {
+                "name": "staticTitle",
+                "id": "staticTitle",
+                "type": "staticText",
+                "formName": ""
+            },
+            "expressionProperties": {
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "css": {
+                    "configuration": [
+                        {
+                            "selectorName": ".add-project-modal-title",
+                            "xs": {
+                                "parent-font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".add-project-modal-title .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "customClassName": "add-project-modal-title"
+                }
+            }
+        },
+        {
+            "baseProperties": {
+                "name": "projectTitle",
+                "id": "projectTitle",
+                "formName": "addProject",
+                "label": "Project Name",
+                "type": "text"
+            },
+            "placeholder": "",
+            "accessor": "",
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": false,
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "css": {
+                    "customClassName": "add-project__title",
+                    "configuration": {
+                        "selectorName": ".add-project__title",
+                        "xs": {
+                            "padding-top": "15px"
+                        }
+                    }
+                }
+            },
+            "minRequirementPattern": "^.{2,100}$"
+        },
+        {
+            "baseProperties": {
+                "name": "projectDesc",
+                "id": "projectDesc",
+                "formName": "addProject",
+                "label": "Description",
+                "type": "text"
+            },
+            "placeholder": "",
+            "accessor": "",
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": false,
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "labelPlacement": "left"
+            },
+            "minRequirementPattern": "^.{2,100}$"
+        },
+        {
+            "baseProperties": {
+                "name": "gitUrl",
+                "id": "gitUrl",
+                "formName": "addProject",
+                "label": "Github URL",
+                "type": "url",
+                "tooltip": "Please fork from the github repo https://github.com/ui-ankush/hmi-external and add it here.",
+                "tooltipPlacement": "top"
+            },
+            "placeholder": "",
+            "accessor": "",
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": false,
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "labelPlacement": "left"
+            },
+            "minRequirementPattern": "^.{2,100}$"
+        },
+        {
+            "baseProperties": {
+                "name": "branchName",
+                "id": "branchName",
+                "formName": "addProject",
+                "label": "Branch Name",
+                "type": "text",
+                "tooltip": "Please create your branch from develop and add it here.",
+                "tooltipPlacement": "top"
+            },
+            "placeholder": "",
+            "accessor": "",
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": false,
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "labelPlacement": "left"
+            },
+            "minRequirementPattern": "^.{2,100}$"
+        },
+        {
+            "baseProperties": {
+                "id": "saveDetails",
+                "name": "saveDetails",
+                "type": "submit",
+                "formName": "addProject",
+                "label": "Save"
+            },
+            "layoutProperties": {
+                "css": {
+                    "themeClass": "btn-warning",
+                    "customClassName": "add-project__save-details",
+                    "configuration": [
+                        {
+                            "selectorName": ".add-project__save-details",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".add-project__save-details .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
+                        }
+                    ]
+                }
+            },
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": false,
+                "visible": "",
+                "visibleValue": true
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "showLoading": true,
+                            "apiConfig": {
+                                "name": "addProjectAPI",
+                                "url": "/rest/addProject",
+                                "method": "POST",
+                                "payloadParams": [
+                                    {
+                                        "paramName": "description",
+                                        "mappedField": "projectDesc"
+                                    },
+                                    {
+                                        "paramName": "title",
+                                        "mappedField": "projectTitle"
+                                    },
+                                    {
+                                        "paramName": "branchName",
+                                        "mappedField": "branchName"
+                                    },
+                                    {
+                                        "paramName": "forkUrl",
+                                        "mappedField": "gitUrl"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "showSuccessMessage": true,
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "componentName": "projectList"
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "showLoading": true,
+                                            "target": "add-project-modal"
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                }
+                            }
+                        }
+                    ],
+                    "debounce": 3000
+                }
+            ]
+        }
+    ],
+    "edit-project-modal": [],
+    "edit-project-modal-content": [
+        {
+            "value": "Edit Your Project",
+            "baseProperties": {
+                "name": "editStaticTitle",
+                "id": "editStaticTitle",
+                "type": "staticText",
+                "formName": ""
+            },
+            "expressionProperties": {
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "css": {
+                    "configuration": [
+                        {
+                            "selectorName": ".edit-project-modal-title",
+                            "xs": {
+                                "font-size": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".edit-project-modal-title .dynamic-style-child",
+                            "xs": {
+                                "text-align": "center",
+                                "font-weight": "500"
+                            }
+                        }
+                    ],
+                    "customClassName": "edit-project-modal-title"
+                }
+            }
+        },
+        {
+            "baseProperties": {
+                "name": "editProjectTitle",
+                "id": "editProjectTitle",
+                "formName": "editProject",
+                "label": "Project Name",
+                "type": "text"
+            },
+            "placeholder": "",
+            "accessor": "",
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": true,
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "labelPlacement": "left",
+                "css": {
+                    "customClassName": "add-project__title",
+                    "configuration": {
+                        "selectorName": ".add-project__title",
+                        "xs": {
+                            "padding-top": "15px"
+                        }
+                    }
+                }
+            },
+            "minRequirementPattern": "^.{2,100}$"
+        },
+        {
+            "baseProperties": {
+                "name": "editProjectDesc",
+                "id": "editProjectDesc",
+                "formName": "editProject",
+                "label": "Description",
+                "type": "text"
+            },
+            "placeholder": "",
+            "accessor": "",
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": false,
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "labelPlacement": "left"
+            },
+            "minRequirementPattern": "^.{2,100}$"
+        },
+        {
+            "baseProperties": {
+                "name": "projectId",
+                "id": "projectId",
+                "formName": "editProject",
+                "label": "Id",
+                "type": "hidden"
+            },
+            "placeholder": "",
+            "accessor": "",
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": true,
+                "visible": "",
+                "visibleValue": false
+            },
+            "layoutProperties": {
+                "labelPlacement": "left"
+            }
+        },
+        {
+            "baseProperties": {
+                "name": "editGitUrl",
+                "id": "editGitUrl",
+                "formName": "editProject",
+                "label": "Github URL",
+                "type": "url"
+            },
+            "placeholder": "",
+            "accessor": "",
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": true,
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "labelPlacement": "left"
+            },
+            "minRequirementPattern": "^.{2,100}$"
+        },
+        {
+            "baseProperties": {
+                "name": "editBranchName",
+                "id": "editBranchName",
+                "formName": "editProject",
+                "label": "Branch Name",
+                "type": "text"
+            },
+            "placeholder": "",
+            "accessor": "",
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": false,
+                "visible": "",
+                "visibleValue": true
+            },
+            "layoutProperties": {
+                "labelPlacement": "left"
+            },
+            "minRequirementPattern": "^.{2,100}$"
+        },
+        {
+            "baseProperties": {
+                "id": "editDetails",
+                "name": "editDetails",
+                "type": "submit",
+                "formName": "editProject",
+                "label": "Update"
+            },
+            "layoutProperties": {
+                "css": {
+                    "themeClass": "btn-warning",
+                    "customClassName": "add-project__save-details",
+                    "configuration": [
+                        {
+                            "selectorName": ".add-project__save-details",
+                            "xs": {
+                                "padding-top": "30px"
+                            }
+                        },
+                        {
+                            "selectorName": ".add-project__save-details .dynamic-style-child",
+                            "xs": {
+                                "width": "100%"
+                            }
+                        }
+                    ]
+                }
+            },
+            "expressionProperties": {
+                "requiredValue": true,
+                "required": "",
+                "readOnly": "",
+                "readOnlyValue": false,
+                "disabled": "",
+                "disabledValue": false,
+                "visible": "",
+                "visibleValue": true
+            },
+            "events": [
+                {
+                    "event": "click",
+                    "actions": [
+                        {
+                            "actionType": "INVOKE_API",
+                            "showLoading": true,
+                            "apiConfig": {
+                                "name": "editProjectAPI",
+                                "url": "/rest/project/:projectId",
+                                "method": "POST",
+                                "pathParams": [
+                                    {
+                                        "paramName": "projectId",
+                                        "mappedField": "projectId"
+                                    }
+                                ],
+                                "payloadParams": [
+                                    {
+                                        "paramName": "description",
+                                        "mappedField": "editProjectDesc"
+                                    },
+                                    {
+                                        "paramName": "branchName",
+                                        "mappedField": "editBranchName"
+                                    }
+                                ],
+                                "onSuccess": {
+                                    "showSuccessMessage": true,
+                                    "actions": [
+                                        {
+                                            "actionType": "RELOAD_COMPONENT_DATA",
+                                            "componentName": "projectList"
+                                        },
+                                        {
+                                            "actionType": "CLOSE_MODAL",
+                                            "showLoading": true,
+                                            "target": "edit-project-modal"
+                                        }
+                                    ]
+                                },
+                                "onError": {
+                                    "showErrorMessage": true
+                                }
+                            }
+                        }
+                    ],
+                    "debounce": 3000
+                }
+            ]
         }
     ]
 }
