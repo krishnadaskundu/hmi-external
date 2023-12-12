@@ -33,7 +33,8 @@
                             },
                             "autoPlace": "false"
                         }
-                    }
+                    },
+                    "sectionList": []
                 },
                 {
                     "id": "add-project-modal",
@@ -71,7 +72,8 @@
                                     },
                                     "autoPlace": "false"
                                 }
-                            }
+                            },
+                            "sectionList": []
                         }
                     ]
                 },
@@ -111,7 +113,8 @@
                                     },
                                     "autoPlace": "false"
                                 }
-                            }
+                            },
+                            "sectionList": []
                         }
                     ]
                 }
