@@ -19,6 +19,13 @@
                     "customClassName": "footer__copyright"
                 }
             }
+        },
+        {
+            "baseProperties": {
+                "type": "email",
+                "id": "df-1"
+            },
+            "layoutProperties": {}
         }
     ]
 }
