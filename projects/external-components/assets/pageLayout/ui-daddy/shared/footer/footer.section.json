@@ -17,7 +17,8 @@
                 "css": {
                     "customClassName": "section-container__no-margin"
                 }
-            }
+            },
+            "sectionList": []
         }
     ]
 }
