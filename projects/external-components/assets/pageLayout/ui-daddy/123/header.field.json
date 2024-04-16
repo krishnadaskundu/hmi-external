@@ -79,14 +79,23 @@
                 "height": null,
                 "css": {
                     "customClassName": "",
-                    "configuration": [],
+                    "configuration": [
+                        {
+                            "selectorName": ".temp-class-1&gt;abc",
+                            "xs": {
+                                "property1": "value"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
             },
             "events": [],
             "expressionProperties": {},
-            "value": null
+            "value": null,
+            "placeholder": null,
+            "accessor": null
         }
     ],
     "dnd-2": [
