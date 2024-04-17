@@ -81,7 +81,7 @@
                     "customClassName": "",
                     "configuration": [
                         {
-                            "selectorName": ".temp-class-1&gt;abc",
+                            "selectorName": "a&gt;b",
                             "xs": {
                                 "property1": "value"
                             }
