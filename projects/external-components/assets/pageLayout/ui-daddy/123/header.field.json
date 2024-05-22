@@ -15,7 +15,7 @@
                     "customClassName": "",
                     "configuration": [
                         {
-                            "selectorName": "a&gt;b",
+                            "selectorName": "a&gt;b2",
                             "xs": {
                                 "property1": "value"
                             }
