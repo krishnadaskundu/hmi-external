@@ -15,7 +15,7 @@
                     "customClassName": "",
                     "configuration": [
                         {
-                            "selectorName": "a1&gt;b2",
+                            "selectorName": "a1>b2",
                             "xs": {
                                 "property1": "value"
                             }
