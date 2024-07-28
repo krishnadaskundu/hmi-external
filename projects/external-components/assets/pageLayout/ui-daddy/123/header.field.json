@@ -112,7 +112,7 @@
         "type": "text",
         "id": "dnd-5",
         "name": "modal",
-        "label": "modal 2"
+        "label": "modal"
       },
       "layoutProperties": {
         "labelPlacement": null,
