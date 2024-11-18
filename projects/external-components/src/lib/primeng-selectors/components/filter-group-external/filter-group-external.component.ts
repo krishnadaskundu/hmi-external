@@ -257,6 +257,33 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
     config.pathParams = this.filterParams(config.pathParams, data);
     config.payloadParams = this.filterParams(config.payloadParams, data);
 
+    if (this.fieldObj.customAttributes?.filterSharedDataAccessor) {
+      const newData: any = {};
+      Object.keys(data).forEach((key:any) => {
+        const value = data[key];
+        newData[key] = value === null || value === undefined ? "" : value;
+      });
+
+      this.initializeEvents.emit({
+        name: "fireEvent", "events": [
+          {
+            "event": "click",
+            "actions": [
+              {
+                "actionType": "SET_SHARED_DATA",
+                "sharedData": [
+                  {
+                    "varName": this.fieldObj.customAttributes.filterSharedDataAccessor,
+                    "staticData": newData
+                  }
+                ]
+              }
+            ]
+          }
+        ], data: null
+      });
+    }
+
     if (this.fieldObj.customAttributes?.showComponentLoaderOnApply) {
       this.initializeEvents.emit({ name: "fireEvent", events: [
         {
