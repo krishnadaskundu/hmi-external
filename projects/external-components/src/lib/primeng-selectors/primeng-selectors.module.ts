@@ -1,3 +1,4 @@
+import { StaticText } from './components/StaticText-external/StaticText-external.component';
 import { NgModule } from '@angular/core';
 import { PasswordExternalComponent } from './components/password-external/password-external.component';
 import { TextExternalComponent } from './components/text-external/text-external.component';
@@ -18,8 +19,7 @@ import { StackblitzEditorComponent } from './components/stackblitz-editor/stackb
 import { IMPORT_MODULES } from './constant/stackblitz-constant';
 
 @NgModule({
-    declarations: [
-        PasswordExternalComponent,
+    declarations: [PasswordExternalComponent,
         TextExternalComponent,
         TableExternalComponent,
         FilterGroupExternalComponent,
@@ -29,11 +29,9 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
         IframeExternalComponent,
         ListPipe,
         GenerateWithAiComponent,
-        StackblitzEditorComponent
-    ],
+        StackblitzEditorComponent, StaticText],
     imports: IMPORT_MODULES,
-    exports: [
-        PasswordExternalComponent,
+    exports: [PasswordExternalComponent,
         TextExternalComponent,
         TableExternalComponent,
         FilterGroupExternalComponent,
@@ -41,8 +39,7 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
         DropdownExternal,
         IframeExternalComponent,
         ChartsExternalComponent, PasswordModule, DropdownModule,
-        GenerateWithAiComponent
-    ],
+        GenerateWithAiComponent, StaticText],
     providers: [
         DialogService 
     ]
