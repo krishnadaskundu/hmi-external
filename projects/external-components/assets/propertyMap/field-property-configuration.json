@@ -280,21 +280,37 @@
     "widgetList": [
       {
         "name": "StaticTextComponent",
-        "icon": "bi bi-box",
+        "icon": "bi bi-type",
         "label": "StaticTextComponent"
       }
     ],
     "hiddenBaseProperties": [
       "label"
     ],
-    "hiddenLayoutProperties": [
-      "themeClass"
+		"hiddenLayoutProperties": [
+      "orientation", "themeClass"
     ],
-    "hiddenExpressionProperties": [
+		"hiddenExpressionProperties": [
       "required",
-      "readOnly",
-      "disabled"
-    ],
-    "customAttributes": []
+       "readOnly",
+        "disabled"
+      ],
+		"customAttributes": [
+      {
+			"propertyName": "value",
+			"defaultValueMapping": "value",
+			"type": "text",
+			"label": "Value",
+			"placeholder": "Enter static text"
+		},
+		{
+			"propertyName": "dynamicValueAccessor",
+			"defaultValueMapping": "dynamicValueAccessor",
+			"type": "textarea",
+			"subtype": "custom",
+			"label": "Dynamic Value Accessor",
+			"placeholder": "Enter Dynamic Value Accessor"
+		}
+  ]
   }
 ]
