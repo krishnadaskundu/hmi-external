@@ -1,4 +1,5 @@
 {
+  "db-1": [],
   "db-2": [
     {
       "baseProperties": {
@@ -9,6 +10,30 @@
         "formName": ""
       },
       "libraryComponent": "StaticText"
+    },
+    {
+      "baseProperties": {
+        "type": "dynamicField",
+        "id": "db-4"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "libraryComponent": "StaticTextComponent",
+      "events": [],
+      "expressionProperties": {},
+      "customAttributes": {
+        "value": "testing",
+        "dynamicValueAccessor": null
+      }
     }
   ]
 }
