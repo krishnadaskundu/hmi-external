@@ -279,9 +279,9 @@
   {
     "widgetList": [
       {
-        "name": "StaticTextExternalComponent",
+        "name": "StaticTextComponent",
         "icon": "bi bi-box",
-        "label": "StaticTextExternalComponent"
+        "label": "StaticTextComponent"
       }
     ],
     "hiddenBaseProperties": [
