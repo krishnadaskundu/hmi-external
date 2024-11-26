@@ -28,11 +28,35 @@
         "orientation": null
       },
       "libraryComponent": "StaticTextComponent",
-      "events": [],
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "message",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "Success",
+              "messageText": "test",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
       "expressionProperties": {},
       "customAttributes": {
         "value": "testing",
-        "dynamicValueAccessor": null
+        "dynamicValueAccessor": {}
       }
     }
   ]
