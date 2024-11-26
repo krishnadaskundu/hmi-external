@@ -280,7 +280,7 @@
     "widgetList": [
       {
         "name": "StaticTextComponent",
-        "icon": "bi bi-box",
+        "icon": "bi bi-type",
         "label": "StaticTextComponent"
       }
     ],
