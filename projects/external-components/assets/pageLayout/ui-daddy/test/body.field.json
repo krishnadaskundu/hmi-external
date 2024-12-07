@@ -3,10 +3,29 @@
     {
       "baseProperties": {
         "type": "dynamicField",
-        "id": "db-1"
+        "id": "db-1",
+        "label": "xyz",
+        "name": "xyz"
       },
-      "layoutProperties": {},
-      "libraryComponent": "text"
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "libraryComponent": "text",
+      "events": [],
+      "expressionProperties": {},
+      "customAttributes": {
+        "value": "abc",
+        "placeholder": null,
+        "accessor": null
+      }
     }
   ]
 }
