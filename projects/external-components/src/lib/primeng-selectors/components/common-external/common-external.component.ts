@@ -1,4 +1,7 @@
-import { AfterViewInit, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, Output, ViewChild, ViewChildren } from '@angular/core';
+import { FieldDynamicAttributes } from '../../../interfaces/dynamic-comp-interface';
+import { UrlConfiguration } from '../../../interfaces/url-configuration';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'hmi-ext-common-external',
@@ -19,23 +22,28 @@ export class CommonExternalComponent implements AfterViewInit {
       Object.assign(this.isDirective? this.primeElement?.nativeElement : this.primeElement, this._fieldObj.customAttributes);
     }
   }
-  @Input() dynamicAttributes: any;
+  @Input() dynamicAttributes: FieldDynamicAttributes | undefined;
   @Input() formGroupObj: any;
-  @Input() customApiCall: any;
+  @Input() customApiCall: ((searchConfig: UrlConfiguration, CUSTOM_FIELD_OBJECT?: any) => Observable<any>) | undefined;
   @Output('initializeEvents') protected initializeEvents = new EventEmitter<any>();
+  @Output('dataChange') protected _dataChange = new EventEmitter<any>();
 
-  @ViewChild('primeElement', {static: true}) primeElement!: any; 
+  @ViewChildren('primeElements') primeElements!: any; 
+  @ViewChild('primeElement') primeElement!: any; 
   subscription: any;
 
   constructor() { }
 
   ngAfterViewInit() {
+    if (this.primeElements?.length) {
+      this.primeElement = this.primeElements.first;
+    }
     if (this.primeElement) {
       const nativeElement = this.primeElement?.nativeElement || (this.primeElement.input && this.primeElement.input.nativeElement);
       if (nativeElement) {
-        nativeElement.readOnly = this.dynamicAttributes.readOnlyValue;
+        nativeElement.readOnly = this.dynamicAttributes?.readOnlyValue;
       } else {
-        this.primeElement.readonly = this.dynamicAttributes.readOnlyValue;
+        this.primeElement.readonly = this.dynamicAttributes?.readOnlyValue;
       }
     }
 

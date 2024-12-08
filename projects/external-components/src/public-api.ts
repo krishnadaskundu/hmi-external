@@ -18,3 +18,5 @@ export {ToggleButtonModule, ToggleButton} from 'primeng/togglebutton';
 export * from './lib/primeng-selectors/util/util';
 export * from './lib/primeng-selectors/components/generate-with-ai/generate-with-ai.component';
 export * from './lib/primeng-selectors/components/static-text/static-text.component';
+export * from './lib/primeng-selectors/components/dropdown/dropdown.component';
+export * from './lib/primeng-selectors/components/char-text/char-text.component';

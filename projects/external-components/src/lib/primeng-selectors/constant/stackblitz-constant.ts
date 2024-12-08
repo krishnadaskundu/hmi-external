@@ -14,18 +14,19 @@ import { TagModule } from "primeng/tag";
 import { ToggleButtonModule } from "primeng/togglebutton";
 import { TooltipModule } from "primeng/tooltip";
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export const IMPORT_MODULES = [
     CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialogModule, ProgressSpinnerModule
+    TooltipModule, MenuModule, TagModule, DynamicDialogModule, ProgressSpinnerModule, NgbModule
 ];
 
 export const STACKBLITZ_IMPORT_MODULES = `
 [
     BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialogModule, ProgressSpinnerModule
+    TooltipModule, MenuModule, TagModule, DynamicDialogModule, ProgressSpinnerModule, NgbModule
 ]`;
 
 export const STACKBLITZ_IMPORT_STATEMENT = `
