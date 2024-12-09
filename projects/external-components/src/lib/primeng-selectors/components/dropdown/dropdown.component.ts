@@ -13,10 +13,9 @@ interface IOption {
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss']
 })
-export class DropdownComponent extends CommonExternalComponent implements OnDestroy, AfterViewInit {
+export class DropdownComponent extends CommonExternalComponent implements OnDestroy {
   optionList: any[] | undefined;
   @Input() isTemplateOnly: boolean = false;
-  @ViewChild('ddRef') ddRef: ElementRef | undefined;
   showLoader = false;
   subscription: any;
   selectedValue: any;
@@ -48,10 +47,6 @@ export class DropdownComponent extends CommonExternalComponent implements OnDest
     this.loadFromOptionList();
   }
 
-  ngAfterViewInit() {
-    //this.eventSubscriptionArr = this.attachEventsToElement(this.fieldObj.events, this.ddRef?.nativeElement, this.fieldObj);
-  }
-
   loadData() {    
     this.clearList();
     this.showLoader = true;        
@@ -68,8 +63,8 @@ export class DropdownComponent extends CommonExternalComponent implements OnDest
   loadFromOptionList() {
     this.showLoader = false;
     this.formattedOptionList = this.optionsFormatter(this.fieldObj.optionList );
-    //let selectedOption = _.find(this.formattedOptionList, { value: _.isObject(this.selectedValue) ? this.selectedValue.value : this.selectedValue});
-    //this.formService.updateFieldValuebyName(this.fieldObj.baseProperties.formName, this.fieldObj.baseProperties.name, selectedOption);
+    let selectedOption = _.find(this.formattedOptionList, { value: this.selectedValue?.hasOwnProperty("value") ? this.selectedValue.value : this.selectedValue});
+    this.formService?.updateFieldValuebyName(this.fieldObj.baseProperties.formName, this.fieldObj.baseProperties.name, selectedOption);
     this.selectChangeHandler();
   }
 

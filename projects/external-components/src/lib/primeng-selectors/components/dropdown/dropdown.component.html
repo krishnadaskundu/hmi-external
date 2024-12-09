@@ -15,7 +15,7 @@
       }"
       for="{{ fieldObj.baseProperties.name }}">{{ fieldObj.baseProperties.label }}</label>
     </div>
-    <select #ddRef [formControlName]="fieldObj.baseProperties.name"
+    <select #primeElement [formControlName]="fieldObj.baseProperties.name"
         [compareWith]="compareFn"
         class="form-control field-input dynamic-style-child"
         [ngClass]="{

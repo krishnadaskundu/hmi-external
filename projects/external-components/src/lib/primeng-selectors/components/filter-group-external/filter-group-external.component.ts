@@ -149,7 +149,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
 
   loadData(ddOption: any, selectedValue?: string) {
     ddOption.showLoader = true;
-    this.customApiCall(ddOption.optionsConfig).subscribe((data: any[]) => {
+    this.customApiCall?.(ddOption.optionsConfig).subscribe((data: any[]) => {
       if(ddOption.isArrayOfString === true){
         ddOption.optionList = data.map(item => ({ [ddOption.labelKey]: item, [ddOption.valueKey]: item })); //tranformimg array of strings to array of objects
       }else{
@@ -296,7 +296,7 @@ export class FilterGroupExternalComponent extends CommonExternalComponent implem
       ], data: null});
     }
 
-    this.customApiCall(config, data).subscribe((data: any[]) => {
+    this.customApiCall?.(config, data).subscribe((data: any[]) => {
       if (isRemove && filter) {
         filter.filterApplied = false;
         if (filter.type === FilterEventType.DEPENDENT) {

@@ -3,6 +3,9 @@ import { FieldDynamicAttributes } from '../../../interfaces/dynamic-comp-interfa
 import { UrlConfiguration } from '../../../interfaces/url-configuration';
 import { Observable } from 'rxjs';
 
+interface FormsService {
+  updateFieldValuebyName(formName: any, fieldName: any, value: any): void;
+}
 @Component({
   selector: 'hmi-ext-common-external',
   template: ''
@@ -25,6 +28,7 @@ export class CommonExternalComponent implements AfterViewInit {
   @Input() dynamicAttributes: FieldDynamicAttributes | undefined;
   @Input() formGroupObj: any;
   @Input() customApiCall: ((searchConfig: UrlConfiguration, CUSTOM_FIELD_OBJECT?: any) => Observable<any>) | undefined;
+  @Input() formService: FormsService | undefined;
   @Output('initializeEvents') protected initializeEvents = new EventEmitter<any>();
   @Output('dataChange') protected _dataChange = new EventEmitter<any>();
 
