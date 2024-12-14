@@ -6,6 +6,8 @@ import { FilterGroupExternalComponent } from './components/filter-group-external
 import {TableModule} from 'primeng/table';
 import { DropdownExternal } from './components/dropdown-external/dropdown-external.component';
 import { ChartsExternalComponent } from './components/charts-external/charts-external.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { CharTextComponent } from './components/char-text/char-text.component';
 
 import {PasswordModule} from 'primeng/password';
 import {DropdownModule} from 'primeng/dropdown';
@@ -33,7 +35,9 @@ import { DynamicStringPipe } from './pipes/dynamic-string.pipe';
         GenerateWithAiComponent,
         StackblitzEditorComponent,
         StaticTextComponent,
-        DynamicStringPipe
+        DynamicStringPipe,
+        DropdownComponent,
+        CharTextComponent
     ],
     imports: IMPORT_MODULES,
     exports: [
@@ -45,7 +49,8 @@ import { DynamicStringPipe } from './pipes/dynamic-string.pipe';
         DropdownExternal,
         IframeExternalComponent,
         ChartsExternalComponent, PasswordModule, DropdownModule,
-        GenerateWithAiComponent, StaticTextComponent
+        GenerateWithAiComponent, StaticTextComponent, DropdownComponent,
+        CharTextComponent
     ],
     providers: [
         DialogService 
