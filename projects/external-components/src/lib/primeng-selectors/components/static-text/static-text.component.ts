@@ -10,7 +10,6 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 export class StaticTextComponent extends CommonExternalComponent implements OnDestroy, AfterViewInit  {
 
   keyArr: Array<String>;
-  @ViewChild('textRef') textRef!: ElementRef;
   eventSubscriptionArr: any;
 
   constructor() {
@@ -24,10 +23,6 @@ export class StaticTextComponent extends CommonExternalComponent implements OnDe
         this.keyArr.push(this.fieldObj.dynamicValueMap[i].value);
       }
     } 
-  }
-
-  ngAfterViewInit() {
-    //this.eventSubscriptionArr = this.attachEventsToElement(this.fieldObj.events, this.textRef?.nativeElement, this.fieldObj);
   }
 
   ngOnDestroy() {
