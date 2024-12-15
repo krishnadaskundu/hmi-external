@@ -1,5 +1,5 @@
 <div #primeElement class="statictext-widget element-container dynamic-style-parent" 
-    [hidden]="!dynamicAttributes.visibleValue"
+    [hidden]="!dynamicAttributes?.visibleValue"
     [ngClass]="fieldObj.layoutProperties.css && fieldObj.layoutProperties.css.customClassName">
     <span *ngIf="keyArr && keyArr.length" class="dynamic-style-child">{{ fieldObj.value | dynamicString: keyArr }}</span>
     <span *ngIf="!(keyArr && keyArr.length)" class="dynamic-style-child" [innerHTML]="fieldObj.value"></span>
