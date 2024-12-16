@@ -1,3 +1,4 @@
+import { StaticText } from './components/StaticText-external/StaticText-external.component';
 import { NgModule } from '@angular/core';
 import { PasswordExternalComponent } from './components/password-external/password-external.component';
 import { TextExternalComponent } from './components/text-external/text-external.component';
@@ -22,8 +23,7 @@ import { StaticTextComponent } from './components/static-text/static-text.compon
 import { DynamicStringPipe } from './pipes/dynamic-string.pipe';
 
 @NgModule({
-    declarations: [
-        PasswordExternalComponent,
+    declarations: [PasswordExternalComponent,
         TextExternalComponent,
         TableExternalComponent,
         FilterGroupExternalComponent,
@@ -39,9 +39,9 @@ import { DynamicStringPipe } from './pipes/dynamic-string.pipe';
         DropdownComponent,
         CharTextComponent
     ],
+
     imports: IMPORT_MODULES,
-    exports: [
-        PasswordExternalComponent,
+    exports: [PasswordExternalComponent,
         TextExternalComponent,
         TableExternalComponent,
         FilterGroupExternalComponent,
@@ -52,6 +52,7 @@ import { DynamicStringPipe } from './pipes/dynamic-string.pipe';
         GenerateWithAiComponent, StaticTextComponent, DropdownComponent,
         CharTextComponent
     ],
+
     providers: [
         DialogService 
     ]

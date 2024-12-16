@@ -1,0 +1,63 @@
+{
+  "db-1": [],
+  "db-2": [
+    {
+      "baseProperties": {
+        "name": "StaticTextField",
+        "id": "db-3",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "StaticText"
+    },
+    {
+      "baseProperties": {
+        "type": "dynamicField",
+        "id": "db-4"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "libraryComponent": "StaticTextComponent",
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "message",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "Success",
+              "messageText": "test",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {},
+      "customAttributes": {
+        "value": "testing",
+        "dynamicValueAccessor": {}
+      }
+    }
+  ]
+}
