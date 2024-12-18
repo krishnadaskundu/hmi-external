@@ -26,7 +26,8 @@
     {
       "baseProperties": {
         "type": "dynamicField",
-        "id": "dh-1"
+        "id": "dh-1",
+        "name": "test"
       },
       "layoutProperties": {
         "labelPlacement": null,
