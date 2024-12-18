@@ -3,7 +3,8 @@
     {
       "baseProperties": {
         "type": "dynamicField",
-        "id": "dh-2"
+        "id": "dh-2",
+        "name": "test"
       },
       "layoutProperties": {
         "labelPlacement": null,
