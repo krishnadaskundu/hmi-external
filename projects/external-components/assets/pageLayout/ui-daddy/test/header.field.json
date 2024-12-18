@@ -1,0 +1,52 @@
+{
+  "dh-0": [
+    {
+      "baseProperties": {
+        "type": "dynamicField",
+        "id": "dh-2"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "libraryComponent": "StaticIconComponent",
+      "events": [],
+      "expressionProperties": {},
+      "customAttributes": {
+        "iconClass": "bi bi-file-earmark-image"
+      }
+    },
+    {
+      "baseProperties": {
+        "type": "dynamicField",
+        "id": "dh-1"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "libraryComponent": "StaticImageComponent",
+      "events": [],
+      "expressionProperties": {},
+      "customAttributes": {
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png",
+        "altText": null,
+        "showDownload": null
+      }
+    }
+  ]
+}
