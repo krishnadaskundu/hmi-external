@@ -318,6 +318,7 @@
 		"hiddenLayoutProperties": ["orientation", "themeClass"],
 		"hiddenExpressionProperties":[],
 		"customAttributes": [{
+
 			"propertyName": "value",
 			"defaultValueMapping": "value",
 			"type": "text",
@@ -338,5 +339,6 @@
 			"label": "Accessor",
 			"placeholder": "Enter Accessor"
 		}]
+
   }
 ]
