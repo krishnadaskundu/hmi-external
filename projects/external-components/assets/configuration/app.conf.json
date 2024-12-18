@@ -269,51 +269,5 @@
       "title": "aipage",
       "layoutProperties": null
     }
-  },
-  "StaticText": {
-    "headerField": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/StaticText/header.field.json"
-    },
-    "headerSection": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/StaticText/header.section.json"
-    },
-    "field": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/StaticText/body.field.json"
-    },
-    "section": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/StaticText/body.section.json"
-    },
-    "footerField": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/StaticText/footer.field.json"
-    },
-    "footerSection": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/StaticText/footer.section.json"
-    },
-    "data": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/StaticText/body.data.json"
-    },
-    "navField": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/StaticText/nav.field.json"
-    },
-    "navSection": {
-      "fetchFromLocal": true,
-      "localURL": "./assets/pageLayout/ui-daddy/StaticText/nav.section.json"
-    },
-    "authGuardConfig": {
-      "enabled": false,
-      "conditions": []
-    },
-    "globalPageSettings": {
-      "title": "StaticText",
-      "layoutProperties": null
-    }
   }
 }
