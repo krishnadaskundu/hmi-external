@@ -58,6 +58,33 @@
         "value": "testing",
         "dynamicValueAccessor": {}
       }
+    },
+    {
+      "baseProperties": {
+        "type": "dynamicField",
+        "id": "db-5",
+        "name": "email",
+        "label": "email"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "libraryComponent": "email",
+      "events": [],
+      "expressionProperties": {},
+      "customAttributes": {
+        "value": null,
+        "placeholder": null,
+        "accessor": null
+      }
     }
   ]
 }
