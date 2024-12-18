@@ -339,6 +339,56 @@
 			"label": "Accessor",
 			"placeholder": "Enter Accessor"
 		}]
-
+  },
+  {
+		"widgetList": [
+			{
+				"name": "StaticImageComponent",
+				"icon": "bi bi-image",
+				"label": "Static Image"
+			}
+		],
+		"hiddenBaseProperties": ["label"],
+		"hiddenLayoutProperties": ["orientation", "themeClass"],
+		"hiddenExpressionProperties":["required", "readOnly", "disabled"],
+		"customAttributes": [{
+			"propertyName": "imageUrl",
+			"defaultValueMapping": "imageUrl",
+			"type": "text",
+			"label": "Image Url",
+			"placeholder": "Image Url"
+		},
+		{
+			"propertyName": "altText",
+			"defaultValueMapping": "altText",
+			"type": "text",
+			"label": "Alt Text",
+			"placeholder": "Enter Alt Text"
+		},
+		{
+			"propertyName": "showDownload",
+			"defaultValueMapping": "showDownload",
+			"type": "checkbox",
+			"label": "Is Download Type?"
+		}]
+  },
+  {
+		"widgetList": [
+			{
+				"name": "StaticIconComponent",
+				"icon": "bi bi-file-earmark-image",
+				"label": "Static Icon"
+			}
+		],
+		"hiddenBaseProperties": ["label"],
+		"hiddenLayoutProperties": ["orientation", "themeClass"],
+		"hiddenExpressionProperties":["required", "readOnly", "disabled"],
+		"customAttributes": [{
+			"propertyName": "iconClass",
+			"defaultValueMapping": "iconClass",
+			"type": "text",
+			"label": "Icon Class",
+			"placeholder": "Enter Font awesome icon Class name"
+		}]
   }
 ]
