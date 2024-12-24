@@ -7,6 +7,12 @@
     --secondary-button-hover-color: #e9ecef;
     --body-bg-color: #E3E9F7;
     --card-bg-color: white;
+    
+    /* nav-item-group.component.scss */
+
+    --nav-item-active-bordercolor: #fff;
+    --nav-item-link-txtcolor: rgba(255, 255, 255, 0.9);
+    --nav-item-link-hover-txtcolor: rgba(255, 255, 255, 0.75);
 }
 
 .p-button.p-button-secondary.theme {
