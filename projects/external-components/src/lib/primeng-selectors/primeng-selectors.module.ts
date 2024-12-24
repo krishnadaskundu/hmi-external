@@ -22,6 +22,9 @@ import { StaticTextComponent } from './components/static-text/static-text.compon
 import { DynamicStringPipe } from './pipes/dynamic-string.pipe';
 import { StaticImageComponent } from './components/static-image/static-image.component';
 import { StaticIconComponent } from './components/static-icon/static-icon.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { RadioComponent } from './components/radio/radio.component';
+import { NavItemGroupComponent } from './components/nav-item-group/nav-item-group.component';
 
 @NgModule({
     declarations: [
@@ -41,7 +44,10 @@ import { StaticIconComponent } from './components/static-icon/static-icon.compon
         DropdownComponent,
         CharTextComponent,
         StaticImageComponent,
-        StaticIconComponent
+        StaticIconComponent,
+        CheckboxComponent,
+        RadioComponent,
+        NavItemGroupComponent
     ],
     imports: IMPORT_MODULES,
     exports: [
@@ -54,7 +60,8 @@ import { StaticIconComponent } from './components/static-icon/static-icon.compon
         IframeExternalComponent,
         ChartsExternalComponent, PasswordModule, DropdownModule,
         GenerateWithAiComponent, StaticTextComponent, DropdownComponent,
-        CharTextComponent, StaticImageComponent, StaticIconComponent
+        CharTextComponent, StaticImageComponent, StaticIconComponent,
+        CheckboxComponent, RadioComponent, NavItemGroupComponent
     ],
     providers: [
         DialogService 

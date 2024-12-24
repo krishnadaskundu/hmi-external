@@ -22,3 +22,6 @@ export * from './lib/primeng-selectors/components/dropdown/dropdown.component';
 export * from './lib/primeng-selectors/components/char-text/char-text.component';
 export * from './lib/primeng-selectors/components/static-image/static-image.component';
 export * from './lib/primeng-selectors/components/static-icon/static-icon.component';
+export * from './lib/primeng-selectors/components/checkbox/checkbox.component';
+export * from './lib/primeng-selectors/components/radio/radio.component';
+export * from './lib/primeng-selectors/components/nav-item-group/nav-item-group.component';
