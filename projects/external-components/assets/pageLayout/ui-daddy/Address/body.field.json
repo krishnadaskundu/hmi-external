@@ -1,1 +1,131 @@
-{"dnd-0":[{"baseProperties":{"type":"typeahead","id":"dnd-1","name":"searchedcity","label":"search City"},"layoutProperties":{"labelPlacement":null,"width":null,"height":null,"css":{"customClassName":"","configuration":[],"themeClass":""},"orientation":null},"events":[],"expressionProperties":{},"customAttributes":{"optionList":null,"searchConfig":null,"displayKey":null,"outputKey":null,"placeholder":null,"searchMinLength":null},"optionList":null,"searchConfig":null,"displayKey":null,"outputKey":null,"placeholder":null,"searchMinLength":null,"value":null},{"baseProperties":{"type":"dropdown","id":"dnd-2","name":"state","label":"State"},"layoutProperties":{"labelPlacement":null,"width":null,"height":null,"css":{"customClassName":"","configuration":[],"themeClass":""},"orientation":null},"events":[],"expressionProperties":{},"customAttributes":{"optionList":null,"optionsConfig":null,"labelKey":null,"valueKey":null},"optionList":[{"name":"a","value":"1","label":"UP"},{"name":"b","value":"2","label":"MP"},{"name":"c","value":"3","label":"UK"}],"optionsConfig":null,"labelKey":"label","valueKey":"value","value":"3"},{"baseProperties":{"type":"button","id":"dnd-4","name":"find","label":"Find"},"layoutProperties":{"labelPlacement":null,"width":null,"height":null,"css":{"customClassName":"","configuration":[],"themeClass":""},"orientation":null},"events":[],"expressionProperties":{},"customAttributes":{}},{"baseProperties":{"type":"reset","id":"dnd-7","name":"reset","label":"Reset"},"layoutProperties":{"labelPlacement":null,"width":null,"height":null,"css":{"customClassName":"","configuration":[],"themeClass":""},"orientation":null},"events":[],"expressionProperties":{}}]}
+{
+  "dnd-0": [
+    {
+      "baseProperties": {
+        "type": "typeahead",
+        "id": "dnd-1",
+        "name": "searchedcity",
+        "label": "search City"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "customAttributes": {
+        "optionList": null,
+        "searchConfig": null,
+        "displayKey": null,
+        "outputKey": null,
+        "placeholder": null,
+        "searchMinLength": null
+      },
+      "optionList": null,
+      "searchConfig": null,
+      "displayKey": null,
+      "outputKey": null,
+      "placeholder": null,
+      "searchMinLength": null,
+      "value": null
+    },
+    {
+      "baseProperties": {
+        "type": "dropdown",
+        "id": "dnd-2",
+        "name": "state",
+        "label": "State"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "customAttributes": {
+        "optionList": null,
+        "optionsConfig": null,
+        "labelKey": null,
+        "valueKey": null
+      },
+      "optionList": [
+        {
+          "name": "a",
+          "value": "1",
+          "label": "UP"
+        },
+        {
+          "name": "b",
+          "value": "2",
+          "label": "MP"
+        },
+        {
+          "name": "c",
+          "value": "3",
+          "label": "UK"
+        }
+      ],
+      "optionsConfig": null,
+      "labelKey": "label",
+      "valueKey": "value",
+      "value": "3"
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "dnd-4",
+        "name": "find",
+        "label": "Find"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "customAttributes": {}
+    },
+    {
+      "baseProperties": {
+        "type": "reset",
+        "id": "dnd-7",
+        "name": "reset",
+        "label": "Reset"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {}
+    }
+  ]
+}
