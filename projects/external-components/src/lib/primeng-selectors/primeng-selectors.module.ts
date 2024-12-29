@@ -16,6 +16,8 @@ import { ListPipe } from './pipes/list/list.pipe';
 import { GenerateWithAiComponent } from './components/generate-with-ai/generate-with-ai.component';
 import { StackblitzEditorComponent } from './components/stackblitz-editor/stackblitz-editor.component';
 import { IMPORT_MODULES } from './constant/stackblitz-constant';
+import { providePrimeNG } from 'primeng/config';
+import Lara from '@primeng/themes/lara'
 
 @NgModule({
     declarations: [
@@ -44,7 +46,12 @@ import { IMPORT_MODULES } from './constant/stackblitz-constant';
         GenerateWithAiComponent
     ],
     providers: [
-        DialogService 
+        DialogService,
+        providePrimeNG({ 
+            theme: {
+                preset: Lara
+            }
+        }) 
     ]
 })
 export class PrimengSelectorsModule { }

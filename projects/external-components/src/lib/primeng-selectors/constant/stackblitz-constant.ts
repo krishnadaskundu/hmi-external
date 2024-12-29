@@ -14,11 +14,13 @@ import { TagModule } from "primeng/tag";
 import { ToggleButtonModule } from "primeng/togglebutton";
 import { TooltipModule } from "primeng/tooltip";
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { IconField } from 'primeng/iconfield';
+import { InputIcon } from 'primeng/inputicon';
 
 export const IMPORT_MODULES = [
     CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule
+    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule, IconField, InputIcon
 ];
 
 export const STACKBLITZ_IMPORT_MODULES = `
