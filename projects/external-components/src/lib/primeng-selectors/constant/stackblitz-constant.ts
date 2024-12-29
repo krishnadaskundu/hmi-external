@@ -4,7 +4,7 @@ import { RouterModule } from "@angular/router";
 import { ButtonModule } from "primeng/button";
 import { ChartModule } from "primeng/chart";
 import { DropdownModule } from "primeng/dropdown";
-import { DynamicDialog  } from "primeng/dynamicdialog";
+import { DynamicDialog } from "primeng/dynamicdialog";
 import { InputTextModule } from "primeng/inputtext";
 import { MenuModule } from "primeng/menu";
 import { MultiSelectModule } from "primeng/multiselect";
@@ -13,18 +13,20 @@ import { TableModule } from "primeng/table";
 import { TagModule } from "primeng/tag";
 import { ToggleButtonModule } from "primeng/togglebutton";
 import { TooltipModule } from "primeng/tooltip";
+import { IconField } from 'primeng/iconfield';
+import { InputIcon } from 'primeng/inputicon';
 
 export const IMPORT_MODULES = [
     CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialog
+    TooltipModule, MenuModule, TagModule, DynamicDialog, IconField, InputIcon
 ];
 
 export const STACKBLITZ_IMPORT_MODULES = `
 [
     BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialog
+    TooltipModule, MenuModule, TagModule, DynamicDialogModule
 ]`;
 
 export const STACKBLITZ_IMPORT_STATEMENT = `
@@ -35,7 +37,7 @@ import { RouterModule } from "@angular/router";
 import { ButtonModule } from "primeng/button";
 import { ChartModule } from "primeng/chart";
 import { DropdownModule } from "primeng/dropdown";
-import { DynamicDialog } from "primeng/dynamicdialog";
+import { DynamicDialogModule } from "primeng/dynamicdialog";
 import { InputTextModule } from "primeng/inputtext";
 import { MenuModule } from "primeng/menu";
 import { MultiSelectModule } from "primeng/multiselect";

@@ -7,6 +7,8 @@
     "@angular/core": "^18.2.13"
   },
   "dependencies": {
+    "@primeng/themes": "^18.0.2",
+    "@stackblitz/sdk": "^1.11.0",
     "chart.js": "^4.1.1",
     "file-saver": "2.0.5",
     "jspdf": "2.5.1",
