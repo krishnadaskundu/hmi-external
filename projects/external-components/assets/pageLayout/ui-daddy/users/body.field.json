@@ -118,7 +118,7 @@
                             }
                         }
                     ],
-                    "themeClass": "p-button-icon-only p-button-outlined"
+                    "themeClass": "p-button-outlined"
                 },
                 "orientation": null
             },
@@ -2953,7 +2953,7 @@
                             }
                         }
                     ],
-                    "themeClass": "p-button-icon-only p-button-outlined"
+                    "themeClass": "p-button-outlined"
                 },
                 "orientation": null
             },
