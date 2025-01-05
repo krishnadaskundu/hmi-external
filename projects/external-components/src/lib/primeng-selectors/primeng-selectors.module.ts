@@ -25,6 +25,10 @@ import { StaticIconComponent } from './components/static-icon/static-icon.compon
 import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { RadioComponent } from './components/radio/radio.component';
 import { NavItemGroupComponent } from './components/nav-item-group/nav-item-group.component';
+import { ButtonComponent } from './components/button/button.component';
+import { DateTimeComponent } from './components/date-time/date-time.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { TypeaheadComponent } from './components/typeahead/typeahead.component';
 
 @NgModule({
     declarations: [
@@ -47,7 +51,11 @@ import { NavItemGroupComponent } from './components/nav-item-group/nav-item-grou
         StaticIconComponent,
         CheckboxComponent,
         RadioComponent,
-        NavItemGroupComponent
+        NavItemGroupComponent,
+        ButtonComponent,
+        DateTimeComponent,
+        FileUploadComponent,
+        TypeaheadComponent
     ],
     imports: IMPORT_MODULES,
     exports: [
@@ -61,7 +69,9 @@ import { NavItemGroupComponent } from './components/nav-item-group/nav-item-grou
         ChartsExternalComponent, PasswordModule, DropdownModule,
         GenerateWithAiComponent, StaticTextComponent, DropdownComponent,
         CharTextComponent, StaticImageComponent, StaticIconComponent,
-        CheckboxComponent, RadioComponent, NavItemGroupComponent
+        CheckboxComponent, RadioComponent, NavItemGroupComponent,
+        ButtonComponent, DateTimeComponent, FileUploadComponent,
+        TypeaheadComponent
     ],
     providers: [
         DialogService 
