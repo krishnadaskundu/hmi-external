@@ -21,14 +21,16 @@ import { InputIcon } from 'primeng/inputicon';
 export const IMPORT_MODULES = [
     CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, ChartModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule, IconField, InputIcon
+    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule, IconField, InputIcon, 
+    NgbDatepickerModule, NgbTimepickerModule, NgbTooltipModule, NgbTypeaheadModule
 ];
 
 export const STACKBLITZ_IMPORT_MODULES = `
 [
     BrowserModule, CommonModule, RouterModule,FormsModule, ReactiveFormsModule, PasswordModule, InputTextModule,
     TableModule, DropdownModule, ToggleButtonModule, MultiSelectModule, ButtonModule, 
-    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule
+    TooltipModule, MenuModule, TagModule, DynamicDialog, ProgressSpinnerModule, 
+    NgbDatepickerModule, NgbTimepickerModule, NgbTooltipModule, NgbTypeaheadModule
 ]`;
 
 export const STACKBLITZ_IMPORT_STATEMENT = `
