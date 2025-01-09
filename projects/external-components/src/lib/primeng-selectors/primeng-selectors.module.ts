@@ -11,7 +11,7 @@ import { CharTextComponent } from './components/char-text/char-text.component';
 
 import {PasswordModule} from 'primeng/password';
 import {DropdownModule} from 'primeng/dropdown';
-import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DialogService, DynamicDialog } from 'primeng/dynamicdialog';
 import { RowDataHandlerDirective } from './components/table-external/rowDataHandler/row-data-handler.directive';
 import { IframeExternalComponent } from './components/iframe-external/iframe-external.component';
 import { ListPipe } from './pipes/list/list.pipe';
