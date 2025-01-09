@@ -20,6 +20,8 @@ import { StackblitzEditorComponent } from './components/stackblitz-editor/stackb
 import { IMPORT_MODULES } from './constant/stackblitz-constant';
 import { StaticTextComponent } from './components/static-text/static-text.component';
 import { DynamicStringPipe } from './pipes/dynamic-string.pipe';
+import { providePrimeNG } from 'primeng/config';
+import CustomPreset from './custom-theme';
 
 @NgModule({
     declarations: [
@@ -53,7 +55,12 @@ import { DynamicStringPipe } from './pipes/dynamic-string.pipe';
         CharTextComponent
     ],
     providers: [
-        DialogService 
+        DialogService,
+        providePrimeNG({ 
+            theme: {
+                preset: CustomPreset
+            }
+        }) 
     ]
 })
 export class PrimengSelectorsModule { }
