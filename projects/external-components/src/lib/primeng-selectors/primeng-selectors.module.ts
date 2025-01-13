@@ -29,6 +29,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { DateTimeComponent } from './components/date-time/date-time.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { TypeaheadComponent } from './components/typeahead/typeahead.component';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 
 @NgModule({
     declarations: [
@@ -55,7 +56,8 @@ import { TypeaheadComponent } from './components/typeahead/typeahead.component';
         ButtonComponent,
         DateTimeComponent,
         FileUploadComponent,
-        TypeaheadComponent
+        TypeaheadComponent,
+        NavMenuComponent
     ],
     imports: IMPORT_MODULES,
     exports: [
@@ -71,7 +73,7 @@ import { TypeaheadComponent } from './components/typeahead/typeahead.component';
         CharTextComponent, StaticImageComponent, StaticIconComponent,
         CheckboxComponent, RadioComponent, NavItemGroupComponent,
         ButtonComponent, DateTimeComponent, FileUploadComponent,
-        TypeaheadComponent
+        TypeaheadComponent, NavMenuComponent
     ],
     providers: [
         DialogService 
