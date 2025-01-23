@@ -20,6 +20,17 @@ import { StackblitzEditorComponent } from './components/stackblitz-editor/stackb
 import { IMPORT_MODULES } from './constant/stackblitz-constant';
 import { StaticTextComponent } from './components/static-text/static-text.component';
 import { DynamicStringPipe } from './pipes/dynamic-string.pipe';
+
+import { StaticImageComponent } from './components/static-image/static-image.component';
+import { StaticIconComponent } from './components/static-icon/static-icon.component';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { RadioComponent } from './components/radio/radio.component';
+import { NavItemGroupComponent } from './components/nav-item-group/nav-item-group.component';
+import { ButtonComponent } from './components/button/button.component';
+import { DateTimeComponent } from './components/date-time/date-time.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { TypeaheadComponent } from './components/typeahead/typeahead.component';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { providePrimeNG } from 'primeng/config';
 import CustomPreset from './custom-theme';
 
@@ -39,7 +50,17 @@ import CustomPreset from './custom-theme';
         StaticTextComponent,
         DynamicStringPipe,
         DropdownComponent,
-        CharTextComponent
+        CharTextComponent,
+        StaticImageComponent,
+        StaticIconComponent,
+        CheckboxComponent,
+        RadioComponent,
+        NavItemGroupComponent,
+        ButtonComponent,
+        DateTimeComponent,
+        FileUploadComponent,
+        TypeaheadComponent,
+        NavMenuComponent
     ],
     imports: IMPORT_MODULES,
     exports: [
@@ -52,7 +73,10 @@ import CustomPreset from './custom-theme';
         IframeExternalComponent,
         ChartsExternalComponent, PasswordModule, DropdownModule,
         GenerateWithAiComponent, StaticTextComponent, DropdownComponent,
-        CharTextComponent
+        CharTextComponent, StaticImageComponent, StaticIconComponent,
+        CheckboxComponent, RadioComponent, NavItemGroupComponent,
+        ButtonComponent, DateTimeComponent, FileUploadComponent,
+        TypeaheadComponent, NavMenuComponent
     ],
     providers: [
         DialogService,
