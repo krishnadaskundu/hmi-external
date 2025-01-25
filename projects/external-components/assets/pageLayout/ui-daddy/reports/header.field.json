@@ -73,7 +73,7 @@
                 },
                 {
                     "id": "reports",
-                    "label": "Reports",
+                    "label": "Overdue Reports",
                     "navigateToPage": "/reports"
                 },
                 {
