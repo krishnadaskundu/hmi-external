@@ -315,8 +315,17 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "table-header-caption",
+                    "configuration": [
+                        {
+                            "selectorName": ".table-header-caption",
+                            "xs": {
+                                "margin-left": "auto",
+                               " margin-right": "auto",
+                                "width": "fit-content"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null

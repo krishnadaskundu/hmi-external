@@ -225,7 +225,7 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "reports_table_status",
+                    "customClassName": "reports_table_status, table-header-caption",
                     "configuration": [
                         {
                             "selectorName": ".reports_table_status",
@@ -251,6 +251,14 @@
                                 "color": "white",
                                 "background-color": "#0f9d15"
                             }
+                        },
+                        {
+                            "selectorName": ".table-header-caption",
+                            "xs": {
+                                "margin-left": "auto",
+                               " margin-right": "auto",
+                                "width": "fit-content"
+                            }
                         }
                     ],
                     "themeClass": ""
@@ -273,15 +281,7 @@
                         "value": 200
                     }
                 },
-                {
-                    "colName": "Priority",
-                    "filterType": "multiselect",
-                    "accessor": "priority",
-                    "colWidth": {
-                        "unit": "px",
-                        "value": 100
-                    }
-                },
+                
                 {
                     "colName": "% Progress",
                     "filterType": "multiselect",
@@ -374,7 +374,7 @@
                     }
                 }
             ],
-            "caption": "",
+            "caption": "Overdue Report",
             "summary": null,
             "globalFilterFields": [
                

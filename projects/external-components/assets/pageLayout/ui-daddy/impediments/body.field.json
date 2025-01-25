@@ -267,8 +267,17 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "table-header-caption",
+                    "configuration": [
+                        {
+                            "selectorName": ".table-header-caption",
+                            "xs": {
+                                "margin-left": "auto",
+                               " margin-right": "auto",
+                                "width": "fit-content"
+                            }
+                        }
+                   ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -353,7 +362,7 @@
                         }
                     },
                     {
-                        "colName": "Remark",
+                        "colName": "Issue Details",
                         "filterType": "text",
                         "accessor": "remark",
                         "colWidth": {
@@ -801,7 +810,7 @@
                 "id": "dnd-23",
                 "formName": "editImpedimentModal",
                 "name": "remarkEdit",
-                "label": "Remark"
+                "label": "Issue Details"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
@@ -1156,7 +1165,7 @@
                 "id": "dnd-18",
                 "formName": "addImpedimentModal",
                 "name": "remarkAdd",
-                "label": "Remark"
+                "label": "Issue Details"
             },
             "layoutProperties": {
                 "labelPlacement": "left",
