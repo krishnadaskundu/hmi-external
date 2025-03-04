@@ -2,6 +2,27 @@
   "dh-0": [
     {
       "baseProperties": {
+        "type": "staticText",
+        "id": "dh-4"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "value": "abcd",
+      "events": [],
+      "expressionProperties": {},
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
         "type": "dynamicField",
         "id": "dh-2",
         "name": "test"
