@@ -14,6 +14,7 @@ interface FormsService {
 })
 export class CommonExternalComponent implements AfterViewInit {
 
+  @Input() isTemplateOnly = false;
   private _fieldObj: any;
   public isDirective: boolean = false;
   private isEventInitialized = false;

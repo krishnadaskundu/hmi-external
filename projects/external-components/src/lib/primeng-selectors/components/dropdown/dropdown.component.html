@@ -20,7 +20,7 @@
         class="form-control field-input dynamic-style-child"
         [ngClass]="{
           'field-required':
-            formGroupObj.controls[fieldObj.baseProperties.name].errors &&
+            formGroupObj?.controls?.[fieldObj.baseProperties.name]?.errors &&
             formGroupObj.controls[fieldObj.baseProperties.name].errors.required
         }"
         (change)="selectChangeHandler()">
