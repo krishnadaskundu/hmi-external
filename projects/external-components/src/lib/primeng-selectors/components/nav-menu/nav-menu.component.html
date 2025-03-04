@@ -8,11 +8,11 @@
       <div class="dynamic-style-parent" 
         [ngClass]="option.layoutProperties && option.layoutProperties.css && option.layoutProperties.css.customClassName" 
         *ngFor="let option of fieldObj.optionList">
-        <div class="dropdown-static-item dynamic-style-child " *ngIf="option.type === 'text'" [innerHTML]="option.value"></div>
-        <a class="dropdown-item dynamic-style-child" [ngClass]="[ option.highlight && (option.active || (currentRoute.indexOf('/' + option.id + '/') !== -1)) ? 'active': '']" href="{{ option.href }}" *ngIf="option.type === 'link' && option.href">
+        <div ngbDropdownItem class="dropdown-static-item dynamic-style-child " *ngIf="option.type === 'text'" [innerHTML]="option.value"></div>
+        <a ngbDropdownItem class="dropdown-item dynamic-style-child" [ngClass]="[ option.highlight && (option.active || (currentRoute.indexOf('/' + option.id + '/') !== -1)) ? 'active': '']" href="{{ option.href }}" *ngIf="option.type === 'link' && option.href">
           {{ option.label }}
         </a>
-        <a class="dropdown-item dynamic-style-child"  [ngClass]="[ option.highlight && (option.active || (currentRoute.indexOf('/' + option.id + '/') !== -1)) ? 'active': '']" *ngIf="option.type === 'link' && !option.href" (click)="this.eventAction($event, option)">
+        <a ngbDropdownItem class="dropdown-item dynamic-style-child"  [ngClass]="[ option.highlight && (option.active || (currentRoute.indexOf('/' + option.id + '/') !== -1)) ? 'active': '']" *ngIf="option.type === 'link' && !option.href" (click)="this.eventAction($event, option)">
           {{ option.label }}
         </a>
       </div>

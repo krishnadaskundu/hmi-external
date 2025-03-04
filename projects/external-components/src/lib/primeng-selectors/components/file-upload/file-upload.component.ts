@@ -13,7 +13,7 @@ import {UntypedFormGroup} from "@angular/forms";
 })
 export class FileUploadComponent extends CommonExternalComponent  implements OnInit, OnDestroy, AfterViewInit {
 
-  isTemplateOnly = false;
+  @Input() isTemplateOnly = false;
   formGroupObj!: UntypedFormGroup;
   subscription: any;
   @ViewChild('inputLabel') inputLabel!: ElementRef;
@@ -50,7 +50,7 @@ export class FileUploadComponent extends CommonExternalComponent  implements OnI
   onValueChange(event:any) {
     console.log('I am in onValueChange()');
     if(!this.isTemplateOnly
-      && this.fieldObj.value !== this.formGroupObj.value[this.fieldObj.baseProperties.name]) { //Value change should be triggered only if actual value has changed.
+      && this.fieldObj.value !== this.formGroupObj?.value?.[this.fieldObj.baseProperties?.name]) { //Value change should be triggered only if actual value has changed.
         const reader = new FileReader();
         reader.onload = this.handleFileLoad.bind(this, event.target.files[0]);
         reader.readAsText(event.target.files[0]);
@@ -67,12 +67,12 @@ export class FileUploadComponent extends CommonExternalComponent  implements OnI
       lastModified: file?.lastModified,
       size: file?.size,
       type: file?.type,
-      fakePath: this.formGroupObj.value[this.fieldObj.baseProperties.name],
+      fakePath: this.formGroupObj?.value?.[this.fieldObj.baseProperties?.name],
       data: event.target.result,
       file: file
     };
     this._dataChange.emit({ dynamicData: dynamicAttributes });
-    if (this.formGroupObj.value[this.fieldObj.baseProperties.name] !== null) {
+    if (this.formGroupObj?.value?.[this.fieldObj.baseProperties?.name] !== null) {
       this.fieldObj.onValueChange && this.fieldObj.onValueChange.actions
       && this._dataChange.emit({ actions: this.fieldObj.onValueChange.actions });
     }
@@ -80,7 +80,7 @@ export class FileUploadComponent extends CommonExternalComponent  implements OnI
   }
 
   clearValue() {
-    this.formGroupObj.get(this.fieldObj.baseProperties.name)?.setValue(null);
+    this.formGroupObj?.get(this.fieldObj.baseProperties?.name)?.setValue(null);
     const dynamicAttributes = _.cloneDeep(this.dynamicAttributes);
     dynamicAttributes!.value = null;
     this._dataChange.emit({ dynamicData: dynamicAttributes });
