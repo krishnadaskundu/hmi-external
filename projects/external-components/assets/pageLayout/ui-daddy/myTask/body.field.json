@@ -37,7 +37,7 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "reports_table_status",
+                    "customClassName": "reports_table_status, table-header-caption",
                     "configuration": [
                         {
                             "selectorName": "[aria-label=\"Assigned\"]",
@@ -58,6 +58,14 @@
                             "xs": {
                                 "color": "white",
                                 "background-color": "#0f9d15"
+                            }
+                        },
+                        {
+                            "selectorName": ".table-header-caption",
+                            "xs": {
+                                "margin-left": "auto",
+                               " margin-right": "auto",
+                                "width": "fit-content"
                             }
                         }
                     ],

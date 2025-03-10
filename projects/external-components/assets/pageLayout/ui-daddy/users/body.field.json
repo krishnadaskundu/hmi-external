@@ -335,8 +335,17 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "table-header-caption",
+                    "configuration": [
+                        {
+                            "selectorName": ".table-header-caption",
+                            "xs": {
+                                "margin-left": "auto",
+                               " margin-right": "auto",
+                                "width": "fit-content"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -1027,7 +1036,7 @@
                     "action": []
                 }
             },
-            "labelKey": "name",
+            "labelKey": "label",
             "valueKey": "code",
             "value": null
         },
@@ -2071,7 +2080,7 @@
                     "action": []
                 }
             },
-            "labelKey": "name",
+            "labelKey": "label",
             "valueKey": "code",
             "value": null
         },
@@ -3170,8 +3179,17 @@
                 "width": null,
                 "height": null,
                 "css": {
-                    "customClassName": "",
-                    "configuration": [],
+                    "customClassName": "table-header-caption",
+                    "configuration": [
+                        {
+                            "selectorName": ".table-header-caption",
+                            "xs": {
+                                "margin-left": "auto",
+                               " margin-right": "auto",
+                                "width": "fit-content"
+                            }
+                        }
+                    ],
                     "themeClass": ""
                 },
                 "orientation": null
@@ -3806,7 +3824,7 @@
                     "action": []
                 }
             },
-            "labelKey": "name",
+            "labelKey": "label",
             "valueKey": "code",
             "value": null
         },
@@ -4850,7 +4868,7 @@
                     "action": []
                 }
             },
-            "labelKey": "name",
+            "labelKey": "label",
             "valueKey": "code",
             "value": null
         },
