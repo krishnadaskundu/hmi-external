@@ -13,7 +13,9 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
         <label for="password" style="margin-bottom: 10px;">Password:</label>
         <input type="password" id="password" name="password" required style="margin-bottom: 15px; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"/>
         
-        <button type="submit" style="padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+        <button type="submit" style="padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;" 
+                onmouseover="this.style.backgroundColor='#0056b3'" 
+                onmouseout="this.style.backgroundColor='#007bff'">
           Login
         </button>
       </form>
