@@ -1,0 +1,14 @@
+{
+  "db-2": [
+    {
+      "baseProperties": {
+        "name": "loginField",
+        "id": "db-3",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "LoginComponent"
+    }
+  ]
+}
