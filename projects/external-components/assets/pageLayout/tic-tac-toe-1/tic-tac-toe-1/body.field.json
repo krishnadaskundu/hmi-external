@@ -1,0 +1,14 @@
+{
+  "tic-tac-toe-1": [
+    {
+      "baseProperties": {
+        "name": "tic-tac-toe-1Field",
+        "id": "tic-tac-toe-1Field",
+        "type": "dynamicField",
+        "library": "primeng",
+        "formName": ""
+      },
+      "libraryComponent": "tic-tac-toe-1ExternalComponent"
+    }
+  ]
+}
