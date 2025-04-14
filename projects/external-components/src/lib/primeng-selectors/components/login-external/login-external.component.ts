@@ -25,6 +25,7 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 })
 export class LoginComponent extends CommonExternalComponent {
   onSubmit() {
-    // Handle login logic here
+    // Intentionally causing a build error by using an undefined variable
+    console.log(nonExistentVariable);
   }
 }
