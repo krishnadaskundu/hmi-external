@@ -43,7 +43,7 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
   `]
 })
 export class TicTacToe1Component extends CommonExternalComponent {
-  board: string[] = Array(9).fill(null);
+  board: (string | null)[] = Array(9).fill(null);
   currentPlayer: string = 'X';
   status: string = 'Your turn!';
 
@@ -56,13 +56,15 @@ export class TicTacToe1Component extends CommonExternalComponent {
         this.status = 'It\'s a draw!';
       } else {
         this.currentPlayer = 'O';
-        this.machineMove();
+        setTimeout(() => this.machineMove(), 400); // Delay for UX
       }
     }
   }
 
   machineMove(): void {
-    const availableMoves = this.board.map((cell, index) => (cell === null ? index : null)).filter(index => index !== null);
+    const availableMoves = this.board
+      .map((cell, index) => (cell === null ? index : null))
+      .filter(index => index !== null) as number[];
     if (availableMoves.length > 0) {
       const randomMove = availableMoves[Math.floor(Math.random() * availableMoves.length)];
       this.board[randomMove] = this.currentPlayer;
@@ -85,7 +87,11 @@ export class TicTacToe1Component extends CommonExternalComponent {
     ];
     return winningCombinations.some(combination => {
       const [a, b, c] = combination;
-      return this.board[a] && this.board[a] === this.board[b] && this.board[a] === this.board[c];
+      return (
+        this.board[a] &&
+        this.board[a] === this.board[b] &&
+        this.board[a] === this.board[c]
+      );
     });
   }
 
