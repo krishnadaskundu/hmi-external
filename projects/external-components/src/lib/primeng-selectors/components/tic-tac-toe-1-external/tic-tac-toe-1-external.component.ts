@@ -1,4 +1,3 @@
-```component.ts```
 import { Component } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 
