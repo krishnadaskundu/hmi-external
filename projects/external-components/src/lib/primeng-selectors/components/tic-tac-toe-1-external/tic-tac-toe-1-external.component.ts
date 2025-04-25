@@ -48,7 +48,7 @@ export class TicTacToe1Component extends CommonExternalComponent {
   status: string = 'Your turn!';
 
   makeMove(index: number): void {
-    if (!this.board[index] && !this.checkWinner()) {
+    if (!this.board[index] && !this.checkWinner() && this.currentPlayer === 'X') {
       this.board[index] = this.currentPlayer;
       if (this.checkWinner()) {
         this.status = `${this.currentPlayer} wins!`;
