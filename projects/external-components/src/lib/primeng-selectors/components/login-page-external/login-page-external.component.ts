@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 
 /*
   Features:
-  - Simple login form with email and password fields
-  - Inline validation for required fields and valid email format
+  - Login form with email and password fields
+  - Inline validation: required fields, valid email format
   - Submit button disabled until the form is valid
 */
 
@@ -95,18 +95,17 @@ export class LoginPageComponent extends CommonExternalComponent {
     });
   }
 
-  get email() {
-    return this.loginForm.get('email')!;
+  get email(): AbstractControl {
+    return this.loginForm.get('email') as AbstractControl;
   }
 
-  get password() {
-    return this.loginForm.get('password')!;
+  get password(): AbstractControl {
+    return this.loginForm.get('password') as AbstractControl;
   }
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      // Handle login logic here
-      // e.g., emit event or call authentication service
+      // Implement login logic here (e.g., emit event or call authentication service)
     }
   }
 }
