@@ -1,1 +1,48 @@
-{}
+{
+  "Flappy-Bird-Clone": {
+    "headerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Flappy-Bird-Clone/Flappy-Bird-Clone/header.field.json"
+    },
+    "headerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Flappy-Bird-Clone/Flappy-Bird-Clone/header.section.json"
+    },
+    "field": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Flappy-Bird-Clone/Flappy-Bird-Clone/body.field.json"
+    },
+    "section": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Flappy-Bird-Clone/Flappy-Bird-Clone/body.section.json"
+    },
+    "footerField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Flappy-Bird-Clone/Flappy-Bird-Clone/footer.field.json"
+    },
+    "footerSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Flappy-Bird-Clone/Flappy-Bird-Clone/footer.section.json"
+    },
+    "data": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Flappy-Bird-Clone/Flappy-Bird-Clone/body.data.json"
+    },
+    "navField": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Flappy-Bird-Clone/Flappy-Bird-Clone/nav.field.json"
+    },
+    "navSection": {
+      "fetchFromLocal": true,
+      "localURL": "./assets/pageLayout/Flappy-Bird-Clone/Flappy-Bird-Clone/nav.section.json"
+    },
+    "authGuardConfig": {
+      "enabled": false,
+      "conditions": []
+    },
+    "globalPageSettings": {
+      "title": "Flappy-Bird-Clone",
+      "layoutProperties": null
+    }
+  }
+}
