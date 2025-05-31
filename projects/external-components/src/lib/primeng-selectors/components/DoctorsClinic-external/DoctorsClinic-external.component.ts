@@ -1,12 +1,5 @@
-// DoctorsClinicComponent: Patient registration, appointment scheduling, search, and WhatsApp reminders.
-// Features:
-// - Add new patients with personal/contact info
-// - "Same as phone" checkbox for WhatsApp number auto-fill
-// - List of patients with appointment scheduling option
-// - Search box to filter patients by name or phone
-// - Inline appointment creation per patient
-// - Upcoming appointments table
-// - Send WhatsApp reminder for any appointment (opens WhatsApp Web/app)
+// DoctorsClinicComponent: Patient registration, appointment scheduling, search, WhatsApp reminders,
+// and explicit country code input (default 91) for phone/WhatsApp numbers.
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -15,6 +8,7 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 interface Patient {
   name: string;
   dob: Date;
+  countryCode: string;
   phone: string;
   whatsapp: string;
   email?: string;
@@ -40,6 +34,11 @@ interface Appointment {
       <label>
         Date of Birth:
         <input type="date" formControlName="dob" required />
+      </label>
+
+      <label>
+        Country Code:
+        <input formControlName="countryCode" required maxlength="4" style="width:50px;" />
       </label>
 
       <label>
@@ -165,6 +164,7 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
     this.patientForm = this.fb.group({
       name: ['', Validators.required],
       dob: ['', Validators.required],
+      countryCode: ['91', [Validators.required, Validators.maxLength(4)]],
       phone: ['', [Validators.required, Validators.maxLength(15)]],
       whatsapp: ['', [Validators.required, Validators.maxLength(15)]],
       sameAsPhone: [false],
@@ -207,6 +207,7 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
       const patient: Patient = {
         name: formValue.name,
         dob: formValue.dob,
+        countryCode: formValue.countryCode,
         phone: formValue.phone,
         whatsapp: formValue.whatsapp,
         email: formValue.email,
@@ -214,7 +215,7 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
         appointments: [],
       };
       this.patients.push(patient);
-      this.patientForm.reset();
+      this.patientForm.reset({ countryCode: '91' }); // Reset and set default country code
       this.patientForm.get('whatsapp')?.enable();
       this.updateFilteredPatients();
     }
@@ -296,22 +297,25 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
     }
   }
 
-  // Maps the filteredPatients' index back to the original patients array index
   getOriginalIndex(filteredIdx: number): number {
     return this.filteredPatientIndices[filteredIdx];
   }
 
-  // Sends WhatsApp reminder for an appointment using the patient's WhatsApp number
   sendWhatsAppReminder(patient: Patient, appointment: Appointment): void {
-    // Clean WhatsApp number: remove all non-digit characters
+    // Clean phone numbers (remove all non-digit characters)
     let phoneNumber: string = patient.whatsapp || '';
-    // Remove spaces, dashes, parentheses, plus signs, etc.
     let cleanPhoneNumber: string = phoneNumber.replace(/[^\d]/g, '');
 
-    // If country code is missing, you may prepend your default country code here if needed
-    // Example: if (cleanPhoneNumber.length === 10) cleanPhoneNumber = '91' + cleanPhoneNumber;
+    // Clean country code (remove non-digits)
+    let countryCode: string = (patient.countryCode || '91').replace(/[^\d]/g, '');
 
-    // Build message
+    // Remove leading zeros from phone number if present
+    cleanPhoneNumber = cleanPhoneNumber.replace(/^0+/, '');
+
+    // Final phone for WhatsApp API: country code + phone
+    const phoneForWhatsApp = `${countryCode}${cleanPhoneNumber}`;
+
+    // Message
     const message: string =
       `Dear ${patient.name},%0A` +
       `This is a reminder for your appointment at our clinic.%0A` +
@@ -324,13 +328,12 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
     const encodedMessage: string = encodeURIComponent(message);
 
     // WhatsApp API URL
-    const whatsappUrl: string = `https://wa.me/${cleanPhoneNumber}?text=${encodedMessage}`;
+    const whatsappUrl: string = `https://wa.me/${phoneForWhatsApp}?text=${encodedMessage}`;
 
     // Open WhatsApp in new window/tab
     window.open(whatsappUrl, '_blank');
   }
 
-  // Helper to format date as dd/MM/yyyy
   private formatDate(date: Date | string): string {
     const d: Date = typeof date === 'string' ? new Date(date) : date;
     const day: string = ('0' + d.getDate()).slice(-2);
