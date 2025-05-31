@@ -1,5 +1,5 @@
-// DoctorsClinicComponent: Patient registration, appointment scheduling, search, WhatsApp reminders,
-// and explicit country code input (default 91) for phone/WhatsApp numbers.
+// DoctorsClinicComponent: Patient registration, appointment scheduling, search,
+// WhatsApp reminders (with proper line breaks), and explicit country code input (default 91).
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -315,13 +315,13 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
     // Final phone for WhatsApp API: country code + phone
     const phoneForWhatsApp = `${countryCode}${cleanPhoneNumber}`;
 
-    // Message
+    // Message (using \n for line breaks)
     const message: string =
-      `Dear ${patient.name},%0A` +
-      `This is a reminder for your appointment at our clinic.%0A` +
-      `Date: ${this.formatDate(appointment.date)}%0A` +
-      `Time: ${appointment.time}%0A` +
-      `Reason: ${appointment.reason}%0A%0A` +
+      `Dear ${patient.name},\n` +
+      `This is a reminder for your appointment at our clinic.\n` +
+      `Date: ${this.formatDate(appointment.date)}\n` +
+      `Time: ${appointment.time}\n` +
+      `Reason: ${appointment.reason}\n\n` +
       `Please contact us if you need to reschedule.`;
 
     // Encode message for URL
