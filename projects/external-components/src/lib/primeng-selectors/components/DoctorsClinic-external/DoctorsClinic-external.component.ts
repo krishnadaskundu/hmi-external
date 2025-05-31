@@ -1,5 +1,15 @@
+// DoctorsClinicComponent: Patient registration, appointment scheduling, and search functionality.
+// Features:
+// - Add new patients with personal/contact info
+// - "Same as phone" checkbox for WhatsApp number auto-fill
+// - List of patients with appointment scheduling option
+// - Search box to filter patients by name or phone
+// - Inline appointment creation per patient
+// - Upcoming appointments table
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonExternalComponent } from '../common-external/common-external.component';
 
 interface Patient {
   name: string;
@@ -57,10 +67,20 @@ interface Appointment {
 
     <div class="patients-list">
       <h2>Patients</h2>
+      <input
+        type="text"
+        placeholder="Search by name or phone"
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="onSearchTermChange()"
+        class="search-box"
+        style="margin-bottom:12px; width:220px;"
+        name="patientSearch"
+        autocomplete="off"
+      />
       <ul>
-        <li *ngFor="let patient of patients; let idx = index">
+        <li *ngFor="let patient of filteredPatients; let idx = index">
           {{ patient.name }} ({{ patient.dob | date:'mediumDate' }})
-          <button (click)="selectPatient(idx)">Set Appointment</button>
+          <button (click)="selectPatient(getOriginalIndex(idx))">Set Appointment</button>
         </li>
       </ul>
     </div>
@@ -116,16 +136,23 @@ interface Appointment {
     .appointments-table th, .appointments-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
     .appointments-table th { background: #f7f7f7; }
     button { margin-top: 8px; margin-right: 8px; }
+    .search-box { padding: 4px 8px; font-size: 15px; border-radius: 5px; border: 1px solid #aaa; }
   `,
   ],
 })
-export class DoctorsClinicComponent implements OnInit {
+export class DoctorsClinicComponent extends CommonExternalComponent implements OnInit {
   patientForm: FormGroup;
   appointmentForm: FormGroup;
   patients: Patient[] = [];
   selectedPatientIdx: number | null = null;
 
+  // For search functionality
+  searchTerm: string = '';
+  filteredPatients: Patient[] = [];
+  private filteredPatientIndices: number[] = [];
+
   constructor(private fb: FormBuilder) {
+    super();
     this.patientForm = this.fb.group({
       name: ['', Validators.required],
       dob: ['', Validators.required],
@@ -145,9 +172,9 @@ export class DoctorsClinicComponent implements OnInit {
 
   ngOnInit(): void {
     // Sync WhatsApp number with Phone if "Same as above" is checked
-    this.patientForm.get('sameAsPhone')?.valueChanges.subscribe((checked) => {
+    this.patientForm.get('sameAsPhone')?.valueChanges.subscribe((checked: boolean) => {
       if (checked) {
-        const phoneValue = this.patientForm.get('phone')?.value || '';
+        const phoneValue: string = this.patientForm.get('phone')?.value || '';
         this.patientForm.get('whatsapp')?.setValue(phoneValue);
         this.patientForm.get('whatsapp')?.disable();
       } else {
@@ -156,11 +183,13 @@ export class DoctorsClinicComponent implements OnInit {
     });
 
     // Also update WhatsApp number when phone changes and "Same as above" is checked
-    this.patientForm.get('phone')?.valueChanges.subscribe((phoneValue) => {
+    this.patientForm.get('phone')?.valueChanges.subscribe((phoneValue: string) => {
       if (this.patientForm.get('sameAsPhone')?.value) {
         this.patientForm.get('whatsapp')?.setValue(phoneValue || '');
       }
     });
+
+    this.updateFilteredPatients();
   }
 
   addPatient(): void {
@@ -178,6 +207,7 @@ export class DoctorsClinicComponent implements OnInit {
       this.patients.push(patient);
       this.patientForm.reset();
       this.patientForm.get('whatsapp')?.enable();
+      this.updateFilteredPatients();
     }
   }
 
@@ -199,6 +229,7 @@ export class DoctorsClinicComponent implements OnInit {
       this.patients[this.selectedPatientIdx].appointments.push(appointment);
       this.selectedPatientIdx = null;
       this.appointmentForm.reset();
+      this.updateFilteredPatients(); // To reflect any changes in the UI
     }
   }
 
@@ -206,7 +237,7 @@ export class DoctorsClinicComponent implements OnInit {
     patientName: string;
     appointment: Appointment;
   }[] {
-    const now = new Date();
+    const now: Date = new Date();
     return this.patients
       .reduce(
         (
@@ -214,8 +245,8 @@ export class DoctorsClinicComponent implements OnInit {
           patient: Patient
         ) => {
           const upcoming = patient.appointments
-            .filter((app) => new Date(app.date) >= now)
-            .map((app) => ({ patientName: patient.name, appointment: app }));
+            .filter((app: Appointment) => new Date(app.date) >= now)
+            .map((app: Appointment) => ({ patientName: patient.name, appointment: app }));
           return acc.concat(upcoming);
         },
         []
@@ -225,5 +256,34 @@ export class DoctorsClinicComponent implements OnInit {
         const d2 = new Date(b.appointment.date + 'T' + b.appointment.time);
         return d1.getTime() - d2.getTime();
       });
+  }
+
+  onSearchTermChange(): void {
+    this.updateFilteredPatients();
+  }
+
+  private updateFilteredPatients(): void {
+    const term: string = this.searchTerm.trim().toLowerCase();
+    if (!term) {
+      this.filteredPatients = [...this.patients];
+      this.filteredPatientIndices = this.patients.map((_p, i) => i);
+    } else {
+      this.filteredPatients = [];
+      this.filteredPatientIndices = [];
+      this.patients.forEach((patient: Patient, idx: number) => {
+        if (
+          patient.name.toLowerCase().includes(term) ||
+          patient.phone.toLowerCase().includes(term)
+        ) {
+          this.filteredPatients.push(patient);
+          this.filteredPatientIndices.push(idx);
+        }
+      });
+    }
+  }
+
+  // Maps the filteredPatients' index back to the original patients array index
+  getOriginalIndex(filteredIdx: number): number {
+    return this.filteredPatientIndices[filteredIdx];
   }
 }
