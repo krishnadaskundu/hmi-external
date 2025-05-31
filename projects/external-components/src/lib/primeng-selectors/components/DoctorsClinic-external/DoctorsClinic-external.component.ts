@@ -1,4 +1,4 @@
-// DoctorsClinicComponent: Patient registration, appointment scheduling, and search functionality.
+// DoctorsClinicComponent: Patient registration, appointment scheduling, search, and WhatsApp reminders.
 // Features:
 // - Add new patients with personal/contact info
 // - "Same as phone" checkbox for WhatsApp number auto-fill
@@ -6,6 +6,7 @@
 // - Search box to filter patients by name or phone
 // - Inline appointment creation per patient
 // - Upcoming appointments table
+// - Send WhatsApp reminder for any appointment (opens WhatsApp Web/app)
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -112,6 +113,7 @@ interface Appointment {
             <th>Date</th>
             <th>Time</th>
             <th>Reason</th>
+            <th>Reminder</th>
           </tr>
         </thead>
         <tbody>
@@ -120,6 +122,13 @@ interface Appointment {
             <td>{{ item.appointment.date | date:'mediumDate' }}</td>
             <td>{{ item.appointment.time }}</td>
             <td>{{ item.appointment.reason }}</td>
+            <td>
+              <button
+                type="button"
+                (click)="sendWhatsAppReminder(item.patient, item.appointment)"
+                title="Send WhatsApp Reminder"
+              >Send WhatsApp</button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -236,17 +245,22 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
   get upcomingAppointments(): {
     patientName: string;
     appointment: Appointment;
+    patient: Patient;
   }[] {
     const now: Date = new Date();
     return this.patients
       .reduce(
         (
-          acc: { patientName: string; appointment: Appointment }[],
+          acc: { patientName: string; appointment: Appointment; patient: Patient }[],
           patient: Patient
         ) => {
           const upcoming = patient.appointments
             .filter((app: Appointment) => new Date(app.date) >= now)
-            .map((app: Appointment) => ({ patientName: patient.name, appointment: app }));
+            .map((app: Appointment) => ({
+              patientName: patient.name,
+              appointment: app,
+              patient: patient
+            }));
           return acc.concat(upcoming);
         },
         []
@@ -285,5 +299,43 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
   // Maps the filteredPatients' index back to the original patients array index
   getOriginalIndex(filteredIdx: number): number {
     return this.filteredPatientIndices[filteredIdx];
+  }
+
+  // Sends WhatsApp reminder for an appointment using the patient's WhatsApp number
+  sendWhatsAppReminder(patient: Patient, appointment: Appointment): void {
+    // Clean WhatsApp number: remove all non-digit characters
+    let phoneNumber: string = patient.whatsapp || '';
+    // Remove spaces, dashes, parentheses, plus signs, etc.
+    let cleanPhoneNumber: string = phoneNumber.replace(/[^\d]/g, '');
+
+    // If country code is missing, you may prepend your default country code here if needed
+    // Example: if (cleanPhoneNumber.length === 10) cleanPhoneNumber = '91' + cleanPhoneNumber;
+
+    // Build message
+    const message: string =
+      `Dear ${patient.name},%0A` +
+      `This is a reminder for your appointment at our clinic.%0A` +
+      `Date: ${this.formatDate(appointment.date)}%0A` +
+      `Time: ${appointment.time}%0A` +
+      `Reason: ${appointment.reason}%0A%0A` +
+      `Please contact us if you need to reschedule.`;
+
+    // Encode message for URL
+    const encodedMessage: string = encodeURIComponent(message);
+
+    // WhatsApp API URL
+    const whatsappUrl: string = `https://wa.me/${cleanPhoneNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp in new window/tab
+    window.open(whatsappUrl, '_blank');
+  }
+
+  // Helper to format date as dd/MM/yyyy
+  private formatDate(date: Date | string): string {
+    const d: Date = typeof date === 'string' ? new Date(date) : date;
+    const day: string = ('0' + d.getDate()).slice(-2);
+    const month: string = ('0' + (d.getMonth() + 1)).slice(-2);
+    const year: string = d.getFullYear().toString();
+    return `${day}/${month}/${year}`;
   }
 }
