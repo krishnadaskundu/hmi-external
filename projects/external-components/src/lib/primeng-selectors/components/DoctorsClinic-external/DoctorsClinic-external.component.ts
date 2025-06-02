@@ -1,15 +1,17 @@
 // DoctorsClinicComponent: Patient registration, appointment scheduling, search,
-// WhatsApp reminders (with proper line breaks), and explicit country code input (default 91).
-// Features: Name and WhatsApp number are compulsory. Submit button is disabled if not filled.
+// WhatsApp reminders (with line breaks), explicit country code input (default 91).
+// Features: Name and WhatsApp number compulsory. Submit button disabled if not filled.
 // Bootstrap-styled forms, tables, buttons, and inputs for modern UI.
+// Data is now persisted in browser IndexedDB using 'idb' library.
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonExternalComponent } from '../common-external/common-external.component';
+import { openDB, DBSchema, IDBPDatabase } from 'idb';
 
 interface Patient {
   name: string;
-  dob?: Date;
+  dob?: Date | string;
   countryCode?: string;
   phone?: string;
   whatsapp: string;
@@ -19,14 +21,22 @@ interface Patient {
 }
 
 interface Appointment {
-  date: Date;
+  date: Date | string;
   time: string;
   reason: string;
+}
+
+interface ClinicDB extends DBSchema {
+  patients: {
+    key: string; // patient name + whatsapp as unique key
+    value: Patient;
+  };
 }
 
 @Component({
   selector: 'app-doctors-clinic',
   template: `
+    <!-- Inline HTML remains unchanged -->
     <form [formGroup]="patientForm" (ngSubmit)="addPatient()" class="clinic-form card shadow-sm p-4 mb-4">
       <h2 class="mb-3">Add New Patient</h2>
       <div class="row g-3">
@@ -183,10 +193,11 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
   patients: Patient[] = [];
   selectedPatientIdx: number | null = null;
 
-  // For search functionality
   searchTerm: string = '';
   filteredPatients: Patient[] = [];
   private filteredPatientIndices: number[] = [];
+
+  private db!: IDBPDatabase<ClinicDB>;
 
   constructor(private fb: FormBuilder) {
     super();
@@ -208,8 +219,10 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
     });
   }
 
-  ngOnInit(): void {
-    // Sync WhatsApp number with Phone if "Same as above" is checked
+  async ngOnInit(): Promise<void> {
+    await this.initDB();
+    await this.loadPatientsFromDB();
+
     this.patientForm.get('sameAsPhone')?.valueChanges.subscribe((checked: boolean) => {
       if (checked) {
         const phoneValue: string = this.patientForm.get('phone')?.value || '';
@@ -220,7 +233,6 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
       }
     });
 
-    // Also update WhatsApp number when phone changes and "Same as above" is checked
     this.patientForm.get('phone')?.valueChanges.subscribe((phoneValue: string) => {
       if (this.patientForm.get('sameAsPhone')?.value) {
         this.patientForm.get('whatsapp')?.setValue(phoneValue || '');
@@ -230,8 +242,36 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
     this.updateFilteredPatients();
   }
 
-  addPatient(): void {
-    // Only add if name and whatsapp are present
+  private async initDB(): Promise<void> {
+    this.db = await openDB<ClinicDB>('doctors-clinic-db', 1, {
+      upgrade(db) {
+        if (!db.objectStoreNames.contains('patients')) {
+          db.createObjectStore('patients', { keyPath: 'key' });
+        }
+      },
+    });
+  }
+
+  private getPatientKey(name: string, whatsapp: string): string {
+    return `${name.trim().toLowerCase()}_${whatsapp.trim()}`;
+  }
+
+  private async loadPatientsFromDB(): Promise<void> {
+    const tx = this.db.transaction('patients', 'readonly');
+    const store = tx.objectStore('patients');
+    const allPatients: Patient[] = [];
+    let cursor = await store.openCursor();
+    while (cursor) {
+      const patient = { ...cursor.value };
+      delete (patient as any).key; // Remove extra key property
+      allPatients.push(patient);
+      cursor = await cursor.continue();
+    }
+    this.patients = allPatients;
+    this.updateFilteredPatients();
+  }
+
+  async addPatient(): Promise<void> {
     if (this.patientForm.get('name')?.value && this.patientForm.get('whatsapp')?.value) {
       const formValue = this.patientForm.getRawValue();
       const patient: Patient = {
@@ -244,10 +284,11 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
         address: formValue.address || undefined,
         appointments: [],
       };
-      this.patients.push(patient);
+      const key = this.getPatientKey(patient.name, patient.whatsapp);
+      await this.db.put('patients', { ...patient, key });
+      await this.loadPatientsFromDB();
       this.patientForm.reset({ countryCode: '91' });
       this.patientForm.get('whatsapp')?.enable();
-      this.updateFilteredPatients();
     }
   }
 
@@ -261,15 +302,18 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
     this.appointmentForm.reset();
   }
 
-  addAppointment(): void {
+  async addAppointment(): Promise<void> {
     if (this.selectedPatientIdx !== null && this.appointmentForm.valid) {
       const appointment: Appointment = {
         ...this.appointmentForm.value,
       };
-      this.patients[this.selectedPatientIdx].appointments.push(appointment);
+      const patient = this.patients[this.selectedPatientIdx];
+      patient.appointments.push(appointment);
+      const key = this.getPatientKey(patient.name, patient.whatsapp);
+      await this.db.put('patients', { ...patient, key });
+      await this.loadPatientsFromDB();
       this.selectedPatientIdx = null;
       this.appointmentForm.reset();
-      this.updateFilteredPatients();
     }
   }
 
