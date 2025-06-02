@@ -84,7 +84,7 @@ interface ClinicDB extends DBSchema {
       </div>
       <button type="submit"
         [disabled]="!patientForm.get('name')?.value || !patientForm.get('whatsapp')?.value"
-        class="btn btn-primary mt-3">
+        class="btn btn-primary mt-3 add-patient-btn">
         Save Patient
       </button>
     </form>
@@ -178,6 +178,14 @@ interface ClinicDB extends DBSchema {
     .list-group-item:hover { background: #f8f9fa; }
     .btn { min-width: 110px; }
     .table th, .table td { vertical-align: middle; }
+    .add-patient-btn:disabled,
+    .add-patient-btn[disabled] {
+      background-color: #e0e0e0 !important;
+      color: #a0a0a0 !important;
+      border-color: #e0e0e0 !important;
+      opacity: 1 !important;
+      cursor: not-allowed;
+    }
     `,
   ],
 })
