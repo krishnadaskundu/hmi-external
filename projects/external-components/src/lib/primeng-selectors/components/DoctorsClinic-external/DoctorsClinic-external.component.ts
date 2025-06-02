@@ -330,12 +330,12 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
     const phoneForWhatsApp = `${countryCode}${cleanPhoneNumber}`;
 
     const message: string =
-      `Dear ${patient.name},\n` +
-      `This is a reminder for your appointment at our clinic.\n` +
+      `Hi ${patient.name},\n` +
+      `This is a reminder for your appointment at Swasthayu Clinic.\n` +
       `Date: ${this.formatDate(appointment.date)}\n` +
       `Time: ${appointment.time}\n` +
       `Reason: ${appointment.reason}\n\n` +
-      `Please contact us if you need to reschedule.`;
+      `Thank you. \nBest regards, \nSwasthayu Clinic, Ravet`;
 
     const encodedMessage: string = encodeURIComponent(message);
 
