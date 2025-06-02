@@ -1,6 +1,7 @@
 // DoctorsClinicComponent: Patient registration, appointment scheduling, search,
 // WhatsApp reminders (with proper line breaks), and explicit country code input (default 91).
-// Features: Bootstrap-styled forms, tables, buttons, and inputs for modern UI.
+// Features: Name and WhatsApp number are compulsory. Submit button is disabled if not filled.
+// Bootstrap-styled forms, tables, buttons, and inputs for modern UI.
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -8,9 +9,9 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 
 interface Patient {
   name: string;
-  dob: Date;
-  countryCode: string;
-  phone: string;
+  dob?: Date;
+  countryCode?: string;
+  phone?: string;
   whatsapp: string;
   email?: string;
   address?: string;
@@ -33,24 +34,27 @@ interface Appointment {
           <label class="form-label">Name:
             <input formControlName="name" required class="form-control" />
           </label>
+          <div *ngIf="patientForm.get('name')?.invalid && patientForm.get('name')?.touched" class="text-danger small">
+            Name is required.
+          </div>
         </div>
         <div class="col-md-6">
           <label class="form-label">Date of Birth:
-            <input type="date" formControlName="dob" required class="form-control" />
+            <input type="date" formControlName="dob" class="form-control" />
           </label>
         </div>
         <div class="col-md-3">
           <label class="form-label">Country Code:
-            <input formControlName="countryCode" required maxlength="4" class="form-control" style="width:80px;" />
+            <input formControlName="countryCode" maxlength="4" class="form-control" style="width:80px;" />
           </label>
         </div>
         <div class="col-md-4">
           <label class="form-label">Phone Number:
-            <input formControlName="phone" required maxlength="15" class="form-control" />
+            <input formControlName="phone" maxlength="15" class="form-control" />
           </label>
         </div>
         <div class="col-md-5">
-          <label class="form-label w-100">WhatsApp Number:
+          <label class="form-label w-100">WhatsApp Number: <span class="text-danger">*</span>
             <div class="input-group">
               <input formControlName="whatsapp" required maxlength="15"
                 [readonly]="patientForm.get('sameAsPhone')?.value" class="form-control" />
@@ -59,6 +63,9 @@ interface Appointment {
               </span>
             </div>
           </label>
+          <div *ngIf="patientForm.get('whatsapp')?.invalid && patientForm.get('whatsapp')?.touched" class="text-danger small">
+            WhatsApp number is required.
+          </div>
         </div>
         <div class="col-md-6">
           <label class="form-label">Email:
@@ -71,7 +78,11 @@ interface Appointment {
           </label>
         </div>
       </div>
-      <button type="submit" [disabled]="!patientForm.valid" class="btn btn-primary mt-3">Save Patient</button>
+      <button type="submit"
+        [disabled]="!patientForm.get('name')?.value || !patientForm.get('whatsapp')?.value"
+        class="btn btn-primary mt-3">
+        Save Patient
+      </button>
     </form>
 
     <div class="patients-list card shadow-sm p-4 mb-4">
@@ -90,7 +101,7 @@ interface Appointment {
       <ul class="list-group">
         <li *ngFor="let patient of filteredPatients; let idx = index" class="list-group-item d-flex justify-content-between align-items-center">
           <span>
-            {{ patient.name }} <small class="text-muted">({{ patient.dob | date:'mediumDate' }})</small>
+            {{ patient.name }} <small class="text-muted" *ngIf="patient.dob">({{ patient.dob | date:'mediumDate' }})</small>
           </span>
           <button (click)="selectPatient(getOriginalIndex(idx))" class="btn btn-outline-success btn-sm">Set Appointment</button>
         </li>
@@ -181,9 +192,9 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
     super();
     this.patientForm = this.fb.group({
       name: ['', Validators.required],
-      dob: ['', Validators.required],
-      countryCode: ['91', [Validators.required, Validators.maxLength(4)]],
-      phone: ['', [Validators.required, Validators.maxLength(15)]],
+      dob: [''],
+      countryCode: ['91', [Validators.maxLength(4)]],
+      phone: ['', [Validators.maxLength(15)]],
       whatsapp: ['', [Validators.required, Validators.maxLength(15)]],
       sameAsPhone: [false],
       email: [''],
@@ -220,16 +231,17 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
   }
 
   addPatient(): void {
-    if (this.patientForm.valid) {
+    // Only add if name and whatsapp are present
+    if (this.patientForm.get('name')?.value && this.patientForm.get('whatsapp')?.value) {
       const formValue = this.patientForm.getRawValue();
       const patient: Patient = {
         name: formValue.name,
-        dob: formValue.dob,
-        countryCode: formValue.countryCode,
-        phone: formValue.phone,
+        dob: formValue.dob || undefined,
+        countryCode: formValue.countryCode || undefined,
+        phone: formValue.phone || undefined,
         whatsapp: formValue.whatsapp,
-        email: formValue.email,
-        address: formValue.address,
+        email: formValue.email || undefined,
+        address: formValue.address || undefined,
         appointments: [],
       };
       this.patients.push(patient);
@@ -306,7 +318,7 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
       this.patients.forEach((patient: Patient, idx: number) => {
         if (
           patient.name.toLowerCase().includes(term) ||
-          patient.phone.toLowerCase().includes(term)
+          (patient.phone && patient.phone.toLowerCase().includes(term))
         ) {
           this.filteredPatients.push(patient);
           this.filteredPatientIndices.push(idx);
