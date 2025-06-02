@@ -253,7 +253,7 @@ export class DoctorsClinicComponent
 
   private async initDB(): Promise<void> {
     this.db = await openDB<ClinicDB>('doctors-clinic-db', 1, {
-      upgrade(db) {
+      upgrade(db: IDBPDatabase<ClinicDB>) {
         if (!db.objectStoreNames.contains('patients')) {
           db.createObjectStore('patients', { keyPath: 'key' });
         }
