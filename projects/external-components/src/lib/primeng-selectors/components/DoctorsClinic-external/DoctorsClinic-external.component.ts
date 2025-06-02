@@ -1,12 +1,3 @@
-/**
- * DoctorsClinicComponent
- * ----------------------
- * - Patient management with IndexedDB (idb)
- * - Add/search patients, set appointments, send WhatsApp reminders
- * - Inline HTML & CSS, Angular 18 compatible, strict typing enforced
- * - Patient name field now shows a required asterisk (*)
- */
-
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonExternalComponent } from '../common-external/common-external.component';
