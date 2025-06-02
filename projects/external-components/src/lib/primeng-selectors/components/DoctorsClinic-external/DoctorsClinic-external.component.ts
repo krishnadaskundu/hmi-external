@@ -1,15 +1,10 @@
-// DoctorsClinicComponent: Patient registration, appointment scheduling, search,
-// WhatsApp reminders (with line breaks), explicit country code input (default 91).
-// Features: Name and WhatsApp number compulsory. Submit button disabled if not filled.
-// Bootstrap-styled forms, tables, buttons, and inputs for modern UI.
-// Data is now persisted in browser IndexedDB using 'idb' library.
-
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 import { openDB, DBSchema, IDBPDatabase } from 'idb';
 
 interface Patient {
+  key?: string;
   name: string;
   dob?: Date | string;
   countryCode?: string;
@@ -28,7 +23,7 @@ interface Appointment {
 
 interface ClinicDB extends DBSchema {
   patients: {
-    key: string; // patient name + whatsapp as unique key
+    key: string;
     value: Patient;
   };
 }
@@ -36,7 +31,6 @@ interface ClinicDB extends DBSchema {
 @Component({
   selector: 'app-doctors-clinic',
   template: `
-    <!-- Inline HTML remains unchanged -->
     <form [formGroup]="patientForm" (ngSubmit)="addPatient()" class="clinic-form card shadow-sm p-4 mb-4">
       <h2 class="mb-3">Add New Patient</h2>
       <div class="row g-3">
@@ -184,19 +178,20 @@ interface ClinicDB extends DBSchema {
     .list-group-item:hover { background: #f8f9fa; }
     .btn { min-width: 110px; }
     .table th, .table td { vertical-align: middle; }
-    `
+    `,
   ],
 })
-export class DoctorsClinicComponent extends CommonExternalComponent implements OnInit {
+export class DoctorsClinicComponent
+  extends CommonExternalComponent
+  implements OnInit
+{
   patientForm: FormGroup;
   appointmentForm: FormGroup;
   patients: Patient[] = [];
   selectedPatientIdx: number | null = null;
-
   searchTerm: string = '';
   filteredPatients: Patient[] = [];
   private filteredPatientIndices: number[] = [];
-
   private db!: IDBPDatabase<ClinicDB>;
 
   constructor(private fb: FormBuilder) {
@@ -223,21 +218,25 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
     await this.initDB();
     await this.loadPatientsFromDB();
 
-    this.patientForm.get('sameAsPhone')?.valueChanges.subscribe((checked: boolean) => {
-      if (checked) {
-        const phoneValue: string = this.patientForm.get('phone')?.value || '';
-        this.patientForm.get('whatsapp')?.setValue(phoneValue);
-        this.patientForm.get('whatsapp')?.disable();
-      } else {
-        this.patientForm.get('whatsapp')?.enable();
-      }
-    });
+    this.patientForm
+      .get('sameAsPhone')
+      ?.valueChanges.subscribe((checked: boolean) => {
+        if (checked) {
+          const phoneValue: string = this.patientForm.get('phone')?.value || '';
+          this.patientForm.get('whatsapp')?.setValue(phoneValue);
+          this.patientForm.get('whatsapp')?.disable();
+        } else {
+          this.patientForm.get('whatsapp')?.enable();
+        }
+      });
 
-    this.patientForm.get('phone')?.valueChanges.subscribe((phoneValue: string) => {
-      if (this.patientForm.get('sameAsPhone')?.value) {
-        this.patientForm.get('whatsapp')?.setValue(phoneValue || '');
-      }
-    });
+    this.patientForm
+      .get('phone')
+      ?.valueChanges.subscribe((phoneValue: string) => {
+        if (this.patientForm.get('sameAsPhone')?.value) {
+          this.patientForm.get('whatsapp')?.setValue(phoneValue || '');
+        }
+      });
 
     this.updateFilteredPatients();
   }
@@ -263,7 +262,7 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
     let cursor = await store.openCursor();
     while (cursor) {
       const patient = { ...cursor.value };
-      delete (patient as any).key; // Remove extra key property
+      delete (patient as any).key;
       allPatients.push(patient);
       cursor = await cursor.continue();
     }
@@ -272,7 +271,10 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
   }
 
   async addPatient(): Promise<void> {
-    if (this.patientForm.get('name')?.value && this.patientForm.get('whatsapp')?.value) {
+    if (
+      this.patientForm.get('name')?.value &&
+      this.patientForm.get('whatsapp')?.value
+    ) {
       const formValue = this.patientForm.getRawValue();
       const patient: Patient = {
         name: formValue.name,
@@ -326,7 +328,11 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
     return this.patients
       .reduce(
         (
-          acc: { patientName: string; appointment: Appointment; patient: Patient }[],
+          acc: {
+            patientName: string;
+            appointment: Appointment;
+            patient: Patient;
+          }[],
           patient: Patient
         ) => {
           const upcoming = patient.appointments
@@ -334,7 +340,7 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
             .map((app: Appointment) => ({
               patientName: patient.name,
               appointment: app,
-              patient: patient
+              patient: patient,
             }));
           return acc.concat(upcoming);
         },
@@ -378,13 +384,12 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
   sendWhatsAppReminder(patient: Patient, appointment: Appointment): void {
     let phoneNumber: string = patient.whatsapp || '';
     let cleanPhoneNumber: string = phoneNumber.replace(/[^\d]/g, '');
-
-    let countryCode: string = (patient.countryCode || '91').replace(/[^\d]/g, '');
-
+    let countryCode: string = (patient.countryCode || '91').replace(
+      /[^\d]/g,
+      ''
+    );
     cleanPhoneNumber = cleanPhoneNumber.replace(/^0+/, '');
-
     const phoneForWhatsApp = `${countryCode}${cleanPhoneNumber}`;
-
     const message: string =
       `Hi ${patient.name},\n` +
       `This is a reminder for your appointment at Swasthayu Clinic.\n` +
@@ -392,11 +397,8 @@ export class DoctorsClinicComponent extends CommonExternalComponent implements O
       `Time: ${appointment.time}\n` +
       `Reason: ${appointment.reason}\n\n` +
       `Thank you. \nBest regards, \nSwasthayu Clinic, Ravet`;
-
     const encodedMessage: string = encodeURIComponent(message);
-
     const whatsappUrl: string = `https://wa.me/${phoneForWhatsApp}?text=${encodedMessage}`;
-
     window.open(whatsappUrl, '_blank');
   }
 
