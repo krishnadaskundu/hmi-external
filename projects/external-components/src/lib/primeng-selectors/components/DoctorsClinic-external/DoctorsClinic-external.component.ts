@@ -1,11 +1,10 @@
-// doctors-clinic.component.ts
-
 /**
  * DoctorsClinicComponent
  * ----------------------
  * - Patient management with IndexedDB (idb)
  * - Add/search patients, set appointments, send WhatsApp reminders
  * - Inline HTML & CSS, Angular 18 compatible, strict typing enforced
+ * - Patient name field now shows a required asterisk (*)
  */
 
 import { Component, OnInit } from '@angular/core';
@@ -45,7 +44,7 @@ interface ClinicDB extends DBSchema {
       <h2 class="mb-3">Add New Patient</h2>
       <div class="row g-3">
         <div class="col-md-6">
-          <label class="form-label">Name:
+          <label class="form-label">Name: <span class="text-danger">*</span>
             <input formControlName="name" required class="form-control" />
           </label>
           <div *ngIf="patientForm.get('name')?.invalid && patientForm.get('name')?.touched" class="text-danger small">
