@@ -3,7 +3,7 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 
 /*
   Features:
-  - Triggers notification every 20 seconds using Service Worker if available, else falls back to Notification API.
+  - Triggers notification every 5 minutes using Service Worker if available, else falls back to Notification API.
   - Requests user permission for notifications.
   - Download/Upload app data (.txt) via provided functions.
   - App data stored in localStorage.
@@ -29,10 +29,10 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
       </div>
       <div class="card-body">
         <div *ngIf="!permissionGranted" class="alert alert-warning" role="alert">
-          Please allow notifications to receive push alerts every 20 seconds.
+          Please allow notifications to receive push alerts every 5 minutes.
         </div>
         <div *ngIf="permissionGranted" class="alert alert-success" role="alert">
-          Notifications enabled! You will get a notification every 20 seconds while this page is open.
+          Notifications enabled! You will get a notification every 5 minutes while this page is open.
         </div>
         <p class="mb-2">App Data (stored in localStorage):</p>
         <pre class="bg-light p-2 rounded">{{ appData | json }}</pre>
@@ -48,6 +48,7 @@ export class NotificationComponent extends CommonExternalComponent {
   public permissionGranted: boolean = false;
   public appData: Record<string, unknown> = {};
   private notificationIntervalId: number | null = null;
+  private readonly NOTIFICATION_INTERVAL_MS: number = 300000; // 5 minutes
 
   constructor(private cdr: ChangeDetectorRef) {
     super();
@@ -87,7 +88,7 @@ export class NotificationComponent extends CommonExternalComponent {
     this.sendNotification(); // Send first immediately
     this.notificationIntervalId = window.setInterval(() => {
       this.sendNotification();
-    }, 20000);
+    }, this.NOTIFICATION_INTERVAL_MS);
   }
 
   private async sendNotification(): Promise<void> {
