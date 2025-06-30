@@ -3,12 +3,12 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
 
 /*
   Features:
-  - Sends browser push notifications every 20 seconds while app is open.
-  - Requests notification permission from user.
-  - Download and upload app data (.txt) using base class functions.
-  - App data is stored in localStorage by default.
-  - Bootstrap 5 used for styling.
-  - Note: Background notifications (when app/tab is closed) require Service Worker & server integration.
+  - Triggers notification every 20 seconds using Service Worker if available, else falls back to Notification API.
+  - Requests user permission for notifications.
+  - Download/Upload app data (.txt) via provided functions.
+  - App data stored in localStorage.
+  - Bootstrap 5 styling.
+  - Note: This works only while app/tab is open; background push requires backend + service worker push event.
 */
 
 @Component({
@@ -16,7 +16,7 @@ import { CommonExternalComponent } from '../common-external/common-external.comp
   template: `
     <div class="card shadow-sm">
       <div class="card-header d-flex justify-content-between align-items-center">
-        <span><i class="bi bi-bell"></i> Push Notification Demo</span>
+        <span><i class="bi bi-bell"></i> Push Notification Demo (Service Worker)</span>
         <div>
           <button type="button" class="btn btn-outline-primary btn-sm me-2" (click)="downloadData()">
             <i class="bi bi-download"></i> Download Data
@@ -90,14 +90,25 @@ export class NotificationComponent extends CommonExternalComponent {
     }, 20000);
   }
 
-  private sendNotification(): void {
-    const title: string = 'Angular Push Notification';
-    const options: NotificationOptions = {
-      body: 'You are receiving this notification every 20 seconds!',
-      icon: 'https://cdn-icons-png.flaticon.com/512/1827/1827379.png'
-    };
+  private async sendNotification(): Promise<void> {
+    const title: string = 'Angular SW Notification';
+    const body: string = 'This notification uses Service Worker if available!';
+    const icon: string = 'https://cdn-icons-png.flaticon.com/512/1827/1827379.png';
     try {
-      new Notification(title, options);
+      if ('serviceWorker' in navigator) {
+        const registration = await navigator.serviceWorker.getRegistration();
+        if (registration) {
+          registration.showNotification(title, {
+            body,
+            icon,
+            tag: 'local-notification'
+          });
+        } else {
+          new Notification(title, { body, icon });
+        }
+      } else {
+        new Notification(title, { body, icon });
+      }
       this.updateAppData();
     } catch (e) {
       // Ignore errors if notifications blocked
@@ -105,7 +116,6 @@ export class NotificationComponent extends CommonExternalComponent {
   }
 
   private updateAppData(): void {
-    // Example: increment counter for notifications sent
     const count: number = Number(localStorage.getItem('notification_count')) || 0;
     const newCount: number = count + 1;
     localStorage.setItem('notification_count', String(newCount));
