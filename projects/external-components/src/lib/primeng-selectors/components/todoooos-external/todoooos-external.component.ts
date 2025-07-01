@@ -1,23 +1,25 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
+// Importing @capacitor/core as required
+import { Capacitor } from '@capacitor/core'; // @capacitor/core@7.4.0
 
 /*
   Features:
   - Add, delete, and mark todos as completed.
-  - Set a notification time for each todo; browser notification will be sent at set time if permission granted.
-  - Download current todo list as a .txt file (JSON format) using componentDataDownloader().
-  - Upload a .txt file to update the todo list via componentDataUploader(event).
-  - Uses Bootstrap 5 for styling.
-  - All changes are synced to localStorage.
-  - Uploaded data is immediately reflected in UI with manual change detection.
-  - Notification feature uses browser Notification API. User must allow notifications.
+  - Set notification time for each todo; browser notification sent at set time if allowed.
+  - Download/upload todo list as .txt (JSON) via componentDataDownloader/componentDataUploader.
+  - Bootstrap 5 styling throughout, inline HTML/CSS.
+  - All changes synced to localStorage by default.
+  - Uploaded file data is immediately reflected in UI.
+  - Strict type checking for all variables.
+  - Prepared for Capacitor integration (@capacitor/core@7.4.0).
 */
 
 interface TodoItem {
   id: number;
   text: string;
   completed: boolean;
-  notifyTime?: string; // ISO string or empty
+  notifyTime?: string;
   notified?: boolean;
 }
 
@@ -49,7 +51,7 @@ interface TodoItem {
             <span class="input-group-text"><i class="bi bi-clock"></i></span>
             <input type="datetime-local" class="form-control"
               [(ngModel)]="newNotifyTime" name="notifyTime"
-              min="{{minDateTime}}" max="9999-12-31T23:59">
+              [min]="minDateTime" max="9999-12-31T23:59">
             <span class="input-group-text small text-muted">Notification time (optional)</span>
           </div>
         </form>
@@ -96,10 +98,10 @@ export class TodoooosComponent extends CommonExternalComponent {
   todos: TodoItem[] = [];
   newTodoText: string = '';
   newNotifyTime: string = '';
-  private readonly STORAGE_KEY = 'todoooos-data';
+  readonly STORAGE_KEY: string = 'todoooos-data';
   minDateTime: string = '';
 
-  private notificationTimers: Map<number, any> = new Map();
+  private notificationTimers: Map<number, ReturnType<typeof setTimeout>> = new Map();
 
   constructor(private cdr: ChangeDetectorRef) {
     super();
@@ -107,11 +109,13 @@ export class TodoooosComponent extends CommonExternalComponent {
     this.loadFromLocalStorage();
     this.requestNotificationPermission();
     this.scheduleAllNotifications();
+    // Example: Log Capacitor platform info (not required for functionality)
+    // console.log('Capacitor platform:', Capacitor.getPlatform());
   }
 
   addTodo(): void {
-    const trimmed = this.newTodoText.trim();
-    if (trimmed.length === 0) return;
+    const trimmed: string = this.newTodoText.trim();
+    if (!trimmed) return;
     const newTodo: TodoItem = {
       id: Date.now(),
       text: trimmed,
@@ -127,7 +131,7 @@ export class TodoooosComponent extends CommonExternalComponent {
   }
 
   deleteTodo(todo: TodoItem): void {
-    this.todos = this.todos.filter(t => t.id !== todo.id);
+    this.todos = this.todos.filter((t: TodoItem) => t.id !== todo.id);
     this.saveToLocalStorage();
     this.cancelNotification(todo.id);
   }
@@ -155,9 +159,9 @@ export class TodoooosComponent extends CommonExternalComponent {
 
   async uploadTodos(event: Event): Promise<void> {
     try {
-      const result = await this.componentDataUploader(event);
+      const result: any = await this.componentDataUploader(event);
       if (result && Array.isArray(result.todos)) {
-        this.todos = result.todos.map((t: any) => ({
+        this.todos = result.todos.map((t: any): TodoItem => ({
           id: typeof t.id === 'number' ? t.id : Date.now(),
           text: typeof t.text === 'string' ? t.text : '',
           completed: !!t.completed,
@@ -177,19 +181,19 @@ export class TodoooosComponent extends CommonExternalComponent {
   }
 
   private loadFromLocalStorage(): void {
-    const data = localStorage.getItem(this.STORAGE_KEY);
+    const data: string | null = localStorage.getItem(this.STORAGE_KEY);
     if (data) {
       try {
-        const parsed = JSON.parse(data);
+        const parsed: unknown = JSON.parse(data);
         if (Array.isArray(parsed)) {
-          this.todos = parsed;
+          this.todos = parsed as TodoItem[];
         }
       } catch {}
     }
   }
 
   private setMinDateTime(): void {
-    const now = new Date();
+    const now: Date = new Date();
     now.setSeconds(0, 0);
     this.minDateTime = now.toISOString().slice(0,16);
   }
@@ -212,11 +216,11 @@ export class TodoooosComponent extends CommonExternalComponent {
       Notification.permission !== 'granted'
     ) return;
 
-    const notifyDate = new Date(todo.notifyTime);
-    const now = new Date();
+    const notifyDate: Date = new Date(todo.notifyTime);
+    const now: Date = new Date();
     if (isNaN(notifyDate.getTime()) || notifyDate <= now) return;
 
-    const delay = notifyDate.getTime() - now.getTime();
+    const delay: number = notifyDate.getTime() - now.getTime();
     const timer = setTimeout(() => {
       this.showNotification(todo);
       todo.notified = true;
@@ -236,7 +240,7 @@ export class TodoooosComponent extends CommonExternalComponent {
   }
 
   private scheduleAllNotifications(): void {
-    this.notificationTimers.forEach((timer, id) => clearTimeout(timer));
+    this.notificationTimers.forEach((timer: any, id: number) => clearTimeout(timer));
     this.notificationTimers.clear();
     if ('Notification' in window && Notification.permission === 'granted') {
       for (const todo of this.todos) {
@@ -249,15 +253,16 @@ export class TodoooosComponent extends CommonExternalComponent {
     if ('Notification' in window && Notification.permission === 'granted') {
       new Notification('Todo Reminder', {
         body: todo.text,
-        icon: 'https://cdn-icons-png.flaticon.com/512/726/726476.png', // Example icon
+        icon: 'https://cdn-icons-png.flaticon.com/512/726/726476.png',
         tag: 'todoooos-' + todo.id
       });
     }
+    // For future: Use Capacitor Push/Local Notifications here if running on mobile
   }
 
   formatNotifyTime(dt: string | undefined): string {
     if (!dt) return '';
-    const date = new Date(dt);
+    const date: Date = new Date(dt);
     if (isNaN(date.getTime())) return '';
     return date.toLocaleString();
   }
