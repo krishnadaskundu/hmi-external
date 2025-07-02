@@ -1,4 +1,3 @@
-import { TicTacToeAdvanceComponent } from './components/tic-tac-toe-advance-external/tic-tac-toe-advance-external.component';
 import { NgModule } from '@angular/core';
 import { PasswordExternalComponent } from './components/password-external/password-external.component';
 import { TextExternalComponent } from './components/text-external/text-external.component';
@@ -21,7 +20,8 @@ import { providePrimeNG } from 'primeng/config';
 import CustomPreset from './custom-theme';
 
 @NgModule({
-    declarations: [PasswordExternalComponent,
+    declarations: [
+        PasswordExternalComponent,
         TextExternalComponent,
         TableExternalComponent,
         FilterGroupExternalComponent,
@@ -31,9 +31,11 @@ import CustomPreset from './custom-theme';
         IframeExternalComponent,
         ListPipe,
         GenerateWithAiComponent,
-        StackblitzEditorComponent, TicTacToeAdvanceComponent],
+        StackblitzEditorComponent
+    ],
     imports: IMPORT_MODULES,
-    exports: [PasswordExternalComponent,
+    exports: [
+        PasswordExternalComponent,
         TextExternalComponent,
         TableExternalComponent,
         FilterGroupExternalComponent,
@@ -41,7 +43,8 @@ import CustomPreset from './custom-theme';
         DropdownExternal,
         IframeExternalComponent,
         ChartsExternalComponent, PasswordModule, DropdownModule,
-        GenerateWithAiComponent, TicTacToeAdvanceComponent],
+        GenerateWithAiComponent
+    ],
     providers: [
         DialogService,
         providePrimeNG({ 
