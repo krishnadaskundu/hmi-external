@@ -1,18 +1,17 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
-// Importing @capacitor/core as required
-import { Capacitor } from '@capacitor/core'; // @capacitor/core >=7.0.0
+import { Capacitor } from '@capacitor/core';
 
 /*
   Features:
   - Add, delete, and mark todos as completed.
-  - Set notification time for each todo; browser notification sent at set time if allowed.
+  - Set notification time per todo; browser notification sent at set time if allowed.
   - Download/upload todo list as .txt (JSON) via componentDataDownloader/componentDataUploader.
   - Bootstrap 5 styling throughout, inline HTML/CSS.
   - All changes synced to localStorage by default.
   - Uploaded file data is immediately reflected in UI.
   - Strict type checking for all variables.
-  - Prepared for Capacitor integration (@capacitor/core >=7.0.0).
+  - Uses @capacitor/core >=7.0.0 for future mobile integration/readiness.
 */
 
 interface TodoItem {
@@ -109,7 +108,7 @@ export class TodoooosComponent extends CommonExternalComponent {
     this.loadFromLocalStorage();
     this.requestNotificationPermission();
     this.scheduleAllNotifications();
-    // Example: Log Capacitor platform info (not required for functionality)
+    // Optional: Log Capacitor platform info for debug
     // console.log('Capacitor platform:', Capacitor.getPlatform());
   }
 
@@ -257,7 +256,7 @@ export class TodoooosComponent extends CommonExternalComponent {
         tag: 'todoooos-' + todo.id
       });
     }
-    // For future: Use Capacitor Push/Local Notifications here if running on mobile
+    // For mobile: Use Capacitor Push/Local Notifications here if needed in future
   }
 
   formatNotifyTime(dt: string | undefined): string {
