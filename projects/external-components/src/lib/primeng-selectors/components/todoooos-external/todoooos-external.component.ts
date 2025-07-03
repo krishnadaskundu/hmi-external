@@ -1,7 +1,7 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 // Importing @capacitor/core as required
-import { Capacitor } from '@capacitor/core'; // @capacitor/core@7.4.0
+import { Capacitor } from '@capacitor/core'; // @capacitor/core >=7.0.0
 
 /*
   Features:
@@ -12,7 +12,7 @@ import { Capacitor } from '@capacitor/core'; // @capacitor/core@7.4.0
   - All changes synced to localStorage by default.
   - Uploaded file data is immediately reflected in UI.
   - Strict type checking for all variables.
-  - Prepared for Capacitor integration (@capacitor/core@7.4.0).
+  - Prepared for Capacitor integration (@capacitor/core >=7.0.0).
 */
 
 interface TodoItem {
