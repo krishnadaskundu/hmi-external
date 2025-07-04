@@ -108,7 +108,7 @@ export class TodoooosComponent extends CommonExternalComponent {
     this.loadFromLocalStorage();
     this.requestNotificationPermission();
     this.scheduleAllNotifications();
-    // Optional: Log Capacitor platform info for debug
+    // Optional: Log Capacitor platform info for debug/future use
     // console.log('Capacitor platform:', Capacitor.getPlatform());
   }
 
