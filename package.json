@@ -24,7 +24,9 @@
     "@angular/router": "18.2.13",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.14.10"
+    "zone.js": "~0.14.10",
+    "@capacitor/core": ">=7.0.0",
+    "@capacitor/local-notifications": "7.0.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.2.12",
