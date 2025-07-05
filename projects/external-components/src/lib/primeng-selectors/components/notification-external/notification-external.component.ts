@@ -1,17 +1,16 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
 import { LocalNotifications, PermissionStatus } from '@capacitor/local-notifications';
 
 /*
   Features:
-  - User can schedule a notification at any future date & time (Android background/foreground supported).
-  - Uses @capacitor/local-notifications for device notifications.
+  - Schedule device notifications at any future date & time (Android background/foreground supported).
+  - Uses @capacitor/local-notifications v7+, @capacitor/core v7+.
   - Requests notification permission if not granted.
   - Lists all scheduled notifications with cancel option.
-  - Download/Upload app data (.txt) via provided functions.
-  - App data (scheduled notifications) stored in localStorage.
-  - Download only happens on explicit user action (Download button), never on schedule/cancel.
-  - Bootstrap 5 styling.
+  - Download/upload scheduled notifications as .txt via provided functions.
+  - Data persists in localStorage by default.
+  - Strict typing, bootstrap 5 styling, change detection on upload.
 */
 
 @Component({
@@ -31,7 +30,7 @@ import { LocalNotifications, PermissionStatus } from '@capacitor/local-notificat
         </div>
       </div>
       <div class="card-body">
-        <form class="row g-2 align-items-end mb-4" (ngSubmit)="scheduleNotification()" #notifForm="ngForm">
+        <form class="row g-2 align-items-end mb-4" (ngSubmit)="scheduleNotification()" #notifForm="ngForm" autocomplete="off">
           <div class="col-md-5">
             <label class="form-label mb-1">Date</label>
             <input type="date" class="form-control form-control-sm" [(ngModel)]="date" name="date" required [min]="minDate"/>
@@ -73,7 +72,8 @@ import { LocalNotifications, PermissionStatus } from '@capacitor/local-notificat
                   <span class="badge bg-secondary" *ngIf="n.datetime <= now">Past</span>
                 </td>
                 <td>
-                  <button class="btn btn-outline-danger btn-sm px-2 py-0" (click)="cancelNotification(n.id)" [disabled]="n.datetime <= now">
+                  <button class="btn btn-outline-danger btn-sm px-2 py-0"
+                    (click)="cancelNotification(n.id)" [disabled]="n.datetime <= now">
                     <i class="bi bi-x-lg"></i>
                   </button>
                 </td>
@@ -91,7 +91,7 @@ import { LocalNotifications, PermissionStatus } from '@capacitor/local-notificat
     .table td, .table th { font-size: 0.97rem; }
   `]
 })
-export class NotificationComponent extends CommonExternalComponent {
+export class NotificationComponent extends CommonExternalComponent implements OnInit, OnDestroy {
   public permissionGranted: boolean = false;
   public date: string = '';
   public time: string = '';
@@ -99,16 +99,25 @@ export class NotificationComponent extends CommonExternalComponent {
   public now: number = Date.now();
   public minDate: string = '';
 
+  private intervalId: ReturnType<typeof setInterval> | null = null;
+
   constructor(private cdr: ChangeDetectorRef) {
     super();
     this.minDate = new Date().toISOString().split('T')[0];
     this.loadAppData();
-    setInterval(() => { this.now = Date.now(); }, 1000 * 30);
+    this.intervalId = setInterval(() => {
+      this.now = Date.now();
+      this.cdr.markForCheck();
+    }, 30_000);
   }
 
   ngOnInit(): void {
     this.checkNotificationPermission();
     this.refreshScheduled();
+  }
+
+  ngOnDestroy(): void {
+    if (this.intervalId) clearInterval(this.intervalId);
   }
 
   private async checkNotificationPermission(): Promise<void> {
@@ -125,12 +134,25 @@ export class NotificationComponent extends CommonExternalComponent {
     if (!this.date || !this.time) return;
     const [year, month, day] = this.date.split('-').map(Number);
     const [hour, minute] = this.time.split(':').map(Number);
-    const dt = new Date(year, month - 1, day, hour, minute, 0);
+
+    // Ensure valid numbers
+    if (
+      isNaN(year) || isNaN(month) || isNaN(day) ||
+      isNaN(hour) || isNaN(minute)
+    ) {
+      alert('Invalid date or time.');
+      return;
+    }
+
+    const dt: Date = new Date(year, month - 1, day, hour, minute, 0);
+
     if (dt.getTime() <= Date.now()) {
       alert('Please select a future date and time.');
       return;
     }
-    const id = this.getNextId();
+
+    const id: number = this.getNextId();
+
     try {
       await LocalNotifications.schedule({
         notifications: [{
@@ -154,13 +176,13 @@ export class NotificationComponent extends CommonExternalComponent {
 
   async cancelNotification(id: number): Promise<void> {
     await LocalNotifications.cancel({ notifications: [{ id }] });
-    this.notifications = this.notifications.filter(n => n.id !== id);
+    this.notifications = this.notifications.filter((n) => n.id !== id);
     this.saveAppData();
     this.cdr.detectChanges();
   }
 
   private getNextId(): number {
-    const ids = this.notifications.map(n => n.id);
+    const ids: number[] = this.notifications.map((n) => n.id);
     let next = 1;
     while (ids.includes(next)) next++;
     return next;
@@ -168,11 +190,10 @@ export class NotificationComponent extends CommonExternalComponent {
 
   private saveAppData(): void {
     localStorage.setItem('scheduled_notifications', JSON.stringify(this.notifications));
-    // No call to componentDataDownloader here!
   }
 
   private loadAppData(): void {
-    const raw = localStorage.getItem('scheduled_notifications');
+    const raw: string | null = localStorage.getItem('scheduled_notifications');
     this.notifications = raw ? JSON.parse(raw) : [];
   }
 
@@ -181,7 +202,7 @@ export class NotificationComponent extends CommonExternalComponent {
   }
 
   async uploadData(event: Event): Promise<void> {
-    const uploaded = await this.componentDataUploader(event);
+    const uploaded: unknown = await this.componentDataUploader(event);
     if (Array.isArray(uploaded)) {
       this.notifications = uploaded.map((n: any) => ({
         id: Number(n.id),
@@ -194,6 +215,6 @@ export class NotificationComponent extends CommonExternalComponent {
   }
 
   private async refreshScheduled(): Promise<void> {
-    // Optionally sync with device scheduled notifications
+    // Optionally could sync with device notifications here.
   }
 }
