@@ -4,8 +4,7 @@ import { LocalNotifications, PermissionStatus } from '@capacitor/local-notificat
 
 /*
   Features:
-  - Schedule device notifications at any future date & time (Android background/foreground supported).
-  - Uses @capacitor/local-notifications v7.0.1, @capacitor/core >=7.0.0.
+  - Schedule device notifications at any future date & time (Android foreground/background supported).
   - Requests notification permission if not granted.
   - Lists all scheduled notifications with cancel option.
   - Download/upload scheduled notifications as .txt via provided functions.
