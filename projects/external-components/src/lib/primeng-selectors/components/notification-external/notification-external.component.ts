@@ -112,7 +112,7 @@ export class NotificationComponent extends CommonExternalComponent implements On
   }
 
   ngOnInit(): void {
-    LocalNotifications.requestPermissions(); // You do this
+    LocalNotifications.requestPermissions();
     LocalNotifications.registerActionTypes({
       types: [
         {
@@ -146,8 +146,8 @@ export class NotificationComponent extends CommonExternalComponent implements On
 
   async scheduleNotification(): Promise<void> {
     if (!this.date || !this.time) return;
-    const [year, month, day] = this.date.split('-').map(Number);
-    const [hour, minute] = this.time.split(':').map(Number);
+    const [year, month, day]: number[] = this.date.split('-').map(Number);
+    const [hour, minute]: number[] = this.time.split(':').map(Number);
 
     // Ensure valid numbers
     if (
