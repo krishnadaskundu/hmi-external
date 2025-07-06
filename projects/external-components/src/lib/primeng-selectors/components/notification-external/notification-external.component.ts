@@ -10,6 +10,7 @@ import { LocalNotifications, PermissionStatus } from '@capacitor/local-notificat
   - Download/upload scheduled notifications as .txt via provided functions.
   - Data persists in localStorage by default.
   - Strict typing, bootstrap 5 styling, change detection on upload.
+  - Notification sound property is not set (no sound field in schedule).
 */
 
 @Component({
@@ -159,8 +160,8 @@ export class NotificationComponent extends CommonExternalComponent implements On
           body: `Your notification for ${dt.toLocaleString()}`,
           id,
           schedule: { at: dt },
-          sound: null,
           smallIcon: 'ic_stat_icon_config_sample'
+          // sound property intentionally omitted
         }]
       });
       this.notifications.push({ id, datetime: dt.getTime() });
