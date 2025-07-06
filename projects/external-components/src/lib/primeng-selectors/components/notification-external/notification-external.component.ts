@@ -112,6 +112,20 @@ export class NotificationComponent extends CommonExternalComponent implements On
   }
 
   ngOnInit(): void {
+    LocalNotifications.requestPermissions(); // You do this
+    LocalNotifications.registerActionTypes({
+      types: [
+        {
+          id: 'default',
+          actions: [
+            {
+              id: 'view',
+              title: 'View',
+            },
+          ],
+        },
+      ],
+    });
     this.checkNotificationPermission();
     this.refreshScheduled();
   }
