@@ -15,7 +15,12 @@
     "@stackblitz/sdk",
     "@primeng/themes",
     "@capacitor/core",
-    "@capacitor/local-notifications"
+    "@capacitor/local-notifications",
+    "@angular/common",
+    "@angular/forms",
+    "@angular/core",
+    "@angular/common/http",
+    "bootstrap"
   ],
   "assets": [
     "styles.scss",
