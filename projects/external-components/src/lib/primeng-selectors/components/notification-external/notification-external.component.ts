@@ -1,234 +1,195 @@
-import { Component, ChangeDetectorRef, OnInit, OnDestroy } from '@angular/core';
+// notification.component.ts
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
-import { LocalNotifications, PermissionStatus } from '@capacitor/local-notifications';
 
-/*
-  Features:
-  - Schedule device notifications at any future date & time (Android foreground/background supported).
-  - Requests notification permission if not granted.
-  - Lists all scheduled notifications with cancel option.
-  - Download/upload scheduled notifications as .txt via provided functions.
-  - Data persists in localStorage by default.
-  - Strict typing, bootstrap 5 styling, change detection on upload.
-  - Notification sound property is not set (no sound field in schedule).
-*/
+interface NotificationData {
+  notifications: ScheduledNotification[];
+}
+
+interface ScheduledNotification {
+  id: number;
+  message: string;
+  dateTime: string; // ISO string
+  shown: boolean;
+}
 
 @Component({
   selector: 'app-notification',
   template: `
-    <div class="card shadow-sm">
-      <div class="card-header d-flex justify-content-between align-items-center">
-        <span><i class="bi bi-bell"></i> Schedule Notification</span>
+    <!-- 
+      Features:
+      - Schedule notifications with custom message and date/time.
+      - Notifications list with status (upcoming/shown).
+      - Download/upload all scheduled notifications as .txt file.
+      - Uses local storage to persist data.
+      - Simple, responsive design using Bootstrap 5 & PrimeIcons.
+    -->
+    <div class="card shadow-sm my-3">
+      <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
+        <span>
+          <i class="pi pi-bell"></i>
+          Notification Scheduler
+        </span>
         <div>
-          <button type="button" class="btn btn-outline-primary btn-sm me-2" (click)="downloadData()">
-            <i class="bi bi-download"></i> Download Data
+          <button class="btn btn-light btn-sm me-2" title="Download Data"
+            (click)="downloadData()">
+            <i class="pi pi-download"></i>
           </button>
-          <label class="btn btn-outline-secondary btn-sm mb-0">
-            <i class="bi bi-upload"></i> Upload Data
+          <label class="btn btn-light btn-sm mb-0" title="Upload Data">
+            <i class="pi pi-upload"></i>
             <input type="file" accept=".txt" hidden (change)="uploadData($event)">
           </label>
         </div>
       </div>
       <div class="card-body">
-        <form class="row g-2 align-items-end mb-4" (ngSubmit)="scheduleNotification()" #notifForm="ngForm" autocomplete="off">
-          <div class="col-md-5">
-            <label class="form-label mb-1">Date</label>
-            <input type="date" class="form-control form-control-sm" [(ngModel)]="date" name="date" required [min]="minDate"/>
+        <form class="row g-2 align-items-end" (ngSubmit)="scheduleNotification()" #notifForm="ngForm">
+          <div class="col-md-6">
+            <label for="message" class="form-label">Message</label>
+            <input required [(ngModel)]="newNotification.message" name="message" id="message" maxlength="100"
+              class="form-control" placeholder="Enter notification message" />
           </div>
           <div class="col-md-4">
-            <label class="form-label mb-1">Time</label>
-            <input type="time" class="form-control form-control-sm" [(ngModel)]="time" name="time" required/>
+            <label for="dateTime" class="form-label">Date & Time</label>
+            <input required [(ngModel)]="newNotification.dateTime" name="dateTime" id="dateTime"
+              class="form-control" type="datetime-local" />
           </div>
-          <div class="col-md-3 d-grid">
-            <button type="submit" class="btn btn-success btn-sm" [disabled]="!date || !time">Schedule</button>
+          <div class="col-md-2">
+            <button [disabled]="!newNotification.message || !newNotification.dateTime"
+              class="btn btn-success w-100" type="submit">
+              <i class="pi pi-plus"></i> Schedule
+            </button>
           </div>
         </form>
-
-        <div *ngIf="!permissionGranted" class="alert alert-warning py-2" role="alert">
-          Please allow notifications to schedule alerts.
+        <hr>
+        <div *ngIf="notifications.length === 0" class="text-muted text-center mt-4">
+          <i class="pi pi-info-circle"></i> No notifications scheduled.
         </div>
-        <div *ngIf="permissionGranted" class="alert alert-success py-2" role="alert">
-          Notifications enabled! Scheduled notifications will work even in background (Android).
-        </div>
-
-        <h6 class="mt-4 mb-2">Scheduled Notifications</h6>
-        <div *ngIf="notifications.length === 0" class="text-muted small mb-2">No notifications scheduled.</div>
-        <div *ngIf="notifications.length > 0" class="table-responsive">
-          <table class="table table-bordered table-sm align-middle mb-0">
-            <thead class="table-light">
-              <tr>
-                <th>#</th>
-                <th>Date & Time</th>
-                <th>Status</th>
-                <th>Cancel</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let n of notifications; let i = index">
-                <td>{{ i + 1 }}</td>
-                <td>{{ n.datetime | date:'medium' }}</td>
-                <td>
-                  <span class="badge bg-success" *ngIf="n.datetime > now">Scheduled</span>
-                  <span class="badge bg-secondary" *ngIf="n.datetime <= now">Past</span>
-                </td>
-                <td>
-                  <button class="btn btn-outline-danger btn-sm px-2 py-0"
-                    (click)="cancelNotification(n.id)" [disabled]="n.datetime <= now">
-                    <i class="bi bi-x-lg"></i>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <ul class="list-group mt-2" *ngIf="notifications.length > 0">
+          <li *ngFor="let notif of notifications" class="list-group-item d-flex justify-content-between align-items-center"
+              [class.list-group-item-success]="notif.shown"
+              [class.list-group-item-warning]="!notif.shown && isUpcoming(notif)">
+            <div>
+              <i class="pi pi-clock text-secondary me-2"></i>
+              <strong>{{ notif.message }}</strong>
+              <br>
+              <small class="text-muted">
+                {{ notif.dateTime | date:'medium' }}
+              </small>
+              <span *ngIf="notif.shown" class="badge bg-success ms-2">
+                <i class="pi pi-check"></i> Shown
+              </span>
+              <span *ngIf="!notif.shown && isUpcoming(notif)" class="badge bg-warning text-dark ms-2">
+                <i class="pi pi-hourglass"></i> Upcoming
+              </span>
+              <span *ngIf="!notif.shown && !isUpcoming(notif)" class="badge bg-danger ms-2">
+                <i class="pi pi-times"></i> Missed
+              </span>
+            </div>
+            <button class="btn btn-outline-danger btn-sm" (click)="deleteNotification(notif.id)">
+              <i class="pi pi-trash"></i>
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
   `,
   styles: [`
-    .card { max-width: 540px; margin: 2rem auto; }
-    th, td { vertical-align: middle; }
-    .form-label { font-size: 0.92rem; }
-    .table td, .table th { font-size: 0.97rem; }
+    .card { max-width: 600px; margin: auto; }
+    input[type="datetime-local"]::-webkit-calendar-picker-indicator { filter: invert(0.5); }
+    .list-group-item { transition: background 0.2s; }
   `]
 })
-export class NotificationComponent extends CommonExternalComponent implements OnInit, OnDestroy {
-  public permissionGranted: boolean = false;
-  public date: string = '';
-  public time: string = '';
-  public notifications: Array<{ id: number, datetime: number }> = [];
-  public now: number = Date.now();
-  public minDate: string = '';
+export class NotificationComponent extends CommonExternalComponent {
+  notifications: ScheduledNotification[] = [];
+  newNotification: { message: string; dateTime: string } = { message: '', dateTime: '' };
+  private readonly LS_KEY = 'notification_app_data';
 
-  private intervalId: ReturnType<typeof setInterval> | null = null;
-
-  constructor(private cdr: ChangeDetectorRef) {
+  constructor(private cd: ChangeDetectorRef) {
     super();
-    this.minDate = new Date().toISOString().split('T')[0];
-    this.loadAppData();
-    this.intervalId = setInterval(() => {
-      this.now = Date.now();
-      this.cdr.markForCheck();
-    }, 30_000);
+    this.loadNotifications();
+    this.startNotificationWatcher();
   }
 
-  ngOnInit(): void {
-    LocalNotifications.requestPermissions();
-    LocalNotifications.registerActionTypes({
-      types: [
-        {
-          id: 'default',
-          actions: [
-            {
-              id: 'view',
-              title: 'View',
-            },
-          ],
-        },
-      ],
-    });
-    this.checkNotificationPermission();
-    this.refreshScheduled();
+  scheduleNotification(): void {
+    const notif: ScheduledNotification = {
+      id: Date.now(),
+      message: this.newNotification.message.trim(),
+      dateTime: this.newNotification.dateTime,
+      shown: false
+    };
+    this.notifications.push(notif);
+    this.saveNotifications();
+    this.newNotification = { message: '', dateTime: '' };
   }
 
-  ngOnDestroy(): void {
-    if (this.intervalId) clearInterval(this.intervalId);
+  deleteNotification(id: number): void {
+    this.notifications = this.notifications.filter(n => n.id !== id);
+    this.saveNotifications();
   }
 
-  private async checkNotificationPermission(): Promise<void> {
-    try {
-      const status: PermissionStatus = await LocalNotifications.requestPermissions();
-      this.permissionGranted = (status.display === 'granted');
-      this.cdr.detectChanges();
-    } catch {
-      this.permissionGranted = false;
+  saveNotifications(): void {
+    const data: NotificationData = { notifications: this.notifications };
+    localStorage.setItem(this.LS_KEY, JSON.stringify(data));
+  }
+
+  loadNotifications(): void {
+    const dataStr = localStorage.getItem(this.LS_KEY);
+    if (dataStr) {
+      try {
+        const data: NotificationData = JSON.parse(dataStr);
+        this.notifications = data.notifications || [];
+      } catch {
+        this.notifications = [];
+      }
     }
-  }
-
-  async scheduleNotification(): Promise<void> {
-    if (!this.date || !this.time) return;
-    const [year, month, day]: number[] = this.date.split('-').map(Number);
-    const [hour, minute]: number[] = this.time.split(':').map(Number);
-
-    // Ensure valid numbers
-    if (
-      isNaN(year) || isNaN(month) || isNaN(day) ||
-      isNaN(hour) || isNaN(minute)
-    ) {
-      alert('Invalid date or time.');
-      return;
-    }
-
-    const dt: Date = new Date(year, month - 1, day, hour, minute, 0);
-
-    if (dt.getTime() <= Date.now()) {
-      alert('Please select a future date and time.');
-      return;
-    }
-
-    const id: number = this.getNextId();
-
-    try {
-      await LocalNotifications.schedule({
-        notifications: [{
-          title: 'Scheduled Notification',
-          body: `Your notification for ${dt.toLocaleString()}`,
-          id,
-          schedule: { at: dt },
-          smallIcon: 'ic_stat_icon_config_sample'
-          // sound property intentionally omitted
-        }]
-      });
-      this.notifications.push({ id, datetime: dt.getTime() });
-      this.saveAppData();
-      this.date = '';
-      this.time = '';
-      this.cdr.detectChanges();
-    } catch (e) {
-      alert('Failed to schedule notification.');
-    }
-  }
-
-  async cancelNotification(id: number): Promise<void> {
-    await LocalNotifications.cancel({ notifications: [{ id }] });
-    this.notifications = this.notifications.filter((n) => n.id !== id);
-    this.saveAppData();
-    this.cdr.detectChanges();
-  }
-
-  private getNextId(): number {
-    const ids: number[] = this.notifications.map((n) => n.id);
-    let next = 1;
-    while (ids.includes(next)) next++;
-    return next;
-  }
-
-  private saveAppData(): void {
-    localStorage.setItem('scheduled_notifications', JSON.stringify(this.notifications));
-  }
-
-  private loadAppData(): void {
-    const raw: string | null = localStorage.getItem('scheduled_notifications');
-    this.notifications = raw ? JSON.parse(raw) : [];
   }
 
   downloadData(): void {
-    this.componentDataDownloader(this.notifications);
+    const data: NotificationData = { notifications: this.notifications };
+    this.componentDataDownloader(data);
   }
 
   async uploadData(event: Event): Promise<void> {
-    const uploaded: unknown = await this.componentDataUploader(event);
-    if (Array.isArray(uploaded)) {
-      this.notifications = uploaded.map((n: any) => ({
-        id: Number(n.id),
-        datetime: Number(n.datetime)
-      }));
-      localStorage.setItem('scheduled_notifications', JSON.stringify(this.notifications));
-      this.refreshScheduled();
-      this.cdr.detectChanges();
+    const data = await this.componentDataUploader(event);
+    if (data && Array.isArray(data.notifications)) {
+      this.notifications = data.notifications;
+      this.saveNotifications();
+      this.cd.detectChanges();
     }
   }
 
-  private async refreshScheduled(): Promise<void> {
-    // Optionally could sync with device notifications here.
+  isUpcoming(notif: ScheduledNotification): boolean {
+    return new Date(notif.dateTime).getTime() > Date.now();
+  }
+
+  private startNotificationWatcher(): void {
+    setInterval(() => {
+      let changed = false;
+      this.notifications.forEach(n => {
+        if (!n.shown && new Date(n.dateTime).getTime() <= Date.now()) {
+          n.shown = true;
+          changed = true;
+          this.showBrowserNotification(n.message);
+        }
+      });
+      if (changed) {
+        this.saveNotifications();
+        this.cd.detectChanges();
+      }
+    }, 15000); // check every 15 seconds
+  }
+
+  private showBrowserNotification(message: string): void {
+    if ('Notification' in window) {
+      if (Notification.permission === 'granted') {
+        new Notification('Scheduled Notification', { body: message });
+      } else if (Notification.permission !== 'denied') {
+        Notification.requestPermission().then(permission => {
+          if (permission === 'granted') {
+            new Notification('Scheduled Notification', { body: message });
+          }
+        });
+      }
+    }
   }
 }
