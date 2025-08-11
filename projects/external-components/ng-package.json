@@ -14,7 +14,8 @@
     "chart.js",
     "@stackblitz/sdk",
     "@primeng/themes",
-    "@capacitor/core"
+    "@capacitor/core",
+    "bootstrap"
   ],
   "assets": [
     "styles.scss",
