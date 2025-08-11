@@ -1,17 +1,14 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { CommonExternalComponent } from '../common-external/common-external.component';
-import { Capacitor } from '@capacitor/core';
 
 /*
-  Features:
+  Features (visible to user):
   - Add, delete, and mark todos as completed.
-  - Set notification time per todo; browser notification sent at set time if allowed.
-  - Download/upload todo list as .txt (JSON) via componentDataDownloader/componentDataUploader.
-  - Bootstrap 5 styling throughout, inline HTML/CSS.
-  - All changes synced to localStorage by default.
-  - Uploaded file data is immediately reflected in UI.
-  - Strict type checking for all variables.
-  - Uses @capacitor/core >=7.0.0 for future mobile integration/readiness.
+  - Set optional notification time per todo; browser notifies you at set time if allowed.
+  - Download/upload your todo list as a .txt file for backup or restore.
+  - Clean Bootstrap 5 look with icons for actions.
+  - All data saved in your browser automatically.
+  - Uploading a backup instantly updates your list.
 */
 
 interface TodoItem {
@@ -29,31 +26,35 @@ interface TodoItem {
       <div class="card-header d-flex justify-content-between align-items-center">
         <span class="fw-bold">Todo List</span>
         <div>
+          <!-- Download Button -->
           <button type="button" class="btn btn-outline-primary btn-sm me-2"
             (click)="downloadTodos()" title="Download Todos">
-            <i class="bi bi-download"></i> Download
+            <i class="pi pi-download"></i> Download
           </button>
+          <!-- Upload Button -->
           <label class="btn btn-outline-secondary btn-sm mb-0" title="Upload Todos">
-            <i class="bi bi-upload"></i> Upload
+            <i class="pi pi-upload"></i> Upload
             <input type="file" accept=".txt" hidden (change)="uploadTodos($event)">
           </label>
         </div>
       </div>
       <div class="card-body">
+        <!-- Add Todo Form -->
         <form class="d-flex flex-column gap-2 mb-3" (submit)="addTodo()">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Add new todo"
               [(ngModel)]="newTodoText" name="todoInput" required maxlength="100" autocomplete="off">
-            <button class="btn btn-success" type="submit">Add</button>
+            <button class="btn btn-success" type="submit"><i class="pi pi-plus"></i></button>
           </div>
           <div class="input-group">
-            <span class="input-group-text"><i class="bi bi-clock"></i></span>
+            <span class="input-group-text"><i class="pi pi-clock"></i></span>
             <input type="datetime-local" class="form-control"
               [(ngModel)]="newNotifyTime" name="notifyTime"
               [min]="minDateTime" max="9999-12-31T23:59">
             <span class="input-group-text small text-muted">Notification time (optional)</span>
           </div>
         </form>
+        <!-- Todo List -->
         <ul class="list-group">
           <li *ngFor="let todo of todos" class="list-group-item d-flex justify-content-between align-items-center"
               [class.list-group-item-secondary]="todo.completed">
@@ -62,7 +63,7 @@ interface TodoItem {
                 (change)="toggleCompleted(todo)">
               <span [class.text-decoration-line-through]="todo.completed">{{ todo.text }}</span>
               <small *ngIf="todo.notifyTime" class="text-info ms-2">
-                <i class="bi bi-bell"></i>
+                <i class="pi pi-bell"></i>
                 {{ formatNotifyTime(todo.notifyTime) }}
                 <span *ngIf="todo.notified" class="badge bg-success ms-1">Notified</span>
               </small>
@@ -71,10 +72,10 @@ interface TodoItem {
               <button *ngIf="!todo.completed && todo.notifyTime"
                 class="btn btn-sm btn-outline-danger"
                 (click)="removeNotifyTime(todo)" title="Remove notification time">
-                <i class="bi bi-bell-slash"></i>
+                <i class="pi pi-bell-slash"></i>
               </button>
               <button class="btn btn-sm btn-danger" (click)="deleteTodo(todo)" title="Delete">
-                <i class="bi bi-trash"></i>
+                <i class="pi pi-trash"></i>
               </button>
             </div>
           </li>
@@ -108,8 +109,6 @@ export class TodoooosComponent extends CommonExternalComponent {
     this.loadFromLocalStorage();
     this.requestNotificationPermission();
     this.scheduleAllNotifications();
-    // Optional: Log Capacitor platform info for debug/future use
-    // console.log('Capacitor platform:', Capacitor.getPlatform());
   }
 
   addTodo(): void {
@@ -256,7 +255,6 @@ export class TodoooosComponent extends CommonExternalComponent {
         tag: 'todoooos-' + todo.id
       });
     }
-    // For mobile: Use Capacitor Push/Local Notifications here if needed in future
   }
 
   formatNotifyTime(dt: string | undefined): string {
