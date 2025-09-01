@@ -18,7 +18,31 @@
         },
         "orientation": null
       },
-      "events": [],
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "openurl",
+              "url": "google.com",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "_blank",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
       "expressionProperties": {},
       "value": null,
       "placeholder": null,
