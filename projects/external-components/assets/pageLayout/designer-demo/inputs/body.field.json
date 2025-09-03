@@ -29,7 +29,7 @@
         "name": "textDescription"
       },
       "layoutProperties": {
-        "labelPlacement": null,
+        "labelPlacement": "left",
         "width": null,
         "height": null,
         "css": {
