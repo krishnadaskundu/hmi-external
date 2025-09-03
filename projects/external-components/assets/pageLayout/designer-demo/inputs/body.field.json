@@ -1,3 +1,72 @@
 {
-  "db-0": []
+  "db-0": [
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-1",
+        "name": "textHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Textbox",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-2",
+        "name": "textDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This is a Text box component. ",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "text",
+        "id": "db-3",
+        "name": "textbox",
+        "label": "Textbox"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "placeholder": null,
+      "accessor": null
+    }
+  ]
 }
