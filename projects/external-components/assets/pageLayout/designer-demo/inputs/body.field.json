@@ -11,8 +11,15 @@
         "width": null,
         "height": null,
         "css": {
-          "customClassName": "",
-          "configuration": [],
+          "customClassName": "header",
+          "configuration": [
+            {
+              "selectorName": "header",
+              "xs": {
+                "font-size": "20px"
+              }
+            }
+          ],
           "themeClass": ""
         },
         "orientation": null
