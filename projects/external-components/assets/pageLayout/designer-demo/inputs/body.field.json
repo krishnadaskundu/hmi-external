@@ -4,7 +4,7 @@
       "baseProperties": {
         "type": "staticText",
         "id": "db-1",
-        "name": "textHeading"
+        "name": "heading"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -17,7 +17,7 @@
               "selectorName": ".header",
               "xs": {
                 "font-size": "25px",
-                "justify-content":"flex-start",
+                "justify-content": "flex-start",
                 "font-weight": "bold"
               }
             }
@@ -35,20 +35,20 @@
       "baseProperties": {
         "type": "staticText",
         "id": "db-2",
-        "name": "textDescription"
+        "name": "description"
       },
       "layoutProperties": {
         "labelPlacement": "left",
         "width": null,
         "height": null,
-       "css": {
+        "css": {
           "customClassName": "sub-header",
           "configuration": [
             {
               "selectorName": ".sub-header",
               "xs": {
                 "font-size": "20px",
-                "justify-content":"flex-start"
+                "justify-content": "flex-start"
               }
             }
           ],
@@ -59,6 +59,28 @@
       "events": [],
       "expressionProperties": {},
       "value": "Various input components for different data types",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-19",
+        "name": "textHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Text",
       "dynamicValueAccessor": null
     },
     {
@@ -77,7 +99,7 @@
             {
               "selectorName": ".description",
               "xs": {
-                "justify-content":"flex-start"
+                "justify-content": "flex-start"
               }
             }
           ],
@@ -87,7 +109,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "Text: A single-line text input field for general purpose use.",
+      "value": "A single-line text input field for general purpose use.",
       "dynamicValueAccessor": null
     },
     {
@@ -110,7 +132,6 @@
                 "background": "#f1f5f9",
                 "padding": "12px"
               }
-
             }
           ],
           "themeClass": ""
@@ -139,7 +160,7 @@
             {
               "selectorName": ".description",
               "xs": {
-                "justify-content":"flex-start"
+                "justify-content": "flex-start"
               }
             }
           ],
@@ -194,13 +215,13 @@
         "labelPlacement": "left",
         "width": null,
         "height": null,
-       "css": {
+        "css": {
           "customClassName": "description",
           "configuration": [
             {
               "selectorName": ".description",
               "xs": {
-                "justify-content":"flex-start"
+                "justify-content": "flex-start"
               }
             }
           ],
@@ -261,7 +282,7 @@
             {
               "selectorName": ".description",
               "xs": {
-                "justify-content":"flex-start"
+                "justify-content": "flex-start"
               }
             }
           ],
@@ -316,13 +337,13 @@
         "labelPlacement": "left",
         "width": null,
         "height": null,
-       "css": {
+        "css": {
           "customClassName": "description",
           "configuration": [
             {
               "selectorName": ".description",
               "xs": {
-                "justify-content":"flex-start"
+                "justify-content": "flex-start"
               }
             }
           ],
@@ -383,7 +404,7 @@
             {
               "selectorName": ".description",
               "xs": {
-                "justify-content":"flex-start"
+                "justify-content": "flex-start"
               }
             }
           ],
@@ -444,7 +465,7 @@
             {
               "selectorName": ".description",
               "xs": {
-                "justify-content":"flex-start"
+                "justify-content": "flex-start"
               }
             }
           ],
@@ -505,7 +526,7 @@
             {
               "selectorName": ".description",
               "xs": {
-                "justify-content":"flex-start"
+                "justify-content": "flex-start"
               }
             }
           ],
