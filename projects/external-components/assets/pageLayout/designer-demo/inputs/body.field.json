@@ -16,7 +16,7 @@
             {
               "selectorName": ".header",
               "xs": {
-                "font-size": "25px",
+                "font-size": "30px",
                 "justify-content": "flex-start",
                 "font-weight": "bold"
               }
@@ -72,15 +72,24 @@
         "width": null,
         "height": null,
         "css": {
-          "customClassName": "",
-          "configuration": [],
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
           "themeClass": ""
         },
         "orientation": null
       },
       "events": [],
       "expressionProperties": {},
-      "value": "Text",
+      "value": "1. Text",
       "dynamicValueAccessor": null
     },
     {
@@ -147,6 +156,37 @@
     {
       "baseProperties": {
         "type": "staticText",
+        "id": "db-20",
+        "name": "emailHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "2. Email",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
         "id": "db-5",
         "name": "emailDescription"
       },
@@ -170,7 +210,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "Email: An input field specifically for entering an email address.",
+      "value": "An input field specifically for entering an email address.",
       "dynamicValueAccessor": null
     },
     {
@@ -208,6 +248,37 @@
     {
       "baseProperties": {
         "type": "staticText",
+        "id": "db-21",
+        "name": "urlHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "3. URL",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
         "id": "db-7",
         "name": "urlDescription"
       },
@@ -231,7 +302,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "URL: An input field for a web address.",
+      "value": "An input field for a web address.",
       "dynamicValueAccessor": null
     },
     {
@@ -269,6 +340,37 @@
     {
       "baseProperties": {
         "type": "staticText",
+        "id": "db-22",
+        "name": "telHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "4. Tel",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
         "id": "db-9",
         "name": "telDescription"
       },
@@ -292,7 +394,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "Tel: An input field for a telephone number.",
+      "value": "An input field for a telephone number.",
       "dynamicValueAccessor": null
     },
     {
@@ -330,6 +432,37 @@
     {
       "baseProperties": {
         "type": "staticText",
+        "id": "db-23",
+        "name": "textareaHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "5. Textarea",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
         "id": "db-11",
         "name": "textareaDescription"
       },
@@ -353,7 +486,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "Textarea: A multi-line text input field for longer text.",
+      "value": "A multi-line text input field for longer text.",
       "dynamicValueAccessor": null
     },
     {
@@ -391,6 +524,37 @@
     {
       "baseProperties": {
         "type": "staticText",
+        "id": "db-24",
+        "name": "passwordHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "6. Password",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
         "id": "db-13",
         "name": "passwordDescription"
       },
@@ -414,7 +578,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "Password: A single-line input field where characters are masked for security.",
+      "value": "A single-line input field where characters are masked for security.",
       "dynamicValueAccessor": null
     },
     {
@@ -452,6 +616,37 @@
     {
       "baseProperties": {
         "type": "staticText",
+        "id": "db-25",
+        "name": "numberHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "7. Number",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
         "id": "db-15",
         "name": "numberDescription"
       },
@@ -475,7 +670,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "Number: A single-line input field for entering a numerical value.",
+      "value": "A single-line input field for entering a numerical value.",
       "dynamicValueAccessor": null
     },
     {
@@ -513,6 +708,37 @@
     {
       "baseProperties": {
         "type": "staticText",
+        "id": "db-26",
+        "name": "hiddenHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "8. Hidden",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
         "id": "db-17",
         "name": "hiddenDescription"
       },
@@ -536,7 +762,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "Hidden: An input field that is not visible to the user but holds data to be submitted with the form.",
+      "value": "An input field that is not visible to the user but holds data to be submitted with the form.",
       "dynamicValueAccessor": null
     },
     {
