@@ -14,9 +14,11 @@
           "customClassName": "header",
           "configuration": [
             {
-              "selectorName": "header",
+              "selectorName": ".header",
               "xs": {
-                "font-size": "20px"
+                "font-size": "25px",
+                "justify-content":"flex-start",
+                "font-weight": "bold"
               }
             }
           ],
@@ -26,7 +28,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "Textbox",
+      "value": "Input Components",
       "dynamicValueAccessor": null
     },
     {
@@ -39,32 +41,78 @@
         "labelPlacement": "left",
         "width": null,
         "height": null,
-        "css": {
-          "customClassName": "",
-          "configuration": [],
+       "css": {
+          "customClassName": "sub-header",
+          "configuration": [
+            {
+              "selectorName": ".sub-header",
+              "xs": {
+                "font-size": "20px",
+                "justify-content":"flex-start"
+              }
+            }
+          ],
           "themeClass": ""
         },
         "orientation": null
       },
       "events": [],
       "expressionProperties": {},
-      "value": "This is a Text box component. ",
+      "value": "Various input components for different data types",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-3",
+        "name": "textDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content":"flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Text: A single-line text input field for general purpose use.",
       "dynamicValueAccessor": null
     },
     {
       "baseProperties": {
         "type": "text",
-        "id": "db-3",
+        "id": "db-4",
         "name": "textbox",
-        "label": "Textbox"
+        "label": "Text Input"
       },
       "layoutProperties": {
         "labelPlacement": null,
         "width": null,
         "height": null,
         "css": {
-          "customClassName": "",
-          "configuration": [],
+          "customClassName": "component-preview",
+          "configuration": [
+            {
+              "selectorName": ".component-preview",
+              "xs": {
+                "background": "#f1f5f9",
+                "padding": "12px"
+              }
+
+            }
+          ],
           "themeClass": ""
         },
         "orientation": null
@@ -72,7 +120,433 @@
       "events": [],
       "expressionProperties": {},
       "value": null,
-      "placeholder": null,
+      "placeholder": "Enter text",
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-5",
+        "name": "emailDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content":"flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Email: An input field specifically for entering an email address.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "email",
+        "id": "db-6",
+        "name": "emailInput",
+        "label": "Email Input"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-preview",
+          "configuration": [
+            {
+              "selectorName": ".component-preview",
+              "xs": {
+                "background": "#f1f5f9",
+                "padding": "12px"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "placeholder": "Enter email address",
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-7",
+        "name": "urlDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+       "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content":"flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "URL: An input field for a web address.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "url",
+        "id": "db-8",
+        "name": "urlInput",
+        "label": "URL Input"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-preview",
+          "configuration": [
+            {
+              "selectorName": ".component-preview",
+              "xs": {
+                "background": "#f1f5f9",
+                "padding": "12px"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "placeholder": "Enter URL",
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-9",
+        "name": "telDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content":"flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Tel: An input field for a telephone number.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "tel",
+        "id": "db-10",
+        "name": "telInput",
+        "label": "Telephone Input"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-preview",
+          "configuration": [
+            {
+              "selectorName": ".component-preview",
+              "xs": {
+                "background": "#f1f5f9",
+                "padding": "12px"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "placeholder": "Enter phone number",
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-11",
+        "name": "textareaDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+       "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content":"flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Textarea: A multi-line text input field for longer text.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "textarea",
+        "id": "db-12",
+        "name": "textareaInput",
+        "label": "Textarea Input"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-preview",
+          "configuration": [
+            {
+              "selectorName": ".component-preview",
+              "xs": {
+                "background": "#f1f5f9",
+                "padding": "12px"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "placeholder": "Enter long text",
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-13",
+        "name": "passwordDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content":"flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Password: A single-line input field where characters are masked for security.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "password",
+        "id": "db-14",
+        "name": "passwordInput",
+        "label": "Password Input"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-preview",
+          "configuration": [
+            {
+              "selectorName": ".component-preview",
+              "xs": {
+                "background": "#f1f5f9",
+                "padding": "12px"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "placeholder": "Enter password",
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-15",
+        "name": "numberDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content":"flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Number: A single-line input field for entering a numerical value.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "number",
+        "id": "db-16",
+        "name": "numberInput",
+        "label": "Number Input"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-preview",
+          "configuration": [
+            {
+              "selectorName": ".component-preview",
+              "xs": {
+                "background": "#f1f5f9",
+                "padding": "12px"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "placeholder": "Enter number",
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-17",
+        "name": "hiddenDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content":"flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Hidden: An input field that is not visible to the user but holds data to be submitted with the form.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "hidden",
+        "id": "db-18",
+        "name": "hiddenInput",
+        "label": "Hidden Input"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-preview",
+          "configuration": [
+            {
+              "selectorName": ".component-preview",
+              "xs": {
+                "background": "#f1f5f9",
+                "padding": "12px"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
       "accessor": null
     }
   ]
