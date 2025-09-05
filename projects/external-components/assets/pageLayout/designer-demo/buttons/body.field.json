@@ -139,7 +139,31 @@
         },
         "orientation": null
       },
-      "events": [],
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "openurl",
+              "url": "google.com",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "_blank",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
       "expressionProperties": {}
     },
     {
@@ -435,7 +459,7 @@
         "name": "link",
         "label": "link"
       },
-       "href": "https://www.google.com/",
+      "href": "https://www.google.com/",
       "layoutProperties": {
         "labelPlacement": null,
         "width": null,
