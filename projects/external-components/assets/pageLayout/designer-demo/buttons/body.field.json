@@ -146,7 +146,7 @@
           "actions": [
             {
               "actionType": "openurl",
-              "url": "google.com",
+              "url": "https://www.google.com/",
               "condition": "1==1",
               "fileName": "",
               "field": "",
