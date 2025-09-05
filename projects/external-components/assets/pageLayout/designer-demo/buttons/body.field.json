@@ -118,7 +118,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "A clickable button that can be used for custom actions.",
+      "value": "A clickable button that can be used for custom actions,  in this example, will open Google in a new browser tab.",
       "dynamicValueAccessor": null
     },
     {
@@ -223,7 +223,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "A clickable button that submits the form data to the server.",
+      "value": "A clickable button that submits the form data to the server,  in this scenario, will submit the feedback entered in the form.",
       "dynamicValueAccessor": null
     },
     {
@@ -330,7 +330,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "A clickable button that clears all form data and resets the form to its initial state.",
+      "value": "A clickable button that clears all form data and resets the form to its initial state, in this example, will clear all form data and reset the form to its initial state.",
       "dynamicValueAccessor": null
     },
     {
@@ -475,7 +475,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "A clickable text that navigates the user to a different web page or resource.",
+      "value": "A clickable text that navigates the user to a different web page or resource,  in this case, will redirect you to google.com",
       "dynamicValueAccessor": null
     },
     {
