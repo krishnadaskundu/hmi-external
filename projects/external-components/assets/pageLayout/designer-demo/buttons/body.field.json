@@ -231,7 +231,8 @@
         "type": "textarea",
         "id": "db-17",
         "label": "Feedback",
-        "name": "feedback"
+        "name": "feedback",
+        "formName": "test"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -255,7 +256,8 @@
         "type": "submit",
         "id": "db-8",
         "name": "submit",
-        "label": "submit"
+        "label": "submit",
+        "formName": "test"
       },
       "layoutProperties": {
         "labelPlacement": null,
