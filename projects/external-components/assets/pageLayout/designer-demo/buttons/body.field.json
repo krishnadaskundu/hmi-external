@@ -285,6 +285,70 @@
     },
     {
       "baseProperties": {
+        "type": "email",
+        "id": "db-15",
+        "name": "email",
+        "label": "Email"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-preview",
+          "configuration": [
+            {
+              "selectorName": ".component-preview",
+              "xs": {
+                "background": "#f1f5f9",
+                "padding": "12px"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "placeholder": "Enter email address",
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "password",
+        "id": "db-16",
+        "name": "password",
+        "label": "Password"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-preview",
+          "configuration": [
+            {
+              "selectorName": ".component-preview",
+              "xs": {
+                "background": "#f1f5f9",
+                "padding": "12px"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "placeholder": "Enter password",
+      "accessor": null
+    },
+    {
+      "baseProperties": {
         "type": "reset",
         "id": "db-11",
         "name": "reset",
@@ -371,6 +435,7 @@
         "name": "link",
         "label": "link"
       },
+       "href": "https://www.google.com/",
       "layoutProperties": {
         "labelPlacement": null,
         "width": null,
