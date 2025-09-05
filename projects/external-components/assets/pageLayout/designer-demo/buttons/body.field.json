@@ -64,7 +64,7 @@
     {
       "baseProperties": {
         "type": "staticText",
-        "id": "db-19",
+        "id": "db-3",
         "name": "textHeading"
       },
       "layoutProperties": {
@@ -89,13 +89,13 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "1. Text",
+      "value": "1. Button",
       "dynamicValueAccessor": null
     },
     {
       "baseProperties": {
         "type": "staticText",
-        "id": "db-3",
+        "id": "db-4",
         "name": "textDescription"
       },
       "layoutProperties": {
@@ -118,15 +118,258 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "A single-line text input field for general purpose use.",
+      "value": "A clickable button that can be used for custom actions.",
       "dynamicValueAccessor": null
     },
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-27",
+        "id": "db-5",
         "name": "button",
         "label": "Button"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-6",
+        "name": "textHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "3. Submit",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-7",
+        "name": "textDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "A clickable button that submits the form data to the server.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "submit",
+        "id": "db-8",
+        "name": "submit",
+        "label": "submit"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-9",
+        "name": "textHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "2. Reset",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-10",
+        "name": "textDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "A clickable button that clears all form data and resets the form to its initial state.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "reset",
+        "id": "db-11",
+        "name": "reset",
+        "label": "reset"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-12",
+        "name": "textHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "4. Link (Hyperlink)",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-13",
+        "name": "textDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "A clickable text that navigates the user to a different web page or resource.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "link",
+        "id": "db-14",
+        "name": "link",
+        "label": "link"
       },
       "layoutProperties": {
         "labelPlacement": null,
