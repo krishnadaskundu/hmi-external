@@ -1,0 +1,146 @@
+{
+  "db-0": [
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-1",
+        "name": "heading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "header",
+          "configuration": [
+            {
+              "selectorName": ".header",
+              "xs": {
+                "font-size": "30px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Button Components",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-2",
+        "name": "description"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "sub-header",
+          "configuration": [
+            {
+              "selectorName": ".sub-header",
+              "xs": {
+                "font-size": "20px",
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Various button components for different data types",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-19",
+        "name": "textHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "1. Text",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-3",
+        "name": "textDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "A single-line text input field for general purpose use.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-27",
+        "name": "button",
+        "label": "Button"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {}
+    }
+  ]
+}
