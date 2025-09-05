@@ -65,7 +65,7 @@
       "baseProperties": {
         "type": "staticText",
         "id": "db-3",
-        "name": "textHeading"
+        "name": "buttonHeading"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -96,7 +96,7 @@
       "baseProperties": {
         "type": "staticText",
         "id": "db-4",
-        "name": "textDescription"
+        "name": "buttonDescription"
       },
       "layoutProperties": {
         "labelPlacement": "left",
@@ -170,7 +170,7 @@
       "baseProperties": {
         "type": "staticText",
         "id": "db-6",
-        "name": "textHeading"
+        "name": "submitHeading"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -201,7 +201,7 @@
       "baseProperties": {
         "type": "staticText",
         "id": "db-7",
-        "name": "textDescription"
+        "name": "submitDescription"
       },
       "layoutProperties": {
         "labelPlacement": "left",
@@ -228,6 +228,30 @@
     },
     {
       "baseProperties": {
+        "type": "textarea",
+        "id": "db-17",
+        "label": "Feedback",
+        "name": "feedback"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "placeholder": null,
+      "accessor": null
+    },
+    {
+      "baseProperties": {
         "type": "submit",
         "id": "db-8",
         "name": "submit",
@@ -251,7 +275,7 @@
       "baseProperties": {
         "type": "staticText",
         "id": "db-9",
-        "name": "textHeading"
+        "name": "resetHeading"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -282,7 +306,7 @@
       "baseProperties": {
         "type": "staticText",
         "id": "db-10",
-        "name": "textDescription"
+        "name": "resetDescription"
       },
       "layoutProperties": {
         "labelPlacement": "left",
@@ -396,7 +420,7 @@
       "baseProperties": {
         "type": "staticText",
         "id": "db-12",
-        "name": "textHeading"
+        "name": "linkHeading"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -427,7 +451,7 @@
       "baseProperties": {
         "type": "staticText",
         "id": "db-13",
-        "name": "textDescription"
+        "name": "linkDescription"
       },
       "layoutProperties": {
         "labelPlacement": "left",
