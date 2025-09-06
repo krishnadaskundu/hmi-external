@@ -470,6 +470,228 @@
         }
       ],
       "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-13"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "setfield",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-14"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "SET_SHARED_DATA",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [
+                {
+                  "varName": "",
+                  "staticData": "",
+                  "cache": false,
+                  "responseAccessor": ""
+                }
+              ],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-15"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "CLEAR_COMPONENT_DATA",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-16"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "RELOAD_COMPONENT_DATA",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-17"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "DOWNLOAD_FILE_FROM_URL",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
     }
   ]
 }
