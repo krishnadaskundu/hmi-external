@@ -228,5 +228,25 @@
       "title": "Static",
       "layoutProperties": null
     }
+  },
+  "hmiAppConfiguration": {
+    "title": "Static commponent",
+    "baseUrl": "",
+    "metaTags": [],
+    "linkTags": [],
+    "ifPageNotFound": "",
+    "interceptorConfigurations": [],
+    "apiConfigurations": [],
+    "layoutProperties": {
+      "labelPlacement": "top",
+      "width": null,
+      "height": null,
+      "css": {
+        "customClassName": "",
+        "configuration": [],
+        "themeClass": ""
+      },
+      "orientation": null
+    }
   }
 }
