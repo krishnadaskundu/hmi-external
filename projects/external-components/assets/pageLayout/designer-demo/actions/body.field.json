@@ -1,4 +1,28 @@
 {
+  "db-9": [
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-10",
+        "name": "modal"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This is modal",
+      "dynamicValueAccessor": null
+    }
+  ],
   "db-0": [
     {
       "baseProperties": {
@@ -349,8 +373,94 @@
               "fieldAccessor": "",
               "messagetype": "",
               "messageText": "",
-              "target": "",
+              "target": "db-9",
               "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-11"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "CLOSE_MODAL",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "db-9",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-12"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "WAIT_IN_MS",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": 5000,
               "formName": "",
               "componentName": "",
               "sharedData": [],
