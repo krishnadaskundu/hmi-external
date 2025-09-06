@@ -29,7 +29,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "Button Components",
+      "value": "Events",
       "dynamicValueAccessor": null
     },
     {
@@ -59,7 +59,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "Various button components for different data types",
+      "value": "Events are occurrences that happen in the browser, such as a user clicking a button, or mouse over . They are crucial for creating dynamic and interactive web applications, allowing developers to execute code in response to these occurrences.",
       "dynamicValueAccessor": null
     },
     {
@@ -90,7 +90,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "1. Button",
+      "value": "Types of Events",
       "dynamicValueAccessor": null
     },
     {
@@ -119,7 +119,7 @@
       },
       "events": [],
       "expressionProperties": {},
-      "value": "A clickable button that can be used for custom actions,  in this example, will open Google in a new browser tab.",
+      "value": "When interacting with web pages, a series of user actions and browser responses trigger various events. click is the most common, firing when a user presses and releases a mouse button on an element. Related to this are mouse events: mousedown fires when the mouse button is pressed down, mouseup when it's released, and mousemove fires repeatedly as the mouse pointer is moved over an element. The events mouseover and mouseout fire when the pointer enters and leaves an element, respectively. For keyboard interactions, keydown fires when a key is pressed down, keyup when it's released, and keypress for most printable characters. On the other hand, focus and blur events deal with an element's active state: focus fires when an element becomes active, such as when you click inside a text box, while blur fires when it loses that active state. Lastly, the change event is triggered when an element's value, like a form input, is altered and the user moves away from it.",
       "dynamicValueAccessor": null
     }
   ],
