@@ -1,0 +1,365 @@
+{
+  "db-0": [
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-1",
+        "label": "Invoke Api"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "INVOKE_API",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": {
+                "name": "API Name",
+                "url": "",
+                "method": "GET",
+                "pathParams": [],
+                "queryParams": [],
+                "payloadParams": [],
+                "onSuccess": {},
+                "onError": {},
+                "beforeSubmit": {
+                  "action": []
+                },
+                "downloadFileName": "",
+                "responseType": "",
+                "encodePathAndQueryParams": false,
+                "isWithCredentials": true
+              }
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-2"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "openurl",
+              "url": "https://www.google.com/",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "_blank",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-3"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "openurl",
+              "url": "https://www.google.com/",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "_self",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-4"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "openurl",
+              "url": "https://www.google.com/",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "_parent",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-5"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "openurl",
+              "url": "https://www.google.com/",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "_top",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-6"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "navigate",
+              "url": "inputs",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-7"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "message",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "Success",
+              "messageText": "Success!",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-8"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "OPEN_MODAL",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    }
+  ]
+}
