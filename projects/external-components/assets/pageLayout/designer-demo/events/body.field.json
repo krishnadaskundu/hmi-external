@@ -1,5 +1,13 @@
 {
   "db-0": [],
-  "db-1": [],
+  "db-1": [
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-3"
+      },
+      "layoutProperties": {}
+    }
+  ],
   "db-2": []
 }
