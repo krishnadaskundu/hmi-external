@@ -1,7 +1,7 @@
 {
   "db-0": [],
   "db-1": [
-     {
+    {
       "baseProperties": {
         "type": "staticText",
         "id": "db-3",
@@ -397,6 +397,51 @@
     {
       "baseProperties": {
         "type": "button",
+        "id": "db-18",
+        "name": "button",
+        "label": "Key Press"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "keypress",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "openurl",
+              "url": "https://www.google.com/",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "_blank",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
+    },
+    {
+      "baseProperties": {
+        "type": "button",
         "id": "db-13",
         "name": "button",
         "label": "Mouse Over"
@@ -595,51 +640,6 @@
       "events": [
         {
           "event": "mousemove",
-          "debounce": null,
-          "actions": [
-            {
-              "actionType": "openurl",
-              "url": "https://www.google.com/",
-              "condition": "1==1",
-              "fileName": "",
-              "field": "",
-              "fieldValue": "",
-              "fieldAccessor": "",
-              "messagetype": "",
-              "messageText": "",
-              "target": "_blank",
-              "timer": null,
-              "formName": "",
-              "componentName": "",
-              "sharedData": [],
-              "apiConfig": null
-            }
-          ]
-        }
-      ],
-      "expressionProperties": {}
-    },
-    {
-      "baseProperties": {
-        "type": "button",
-        "id": "db-18",
-        "name": "button",
-        "label": "Key Press"
-      },
-      "layoutProperties": {
-        "labelPlacement": null,
-        "width": null,
-        "height": null,
-        "css": {
-          "customClassName": "",
-          "configuration": [],
-          "themeClass": ""
-        },
-        "orientation": null
-      },
-      "events": [
-        {
-          "event": "keypress",
           "debounce": null,
           "actions": [
             {
