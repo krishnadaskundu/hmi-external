@@ -1,4 +1,13 @@
 {
+  "db-36": [
+    {
+      "baseProperties": {
+        "type": "text",
+        "id": "db-37"
+      },
+      "layoutProperties": {}
+    }
+  ],
   "db-9": [
     {
       "baseProperties": {
