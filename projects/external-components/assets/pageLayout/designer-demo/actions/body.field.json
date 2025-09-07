@@ -24,7 +24,9 @@
     }
   ],
   "db-0": [],
-  "db-19": [
+  "db-19": [],
+  "db-35": [],
+  "db-32": [
     {
       "baseProperties": {
         "type": "button",
@@ -312,7 +314,9 @@
       "expressionProperties": {}
     }
   ],
-  "db-21": [
+  "db-21": [],
+  "db-34": [],
+  "db-33": [
     {
       "baseProperties": {
         "type": "button",
