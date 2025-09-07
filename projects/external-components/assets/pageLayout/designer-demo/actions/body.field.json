@@ -23,7 +23,8 @@
       "dynamicValueAccessor": null
     }
   ],
-  "db-0": [
+  "db-0":[],
+  "db-18": [
     {
       "baseProperties": {
         "type": "button",
@@ -83,11 +84,14 @@
         }
       ],
       "expressionProperties": {}
-    },
+    }
+  ],
+  "db-19": [
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-2"
+        "id": "db-2",
+        "label": "New Window/Tab"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -130,7 +134,8 @@
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-3"
+        "id": "db-3",
+        "label": "Current Frame"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -173,7 +178,8 @@
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-4"
+        "id": "db-4",
+        "label": "Parent Frame"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -216,7 +222,8 @@
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-5"
+        "id": "db-5",
+        "label": "Full body of Window"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -255,11 +262,15 @@
         }
       ],
       "expressionProperties": {}
-    },
+    }
+  ],
+  "db-20": [
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-6"
+        "id": "db-6",
+        "label": "Navigate To Page"
+
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -298,11 +309,15 @@
         }
       ],
       "expressionProperties": {}
-    },
+    }
+  ],
+  "db-21": [
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-7"
+        "id": "db-7",
+        "label": "Show Toast Message"
+
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -341,11 +356,14 @@
         }
       ],
       "expressionProperties": {}
-    },
+    }
+  ],
+  "db-22": [
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-8"
+        "id": "db-8",
+        "label": "Open Modal"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -384,11 +402,14 @@
         }
       ],
       "expressionProperties": {}
-    },
+    }
+  ],
+  "db-23": [
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-11"
+        "id": "db-11",
+        "label": "Close Modal"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -427,11 +448,14 @@
         }
       ],
       "expressionProperties": {}
-    },
+    }
+  ],
+  "db-24": [
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-12"
+        "id": "db-12",
+        "label": "Wait for Next Action to fire"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -470,11 +494,14 @@
         }
       ],
       "expressionProperties": {}
-    },
+    }
+  ],
+  "db-25": [
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-13"
+        "id": "db-13",
+        "label": "Set Widget Value"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -513,11 +540,14 @@
         }
       ],
       "expressionProperties": {}
-    },
+    }
+  ],
+  "db-26": [
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-14"
+        "id": "db-14",
+        "label": "Set Shared Data"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -563,11 +593,14 @@
         }
       ],
       "expressionProperties": {}
-    },
+    }
+  ],
+  "db-27": [
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-15"
+        "id": "db-15",
+        "label": "Clear Widget Data"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -606,11 +639,14 @@
         }
       ],
       "expressionProperties": {}
-    },
+    }
+  ],
+  "db-28": [
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-16"
+        "id": "db-16",
+        "label": "Reload Widget Data"
       },
       "layoutProperties": {
         "labelPlacement": null,
@@ -649,11 +685,14 @@
         }
       ],
       "expressionProperties": {}
-    },
+    }
+  ],
+  "db-29": [
     {
       "baseProperties": {
         "type": "button",
-        "id": "db-17"
+        "id": "db-17",
+        "label": "Download File from URL"
       },
       "layoutProperties": {
         "labelPlacement": null,

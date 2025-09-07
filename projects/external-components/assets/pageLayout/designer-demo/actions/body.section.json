@@ -25,10 +25,10 @@
       "layout": {
         "column": {
           "ratio": {
-            "lg": "3",
-            "md": "3",
-            "sm": "3",
-            "xs": "3"
+            "lg": "12",
+            "md": "12",
+            "sm": "12",
+            "xs": "12"
           },
           "count": 1
         },
@@ -37,7 +37,268 @@
           "customClassName": null
         }
       },
-      "sectionList": []
+      "sectionList": [
+        {
+          "id": "db-18",
+          "type": "content",
+          "layout": {
+            "column": {
+              "ratio": {
+                "lg": "3",
+                "md": "3",
+                "sm": "3",
+                "xs": "3"
+              },
+              "count": 1
+            },
+            "css": {
+              "configuration": [],
+              "customClassName": null
+            }
+          },
+          "sectionList": []
+        },
+        {
+          "id": "db-19",
+          "type": "content",
+          "layout": {
+            "column": {
+              "ratio": {
+                "lg": "3",
+                "md": "3",
+                "sm": "3",
+                "xs": "3"
+              },
+              "count": 1
+            },
+            "css": {
+              "configuration": [],
+              "customClassName": null
+            }
+          },
+          "sectionList": []
+        },
+        {
+          "id": "db-20",
+          "type": "content",
+          "layout": {
+            "column": {
+              "ratio": {
+                "lg": "3",
+                "md": "3",
+                "sm": "3",
+                "xs": "3"
+              },
+              "count": 1
+            },
+            "css": {
+              "configuration": [],
+              "customClassName": null
+            }
+          },
+          "sectionList": []
+        },
+        {
+          "id": "db-21",
+          "type": "content",
+          "layout": {
+            "column": {
+              "ratio": {
+                "lg": "3",
+                "md": "3",
+                "sm": "3",
+                "xs": "3"
+              },
+              "count": 1
+            },
+            "css": {
+              "configuration": [],
+              "customClassName": null
+            }
+          },
+          "sectionList": []
+        },
+        {
+          "id": "db-22",
+          "type": "content",
+          "layout": {
+            "column": {
+              "ratio": {
+                "lg": "3",
+                "md": "3",
+                "sm": "3",
+                "xs": "3"
+              },
+              "count": 1
+            },
+            "css": {
+              "configuration": [],
+              "customClassName": null
+            }
+          },
+          "sectionList": []
+        },
+        {
+          "id": "db-23",
+          "type": "content",
+          "layout": {
+            "column": {
+              "ratio": {
+                "lg": "3",
+                "md": "3",
+                "sm": "3",
+                "xs": "3"
+              },
+              "count": 1
+            },
+            "css": {
+              "configuration": [],
+              "customClassName": null
+            }
+          },
+          "sectionList": []
+        },
+        {
+          "id": "db-24",
+          "type": "content",
+          "layout": {
+            "column": {
+              "ratio": {
+                "lg": "3",
+                "md": "3",
+                "sm": "3",
+                "xs": "3"
+              },
+              "count": 1
+            },
+            "css": {
+              "configuration": [],
+              "customClassName": null
+            }
+          },
+          "sectionList": []
+        },
+        {
+          "id": "db-25",
+          "type": "content",
+          "layout": {
+            "column": {
+              "ratio": {
+                "lg": "3",
+                "md": "3",
+                "sm": "3",
+                "xs": "3"
+              },
+              "count": 1
+            },
+            "css": {
+              "configuration": [],
+              "customClassName": null
+            }
+          },
+          "sectionList": []
+        },
+        {
+          "id": "db-26",
+          "type": "content",
+          "layout": {
+            "column": {
+              "ratio": {
+                "lg": "3",
+                "md": "3",
+                "sm": "3",
+                "xs": "3"
+              },
+              "count": 1
+            },
+            "css": {
+              "configuration": [],
+              "customClassName": null
+            }
+          },
+          "sectionList": []
+        },
+        {
+          "id": "db-27",
+          "type": "content",
+          "layout": {
+            "column": {
+              "ratio": {
+                "lg": "3",
+                "md": "3",
+                "sm": "3",
+                "xs": "3"
+              },
+              "count": 1
+            },
+            "css": {
+              "configuration": [],
+              "customClassName": null
+            }
+          },
+          "sectionList": []
+        },
+        {
+          "id": "db-28",
+          "type": "content",
+          "layout": {
+            "column": {
+              "ratio": {
+                "lg": "3",
+                "md": "3",
+                "sm": "3",
+                "xs": "3"
+              },
+              "count": 1
+            },
+            "css": {
+              "configuration": [],
+              "customClassName": null
+            }
+          },
+          "sectionList": []
+        },
+        {
+          "id": "db-29",
+          "type": "content",
+          "layout": {
+            "column": {
+              "ratio": {
+                "lg": "3",
+                "md": "3",
+                "sm": "3",
+                "xs": "3"
+              },
+              "count": 1
+            },
+            "css": {
+              "configuration": [],
+              "customClassName": null
+            }
+          },
+          "sectionList": []
+        },
+        {
+          "id": "db-30",
+          "type": "content",
+          "layout": {
+            "column": {
+              "ratio": {
+                "lg": "3",
+                "md": "3",
+                "sm": "3",
+                "xs": "3"
+              },
+              "count": 1
+            },
+            "css": {
+              "configuration": [],
+              "customClassName": null
+            }
+          },
+          "sectionList": []
+        }
+      ]
     }
   ]
 }
