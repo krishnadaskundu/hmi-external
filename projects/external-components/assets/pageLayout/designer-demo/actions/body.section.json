@@ -56,7 +56,46 @@
               "customClassName": null
             }
           },
-          "sectionList": []
+          "sectionList": [
+            {
+              "id": "db-35",
+              "type": "content",
+              "layout": {
+                "column": {
+                  "ratio": {
+                    "lg": "12",
+                    "md": "12",
+                    "sm": "12",
+                    "xs": "12"
+                  }
+                },
+                "css": {
+                  "configuration": [],
+                  "customClassName": null
+                }
+              },
+              "sectionList": []
+            },
+            {
+              "id": "db-32",
+              "type": "content",
+              "layout": {
+                "column": {
+                  "ratio": {
+                    "lg": "12",
+                    "md": "12",
+                    "sm": "12",
+                    "xs": "12"
+                  }
+                },
+                "css": {
+                  "configuration": [],
+                  "customClassName": null
+                }
+              },
+              "sectionList": []
+            }
+          ]
         },
         {
           "id": "db-18",
@@ -124,10 +163,10 @@
           "layout": {
             "column": {
               "ratio": {
-                "lg": "3",
-                "md": "3",
-                "sm": "3",
-                "xs": "3"
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
               },
               "count": 1
             },
@@ -144,10 +183,10 @@
           "layout": {
             "column": {
               "ratio": {
-                "lg": "3",
-                "md": "3",
-                "sm": "3",
-                "xs": "3"
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
               },
               "count": 1
             },
@@ -156,7 +195,46 @@
               "customClassName": null
             }
           },
-          "sectionList": []
+          "sectionList": [
+            {
+              "id": "db-34",
+              "type": "content",
+              "layout": {
+                "column": {
+                  "ratio": {
+                    "lg": "12",
+                    "md": "12",
+                    "sm": "12",
+                    "xs": "12"
+                  }
+                },
+                "css": {
+                  "configuration": [],
+                  "customClassName": null
+                }
+              },
+              "sectionList": []
+            },
+            {
+              "id": "db-33",
+              "type": "content",
+              "layout": {
+                "column": {
+                  "ratio": {
+                    "lg": "12",
+                    "md": "12",
+                    "sm": "12",
+                    "xs": "12"
+                  }
+                },
+                "css": {
+                  "configuration": [],
+                  "customClassName": null
+                }
+              },
+              "sectionList": []
+            }
+          ]
         },
         {
           "id": "db-22",
@@ -164,10 +242,10 @@
           "layout": {
             "column": {
               "ratio": {
-                "lg": "3",
-                "md": "3",
-                "sm": "3",
-                "xs": "3"
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
               },
               "count": 1
             },
@@ -184,10 +262,10 @@
           "layout": {
             "column": {
               "ratio": {
-                "lg": "3",
-                "md": "3",
-                "sm": "3",
-                "xs": "3"
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
               },
               "count": 1
             },
@@ -204,10 +282,10 @@
           "layout": {
             "column": {
               "ratio": {
-                "lg": "3",
-                "md": "3",
-                "sm": "3",
-                "xs": "3"
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
               },
               "count": 1
             },
@@ -224,10 +302,10 @@
           "layout": {
             "column": {
               "ratio": {
-                "lg": "3",
-                "md": "3",
-                "sm": "3",
-                "xs": "3"
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
               },
               "count": 1
             },
@@ -244,10 +322,10 @@
           "layout": {
             "column": {
               "ratio": {
-                "lg": "3",
-                "md": "3",
-                "sm": "3",
-                "xs": "3"
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
               },
               "count": 1
             },
@@ -264,10 +342,10 @@
           "layout": {
             "column": {
               "ratio": {
-                "lg": "3",
-                "md": "3",
-                "sm": "3",
-                "xs": "3"
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
               },
               "count": 1
             },
@@ -284,10 +362,10 @@
           "layout": {
             "column": {
               "ratio": {
-                "lg": "3",
-                "md": "3",
-                "sm": "3",
-                "xs": "3"
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
               },
               "count": 1
             },
@@ -304,10 +382,10 @@
           "layout": {
             "column": {
               "ratio": {
-                "lg": "3",
-                "md": "3",
-                "sm": "3",
-                "xs": "3"
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
               },
               "count": 1
             },
