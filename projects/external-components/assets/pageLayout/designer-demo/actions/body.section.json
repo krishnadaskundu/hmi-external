@@ -64,10 +64,10 @@
           "layout": {
             "column": {
               "ratio": {
-                "lg": "3",
-                "md": "3",
-                "sm": "3",
-                "xs": "3"
+                "lg": "12",
+                "md": "12",
+                "sm": "12",
+                "xs": "12"
               },
               "count": 1
             },
@@ -78,7 +78,7 @@
           },
           "sectionList": [
             {
-              "id": "db-30",
+              "id": "db-31",
               "type": "content",
               "layout": {
                 "column": {
@@ -87,6 +87,25 @@
                     "md": "12",
                     "sm": "12",
                     "xs": "12"
+                  }
+                },
+                "css": {
+                  "configuration": [],
+                  "customClassName": null
+                }
+              },
+              "sectionList": []
+            },
+            {
+              "id": "db-30",
+              "type": "content",
+              "layout": {
+                "column": {
+                  "ratio": {
+                    "lg": "3",
+                    "md": "3",
+                    "sm": "3",
+                    "xs": "3"
                   },
                   "count": 1
                 },
