@@ -21,6 +21,50 @@
       "expressionProperties": {},
       "value": "This is modal",
       "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "button",
+        "id": "db-11",
+        "label": "Close Modal"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [
+        {
+          "event": "click",
+          "debounce": null,
+          "actions": [
+            {
+              "actionType": "CLOSE_MODAL",
+              "url": "",
+              "condition": "1==1",
+              "fileName": "",
+              "field": "",
+              "fieldValue": "",
+              "fieldAccessor": "",
+              "messagetype": "",
+              "messageText": "",
+              "target": "db-9",
+              "timer": null,
+              "formName": "",
+              "componentName": "",
+              "sharedData": [],
+              "apiConfig": null
+            }
+          ]
+        }
+      ],
+      "expressionProperties": {}
     }
   ],
   "db-0": [],
@@ -408,52 +452,7 @@
       "expressionProperties": {}
     }
   ],
-  "db-23": [
-    {
-      "baseProperties": {
-        "type": "button",
-        "id": "db-11",
-        "label": "Close Modal"
-      },
-      "layoutProperties": {
-        "labelPlacement": null,
-        "width": null,
-        "height": null,
-        "css": {
-          "customClassName": "",
-          "configuration": [],
-          "themeClass": ""
-        },
-        "orientation": null
-      },
-      "events": [
-        {
-          "event": "click",
-          "debounce": null,
-          "actions": [
-            {
-              "actionType": "CLOSE_MODAL",
-              "url": "",
-              "condition": "1==1",
-              "fileName": "",
-              "field": "",
-              "fieldValue": "",
-              "fieldAccessor": "",
-              "messagetype": "",
-              "messageText": "",
-              "target": "db-9",
-              "timer": null,
-              "formName": "",
-              "componentName": "",
-              "sharedData": [],
-              "apiConfig": null
-            }
-          ]
-        }
-      ],
-      "expressionProperties": {}
-    }
-  ],
+  "db-23": [],
   "db-24": [
     {
       "baseProperties": {
