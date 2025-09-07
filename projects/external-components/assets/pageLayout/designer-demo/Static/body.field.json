@@ -1,1 +1,70 @@
-{}
+{
+  "dh-0": [
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "dh-1",
+        "name": "staticText"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This is Static text",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticIcon",
+        "id": "dh-2",
+        "name": "staticIcon"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "iconClass": "bi-0-circle"
+    },
+    {
+      "baseProperties": {
+        "type": "staticImage",
+        "id": "dh-3",
+        "formName": "staticImage"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "imageUrl": "https://images.dog.ceo/breeds/boxer/n02108089_4440.jpg",
+      "altText": "dog",
+      "showDownload": null
+    }
+  ]
+}
