@@ -1,5 +1,6 @@
 {
-  "db-0": [
+  "db-18": [],
+  "db-19": [
     {
       "baseProperties": {
         "type": "staticText",
@@ -60,7 +61,9 @@
       "expressionProperties": {},
       "value": "Various button components for different data types",
       "dynamicValueAccessor": null
-    },
+    }
+  ],
+  "db-20": [
     {
       "baseProperties": {
         "type": "staticText",
@@ -165,114 +168,9 @@
         }
       ],
       "expressionProperties": {}
-    },
-    {
-      "baseProperties": {
-        "type": "staticText",
-        "id": "db-6",
-        "name": "submitHeading"
-      },
-      "layoutProperties": {
-        "labelPlacement": null,
-        "width": null,
-        "height": null,
-        "css": {
-          "customClassName": "component-heading",
-          "configuration": [
-            {
-              "selectorName": ".component-heading",
-              "xs": {
-                "font-size": "25px",
-                "justify-content": "flex-start",
-                "font-weight": "bold"
-              }
-            }
-          ],
-          "themeClass": ""
-        },
-        "orientation": null
-      },
-      "events": [],
-      "expressionProperties": {},
-      "value": "3. Submit",
-      "dynamicValueAccessor": null
-    },
-    {
-      "baseProperties": {
-        "type": "staticText",
-        "id": "db-7",
-        "name": "submitDescription"
-      },
-      "layoutProperties": {
-        "labelPlacement": "left",
-        "width": null,
-        "height": null,
-        "css": {
-          "customClassName": "description",
-          "configuration": [
-            {
-              "selectorName": ".description",
-              "xs": {
-                "justify-content": "flex-start"
-              }
-            }
-          ],
-          "themeClass": ""
-        },
-        "orientation": null
-      },
-      "events": [],
-      "expressionProperties": {},
-      "value": "A clickable button that submits the form data to the server,  in this scenario, will submit the feedback entered in the form.",
-      "dynamicValueAccessor": null
-    },
-    {
-      "baseProperties": {
-        "type": "textarea",
-        "id": "db-17",
-        "label": "Feedback",
-        "name": "feedback",
-        "formName": "test"
-      },
-      "layoutProperties": {
-        "labelPlacement": null,
-        "width": null,
-        "height": null,
-        "css": {
-          "customClassName": "",
-          "configuration": [],
-          "themeClass": ""
-        },
-        "orientation": null
-      },
-      "events": [],
-      "expressionProperties": {},
-      "value": null,
-      "placeholder": null,
-      "accessor": null
-    },
-    {
-      "baseProperties": {
-        "type": "submit",
-        "id": "db-8",
-        "name": "submit",
-        "label": "submit",
-        "formName": "test"
-      },
-      "layoutProperties": {
-        "labelPlacement": null,
-        "width": null,
-        "height": null,
-        "css": {
-          "customClassName": "",
-          "configuration": [],
-          "themeClass": ""
-        },
-        "orientation": null
-      },
-      "events": [],
-      "expressionProperties": {}
-    },
+    }
+  ],
+  "db-0": [
     {
       "baseProperties": {
         "type": "staticText",
@@ -417,7 +315,118 @@
       },
       "events": [],
       "expressionProperties": {}
+    }
+  ],
+  "db-21": [
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-6",
+        "name": "submitHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "3. Submit",
+      "dynamicValueAccessor": null
     },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-7",
+        "name": "submitDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "A clickable button that submits the form data to the server,  in this scenario, will submit the feedback entered in the form.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "textarea",
+        "id": "db-17",
+        "label": "Feedback",
+        "name": "feedback",
+        "formName": "test"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "placeholder": null,
+      "accessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "submit",
+        "id": "db-8",
+        "name": "submit",
+        "label": "submit",
+        "formName": "test"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {}
+    }
+  ],
+  "db-22": [
     {
       "baseProperties": {
         "type": "staticText",
