@@ -132,8 +132,7 @@
   ],
   "db-0": [],
   "db-19": [],
-  "db-35": [],
-  "db-32": [
+  "db-35": [
     {
       "baseProperties": {
         "type": "staticText",
@@ -193,7 +192,9 @@
       "expressionProperties": {},
       "value": "This action triggers a call to an external API (Application Programming Interface), allowing the application to send and receive data from other services.",
       "dynamicValueAccessor": null
-    },
+    }
+  ],
+  "db-32": [
     {
       "baseProperties": {
         "type": "button",
@@ -256,8 +257,7 @@
     }
   ],
   "db-18": [],
-  "db-31": [],
-  "db-30": [
+  "db-31": [
     {
       "baseProperties": {
         "type": "staticText",
@@ -317,7 +317,9 @@
       "expressionProperties": {},
       "value": "This action triggers a call to an external API (Application Programming Interface), allowing the application to send and receive data from other services.",
       "dynamicValueAccessor": null
-    },
+    }
+  ],
+  "db-30": [
     {
       "baseProperties": {
         "type": "button",
