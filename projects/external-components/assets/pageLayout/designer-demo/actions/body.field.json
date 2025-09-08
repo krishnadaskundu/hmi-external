@@ -2,10 +2,64 @@
   "db-36": [
     {
       "baseProperties": {
-        "type": "text",
-        "id": "db-37"
+        "type": "staticText",
+        "id": "db-37",
+        "name": "heading"
       },
-      "layoutProperties": {}
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "header",
+          "configuration": [
+            {
+              "selectorName": ".header",
+              "xs": {
+                "font-size": "30px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Actions",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-38",
+        "name": "description"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "sub-header",
+          "configuration": [
+            {
+              "selectorName": ".sub-header",
+              "xs": {
+                "font-size": "20px",
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "Actions are specific commands or functions that a program can execute in response to a user's behavior or a specific event. They define what the application does, such as showing a message, navigating to a new page, or Api calls.",
+      "dynamicValueAccessor": null
     }
   ],
   "db-9": [
@@ -82,6 +136,66 @@
   "db-32": [
     {
       "baseProperties": {
+        "type": "staticText",
+        "id": "db-39",
+        "name": "invokeApiHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "1. Invoke API",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-40",
+        "name": "invokeApiDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This action triggers a call to an external API (Application Programming Interface), allowing the application to send and receive data from other services.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
         "type": "button",
         "id": "db-1",
         "label": "Invoke Api"
@@ -144,6 +258,66 @@
   "db-18": [],
   "db-31": [],
   "db-30": [
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-41",
+        "name": "invokeApiHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "1. Invoke API",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-42",
+        "name": "invokeApiDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This action triggers a call to an external API (Application Programming Interface), allowing the application to send and receive data from other services.",
+      "dynamicValueAccessor": null
+    },
     {
       "baseProperties": {
         "type": "button",
@@ -324,6 +498,66 @@
   "db-20": [
     {
       "baseProperties": {
+        "type": "staticText",
+        "id": "db-43",
+        "name": "invokeApiHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "1. Invoke API",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-44",
+        "name": "invokeApiDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This action triggers a call to an external API (Application Programming Interface), allowing the application to send and receive data from other services.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
         "type": "button",
         "id": "db-6",
         "label": "Navigate To Page"
@@ -372,6 +606,66 @@
   "db-33": [
     {
       "baseProperties": {
+        "type": "staticText",
+        "id": "db-45",
+        "name": "invokeApiHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "1. Invoke API",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-46",
+        "name": "invokeApiDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This action triggers a call to an external API (Application Programming Interface), allowing the application to send and receive data from other services.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
         "type": "button",
         "id": "db-7",
         "label": "Show Toast Message"
@@ -416,6 +710,66 @@
     }
   ],
   "db-22": [
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-47",
+        "name": "invokeApiHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "1. Invoke API",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-48",
+        "name": "invokeApiDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This action triggers a call to an external API (Application Programming Interface), allowing the application to send and receive data from other services.",
+      "dynamicValueAccessor": null
+    },
     {
       "baseProperties": {
         "type": "button",
@@ -465,6 +819,66 @@
   "db-24": [
     {
       "baseProperties": {
+        "type": "staticText",
+        "id": "db-49",
+        "name": "invokeApiHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "1. Invoke API",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-50",
+        "name": "invokeApiDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This action triggers a call to an external API (Application Programming Interface), allowing the application to send and receive data from other services.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
         "type": "button",
         "id": "db-12",
         "label": "Wait for Next Action to fire"
@@ -511,6 +925,66 @@
   "db-25": [
     {
       "baseProperties": {
+        "type": "staticText",
+        "id": "db-51",
+        "name": "invokeApiHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "1. Invoke API",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-52",
+        "name": "invokeApiDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This action triggers a call to an external API (Application Programming Interface), allowing the application to send and receive data from other services.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
         "type": "button",
         "id": "db-13",
         "label": "Set Widget Value"
@@ -555,6 +1029,66 @@
     }
   ],
   "db-26": [
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-53",
+        "name": "invokeApiHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "1. Invoke API",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-54",
+        "name": "invokeApiDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This action triggers a call to an external API (Application Programming Interface), allowing the application to send and receive data from other services.",
+      "dynamicValueAccessor": null
+    },
     {
       "baseProperties": {
         "type": "button",
@@ -610,6 +1144,66 @@
   "db-27": [
     {
       "baseProperties": {
+        "type": "staticText",
+        "id": "db-55",
+        "name": "invokeApiHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "1. Invoke API",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-56",
+        "name": "invokeApiDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This action triggers a call to an external API (Application Programming Interface), allowing the application to send and receive data from other services.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
         "type": "button",
         "id": "db-15",
         "label": "Clear Widget Data"
@@ -656,6 +1250,66 @@
   "db-28": [
     {
       "baseProperties": {
+        "type": "staticText",
+        "id": "db-57",
+        "name": "invokeApiHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "1. Invoke API",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-58",
+        "name": "invokeApiDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This action triggers a call to an external API (Application Programming Interface), allowing the application to send and receive data from other services.",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
         "type": "button",
         "id": "db-16",
         "label": "Reload Widget Data"
@@ -700,6 +1354,66 @@
     }
   ],
   "db-29": [
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-59",
+        "name": "invokeApiHeading"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "component-heading",
+          "configuration": [
+            {
+              "selectorName": ".component-heading",
+              "xs": {
+                "font-size": "25px",
+                "justify-content": "flex-start",
+                "font-weight": "bold"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "1. Invoke API",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
+        "type": "staticText",
+        "id": "db-60",
+        "name": "invokeApiDescription"
+      },
+      "layoutProperties": {
+        "labelPlacement": "left",
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "description",
+          "configuration": [
+            {
+              "selectorName": ".description",
+              "xs": {
+                "justify-content": "flex-start"
+              }
+            }
+          ],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "This action triggers a call to an external API (Application Programming Interface), allowing the application to send and receive data from other services.",
+      "dynamicValueAccessor": null
+    },
     {
       "baseProperties": {
         "type": "button",
