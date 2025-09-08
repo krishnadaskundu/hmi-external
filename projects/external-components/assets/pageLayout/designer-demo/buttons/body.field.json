@@ -390,9 +390,17 @@
         "labelPlacement": null,
         "width": null,
         "height": null,
-        "css": {
-          "customClassName": "",
-          "configuration": [],
+         "css": {
+          "customClassName": "component-preview",
+          "configuration": [
+            {
+              "selectorName": ".component-preview",
+              "xs": {
+                "background": "#f1f5f9",
+                "padding": "12px"
+              }
+            }
+          ],
           "themeClass": ""
         },
         "orientation": null
