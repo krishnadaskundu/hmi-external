@@ -1,1 +1,27 @@
-{}
+{
+  "dn-0": [
+    {
+      "baseProperties": {
+        "type": "text",
+        "id": "dn-1",
+        "label": "test"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": null,
+      "placeholder": null,
+      "accessor": null
+    }
+  ]
+}
