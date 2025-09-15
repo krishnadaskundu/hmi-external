@@ -2,6 +2,27 @@
   "dn-0": [
     {
       "baseProperties": {
+        "type": "staticText",
+        "id": "dn-2"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "value": "xyz",
+      "dynamicValueAccessor": null
+    },
+    {
+      "baseProperties": {
         "type": "text",
         "id": "dn-1",
         "label": "test"
