@@ -10,8 +10,16 @@
         "width": null,
         "height": null,
         "css": {
-          "customClassName": "",
-          "configuration": [],
+          "customClassName": "temp-class-1",
+          "configuration": [
+            {
+              "selectorName": ".temp-class-1",
+              "xs": {
+                "color": "aqua",
+                "font-size": "25px"
+              }
+            }
+          ],
           "themeClass": ""
         },
         "orientation": null
