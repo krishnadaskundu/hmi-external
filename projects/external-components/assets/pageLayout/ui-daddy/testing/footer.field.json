@@ -1,1 +1,36 @@
-{}
+{
+  "df-0": [
+    {
+      "baseProperties": {
+        "type": "radio",
+        "id": "df-1"
+      },
+      "layoutProperties": {
+        "labelPlacement": null,
+        "width": null,
+        "height": null,
+        "css": {
+          "customClassName": "",
+          "configuration": [],
+          "themeClass": ""
+        },
+        "orientation": null
+      },
+      "events": [],
+      "expressionProperties": {},
+      "optionList": [
+        {
+          "label": "Customer",
+          "value": "customer",
+          "name": "customer"
+        },
+        {
+          "label": "Business Owner",
+          "value": "merchant",
+          "name": "merchant"
+        }
+      ],
+      "value": null
+    }
+  ]
+}
